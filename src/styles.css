@@ -15,13 +15,13 @@ body {
   .spinner .ball {
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: turquoise;
     border-radius: 50%;
     display: inline-block;
     -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
     animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
   .spinner p {
-    color: red;
+    color: turquoise;
     margin-top: 5px;
     font-family: sans-serif;
     letter-spacing: 3px;

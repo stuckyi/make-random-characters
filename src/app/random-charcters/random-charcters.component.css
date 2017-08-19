@@ -5640,16 +5640,18 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 /* Color */
-svg {
-  border: 2px solid aquamarine;
-  transform: scale(0.2); }
-  svg.inactive {
-    display: none; }
-  svg.active {
-    display: visible; }
+.svg-container {
+  height: 600px; }
+  .svg-container svg {
+    max-height: 600px;
+    margin: 0 auto; }
 
-.container p {
-  text-align: center; }
+.section {
+  padding-top: 24px; }
+  .section .container p {
+    text-align: center; }
+  .section .container .startBtn {
+    max-width: 200px; }
 
 .output-container div {
   width: 392px;

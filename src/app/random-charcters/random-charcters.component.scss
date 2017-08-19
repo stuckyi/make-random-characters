@@ -10,17 +10,23 @@ $face-stroke-width: 3;
 $face-stroke-miterlimit: 10; 
 
 
-svg {
-    border: 2px solid aquamarine;
-    &.inactive{ display:none; }
-    &.active { display: visible; }
-    transform: scale(.2);
+.svg-container {
+    height: 600px;
+    svg {
+        max-height: 600px;
+        margin: 0 auto;
+    }
 }
 
+.section {
+    padding-top: 24px;
 
-
-.container {
-    p { text-align: center; }
+    .container {
+        p { text-align: center; }
+        .startBtn { 
+            max-width: 200px;
+        }
+    }
 }
 
 .output-container {
