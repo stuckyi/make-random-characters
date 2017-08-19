@@ -31,6 +31,10 @@
 - [p5play]()
     - [p5play example](http://p5play.molleindustria.org/examples/index.html?fileName=sprite3.js)
 
+**SVG**
+
+- [Using SVG with ng2 - TEROPA](https://teropa.info/blog/2016/12/12/graphics-in-angular-2.html)
+- [How to Scale SVG - CSS TRICKS](https://css-tricks.com/scale-svg/)
 
 #### 기술 라이브러리
 - [createJs](http://createjs.com/)
@@ -47,7 +51,11 @@
 
 - [유산균 점프게임 블로거 정리글](http://pastelcloud.tistory.com/m/142) : 게임을 시작하고 규칙을 부여하고, 스토리를 설정하는 부분에서 참고할 것이 많다.
 - [protestgame](http://www.protestgames.org/) : 목적인 무엇인지는 모르겠지만, 게임 기획할 때 참고하기 좋은 재미있는 사이트
+- [quickdraw](https://quickdraw.withgoogle.com/) : 구글 퀵드로우. 전반적인 구성이 뭘 하는 사이트인지 알 수 있는 디자인, 구성이며 결과물을 SNS에 공유할 수 있도록 기능을 만들어 두었다. 그리고 다른 사람은 같은 그림을(혹은 내가 그리지 못한 그림을)어떻게 그렸는지 볼 수 있다.
 
+#### 향후 방향
+
+- [nimuradaisuke](http://nimuradaisuke.tumblr.com/)의 다양한 동작과 소품들도 적용해보면 좋을 것 같다.
 
 
 
