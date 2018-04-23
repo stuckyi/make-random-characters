@@ -120,11 +120,13 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   // 랜덤 시작
   randomStart() {
     console.log('randomStart()');
-    this.timer$ = timer(100, 100).subscribe(val => {
-      this.isLeg = true;
-      this.getRandomIndex();
+    this.timer$ = timer(100, 100)
+      .subscribe(val => {
+        this.isLeg = true;
+        this.getRandomIndex();
     });
   }
+
   // 랜덤 종료
   randomStop() {
     console.log('randomStop()');
