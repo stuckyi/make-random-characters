@@ -1,11 +1,10 @@
 @import 'assets/scss/_global';
 $nav-bg-col: $turquoise;
-
 .navbar { 
     // background-color: $nav-bg-col;
     padding: 10px;
     a { 
-        color: $turquoise;
+        color: $nav-bg-col;
         span { font-size: $size-3; }
     }
     

@@ -58,6 +58,9 @@
 - [nimuradaisuke](http://nimuradaisuke.tumblr.com/)의 다양한 동작과 소품들도 적용해보면 좋을 것 같다.
 
 
+### 기술적 개선이 필요한 지점
+- SVG Inline import 및 그에따른 컨트롤을 위한 코드 개선
+
 
 ---
 
@@ -74,3 +77,5 @@ Run `ng serve` for a dev server.
 
 개발 서버를 실행한 후, 브라우저를 열어 `http://localhost:4200/` 경로로 이동하면 결과물을 보실 수 있습니다. 
 Navigate to `http://localhost:4200/`.
+
+
