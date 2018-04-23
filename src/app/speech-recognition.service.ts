@@ -54,7 +54,7 @@ export class SpeechRecognitionService {
             };
 
             this.speechRecognition.start();
-            console.log('Say something - We are listening !!!');
+            console.log('말해보세요, 지금 듣고 있어요');
         });
     }
 

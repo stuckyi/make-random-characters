@@ -5,38 +5,10 @@
       (mouseenter)="onMouseEnter('start')"
       (mouseleave)="onMouseLeave('start')"
       (click)="setRandomState()" [src]="startBtnUrl">
-    
-    
-    <!--<a class="button is-large" #startBtn (click)="setRandomState()">시작하기</a>-->
   </div>
 
   <div *ngIf="isRandom" class="svg-container is-paddingless"> 
 
-    <!--
-    <div class="column is-padding-less output-container">
-      <div [style.background-image]="'url(/assets/images/leg/'+ randomLegUrl + ')'"> </div>
-      
-      <div [style.background-image]="'url(/assets/images/hair/'+ randomHairUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/torso/'+ randomTorsoUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/ear/'+ randomEarUrl + ')'"> </div>
-      
-      <div [style.background-image]="'url(/assets/images/top/'+ randomTopUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/face/'+ randomFaceUrl + ')'"
-           [style.background-color]="red"> </div>
-
-      
-      <div [style.background-image]="'url(/assets/images/eye/'+ randomEyeUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/mouth/'+ randomMouthUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/nose/'+ randomNoseUrl + ')'"> </div>
-
-      
-      <div [style.background-image]="'url(/assets/images/shoes/'+ randomShoesUrl + ')'"> </div>
-      <div [style.background-image]="'url(/assets/images/bottom/'+ randomBottomUrl + ')'"> </div>      
-
-      <div [style.background-image]="'url(/assets/images/hair_acc/'+ randomHairAccUrl + ')'"> </div>
-    </div>
-
-  -->
   <svg viewBox="0 0 700 1200" preserveAspectRatio = "xMinYMin xMid" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"   xml:space="preserve">
      
       
@@ -1098,9 +1070,3 @@
 
 </div>
 
-
- <!-- test
-      <g [ngClass]="colorClassName === 'test4'? 'test4':'notTest4'">
-        <circle [attr.fill]="'red'" cx="102.6" cy="81" r="72.4"/>
-      </g>
-      -->

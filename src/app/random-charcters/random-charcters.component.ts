@@ -1,13 +1,11 @@
-import { SpeechRecognitionService } from './../speech-recognition.service';
-import { Observable } from 'rxjs/Observable';
-import { SpeechService } from './../speech.service';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer, AfterViewInit } from '@angular/core';
-
-
-
-import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs/Observable';
 import { timer } from 'rxjs/observable/timer';
 import { select } from 'd3-selection';
+
+import 'rxjs/add/observable/interval';
+
+import { SpeechRecognitionService } from './../speech-recognition.service';
 
 @Component({
   selector: 'app-random-charcters',
@@ -15,11 +13,18 @@ import { select } from 'd3-selection';
   styleUrls: ['./random-charcters.component.css']
 })
 export class RandomCharctersComponent implements OnInit, OnDestroy {
+  timer$;
+  
+  startBtnUrl = 'assets/images/msg/start.png';
+  
+  showSearchButton: boolean;
+  speechData: string;
 
-  isRandom: boolean = false;
-  isPlay: boolean = false;
-  isComplete: boolean = false;
+  isRandom = false;
+  isPlay = false;
+  isComplete = false;
 
+  isLeg = false;
 
   // Random Object Variables (SVG File Import Type)
   randomFaceUrl: string;
@@ -34,13 +39,10 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   randomBottomUrl: string;
   randomShoesUrl: string;
   randomHairAccUrl: string;
-  
 
-  
+
 
   // Random Index Variables (SVG Inline Type)
-  
-
   randomFaceIndex: number;
   randomHairIndex: number;
   randomTorsoIndex: number;
@@ -52,78 +54,89 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   randomShoesIndex: number;
   randomBottomIndex: number;
   randomHairAccIndex: number;
-  isLeg: boolean = false;
-  
 
-  
-  timer; // Random Stream Subscription Object.
-  timer_delay;
-  colorClassName = 'test4'; // Conditional Class Variables (for test)
 
-  startBtnUrl = 'assets/images/msg/start.png';
-  
-  showSearchButton: boolean;
-  speechData: string;
   constructor(
-    private speechRecognitionService: SpeechRecognitionService,
-    private speechService: SpeechService
+    private speechRecognitionService: SpeechRecognitionService
   ) {
     this.showSearchButton = true;
     this.speechData = '';
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.activateSpeech();
+  }
+  
 
   ngOnDestroy() {
     this.speechRecognitionService.DestroySpeechObject();
     console.log('ngOnDestroy!');
   }
   // 음성검색 활성화
-  activateSpeechSearchMovie(): void {
+  activateSpeech(): void {
     this.showSearchButton = false;
 
     this.speechRecognitionService.record()
         .subscribe(
         // listener
         (value) => {
-            this.speechData = value;
-            console.log(value);
+          this.speechData = value;
+
+          if (value === '시작하기' && !this.isRandom) {
+            this.setRandomState();
+          }
+
+          if (this.isRandom) {
+            if (value === '그만 그만' || value === '그만' && this.isPlay) {
+              this.randomStop();
+            }
+            if (value === '다시다시' || value === '다시 다시' && !this.isPlay) {
+              this.randomRestart();
+            }
+          }
+          console.log(value);
         },
         // errror
         (err) => {
             console.log(err);
             if (err.error === 'no-speech') {
                 console.log('--restatring service--');
-                this.activateSpeechSearchMovie();
+                this.activateSpeech();
             }
         },
         // completion
         () => {
             this.showSearchButton = true;
             console.log('--complete--');
-            this.activateSpeechSearchMovie();
+            this.activateSpeech();
         });
 }
-  // 시작하기 버튼 클릭시
+  // 랜덤 선택 최초 실행시
   setRandomState() {
     this.isRandom = true;
     this.isPlay = true;
     this.randomStart();
   }
+  // 랜덤 시작
   randomStart() {
-    this.timer_delay = timer(100, 100).subscribe(val => {
+    console.log('randomStart()');
+    this.timer$ = timer(100, 100).subscribe(val => {
       this.isLeg = true;
       this.getRandomIndex();
     });
   }
-
+  // 랜덤 종료
   randomStop() {
+    console.log('randomStop()');
     this.isPlay = false;
-    this.timer_delay.unsubscribe();
+    this.timer$.unsubscribe();
     this.isComplete = true;
   }
+  // 랜덤 다시시작
   randomRestart() {
+    console.log('randomRestart()');
     this.randomStart();
+    this.isPlay = true;
     this.isComplete = false;
   }
 
@@ -143,7 +156,6 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     this.randomShoesIndex = Math.floor(Math.random() * 11);
     this.randomBottomIndex = Math.floor(Math.random() * 9);
     this.randomHairAccIndex = Math.floor(Math.random() * 4);
-
   }
 
 
@@ -172,7 +184,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
 
 
   
-  
+
   onMouseEnter(btnName: string) {
     if (btnName === 'start') {
       this.startBtnUrl = 'assets/images/msg/start_hover.png';
