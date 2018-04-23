@@ -1,6 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer, AfterViewInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { SpeechRecognitionService } from './../speech-recognition.service';
+import { Observable } from 'rxjs/Observable';
+import { SpeechService } from './../speech.service';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer, AfterViewInit } from '@angular/core';
+
+
+
 import 'rxjs/add/observable/interval';
+import { timer } from 'rxjs/observable/timer';
 import { select } from 'd3-selection';
 
 @Component({
@@ -8,7 +14,7 @@ import { select } from 'd3-selection';
   templateUrl: './random-charcters.component.html',
   styleUrls: ['./random-charcters.component.css']
 })
-export class RandomCharctersComponent implements OnInit {
+export class RandomCharctersComponent implements OnInit, OnDestroy {
 
   isRandom: boolean = false;
   isPlay: boolean = false;
@@ -33,7 +39,8 @@ export class RandomCharctersComponent implements OnInit {
   
 
   // Random Index Variables (SVG Inline Type)
-  randomStream$;
+  
+
   randomFaceIndex: number;
   randomHairIndex: number;
   randomTorsoIndex: number;
@@ -47,58 +54,80 @@ export class RandomCharctersComponent implements OnInit {
   randomHairAccIndex: number;
   isLeg: boolean = false;
   
-  timer; // Random Stream Subscription Object.
-  colorClassName: string = 'test4'; // Conditional Class Variables (for test)
 
-  startBtnUrl: string = 'assets/images/msg/start.png';
   
+  timer; // Random Stream Subscription Object.
+  timer_delay;
+  colorClassName = 'test4'; // Conditional Class Variables (for test)
 
-  constructor() {
-    // this.timer = this.randomStream$.subscribe();
+  startBtnUrl = 'assets/images/msg/start.png';
+  
+  showSearchButton: boolean;
+  speechData: string;
+  constructor(
+    private speechRecognitionService: SpeechRecognitionService,
+    private speechService: SpeechService
+  ) {
+    this.showSearchButton = true;
+    this.speechData = '';
   }
 
   ngOnInit() { }
 
+  ngOnDestroy() {
+    this.speechRecognitionService.DestroySpeechObject();
+    console.log('ngOnDestroy!');
+  }
+  // 음성검색 활성화
+  activateSpeechSearchMovie(): void {
+    this.showSearchButton = false;
+
+    this.speechRecognitionService.record()
+        .subscribe(
+        // listener
+        (value) => {
+            this.speechData = value;
+            console.log(value);
+        },
+        // errror
+        (err) => {
+            console.log(err);
+            if (err.error === 'no-speech') {
+                console.log('--restatring service--');
+                this.activateSpeechSearchMovie();
+            }
+        },
+        // completion
+        () => {
+            this.showSearchButton = true;
+            console.log('--complete--');
+            this.activateSpeechSearchMovie();
+        });
+}
+  // 시작하기 버튼 클릭시
   setRandomState() {
     this.isRandom = true;
     this.isPlay = true;
-    this.setRandomStream();    // this.testDelay();
-
+    this.randomStart();
+  }
+  randomStart() {
+    this.timer_delay = timer(100, 100).subscribe(val => {
+      this.isLeg = true;
+      this.getRandomIndex();
+    });
   }
 
   randomStop() {
     this.isPlay = false;
-    this.timer.unsubscribe();
+    this.timer_delay.unsubscribe();
     this.isComplete = true;
-
-
-    // for debuging.
-    // console.log("torso", this.randomTorsoIndex);
-    // console.log("mouth", this.randomMouthIndex);
-    // console.log("shoes", this.randomShoesIndex);
   }
   randomRestart() {
-    this.timer = this.randomStream$.subscribe();
+    this.randomStart();
     this.isComplete = false;
   }
 
-
-  setRandomStream() {
-    const startDelay = 100;
-    const eachRandomDelay = 100;
-
-    this.randomStream$ = Observable.interval(startDelay)
-      .delay(new Date(Date.now() + eachRandomDelay))
-      .map(() => {
-        // 현재 돌아가는 Random Stream에서 선택 된 Element. (선택되었다는 것은 1개를 의미.)
-        // const faceEls = document.getElementsByClassName('face');
-        // console.log(faceEls);
-        this.isLeg = true;
-        this.getRandomIndex();
-      }); 
-    
-    this.timer = this.randomStream$.subscribe();
-  }
+ 
 
 
   // SVG Inline Type
@@ -115,7 +144,7 @@ export class RandomCharctersComponent implements OnInit {
     this.randomBottomIndex = Math.floor(Math.random() * 9);
     this.randomHairAccIndex = Math.floor(Math.random() * 4);
 
-  }  
+  }
 
 
 
@@ -125,7 +154,7 @@ export class RandomCharctersComponent implements OnInit {
   getRandomUrl() {
     this.randomFaceUrl = Math.floor(Math.random() * 7) + '.svg';
     this.randomHairUrl = Math.floor(Math.random() * 4) + '.svg';
-    
+
     this.randomEarUrl = Math.floor(Math.random() * 9) + '.svg';
     this.randomEyeUrl = Math.floor(Math.random() * 10) + '.svg';
     this.randomMouthUrl = Math.floor(Math.random() * 12) + '.svg';
@@ -146,9 +175,8 @@ export class RandomCharctersComponent implements OnInit {
   
   onMouseEnter(btnName: string) {
     if (btnName === 'start') {
-      this.startBtnUrl = 'assets/images/msg/start_hover.png';  
+      this.startBtnUrl = 'assets/images/msg/start_hover.png';
     }
-    
   }
 
   onMouseLeave(btnName: string) {

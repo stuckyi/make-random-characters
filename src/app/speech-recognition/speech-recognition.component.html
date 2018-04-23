@@ -1,0 +1,11 @@
+
+<label></label>
+<input type="text" class="form-control border-input" name="txtSpeechSearchMovieName" id="txtSpeechSearchMovieName" value=""
+        placeholder="아래 버튼을 누른 후 뭔가를 말해보자" [(ngModel)]="speechData">
+
+
+
+<button class="btn btn-info btn-fill btn-wd" name="btnActivateSpeechSearchMovie" id="btnActivateSpeechSearchMovie" (click)="activateSpeechSearchMovie()"
+    [disabled]="!showSearchButton">
+Enable Speech Search
+</button>

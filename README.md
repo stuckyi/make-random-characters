@@ -24,6 +24,11 @@
 
 ### 기술
 
+#### 음성인식
+
+- [Speech Recognition with Angular2](https://hassantariqblog.wordpress.com/2016/12/04/angular2-web-speech-api-speech-recognition-in-angular2/)
+- [나만의 Siri 만들기](https://www.vobour.com/%EC%9D%8C%EC%84%B1%EC%9D%B8%EC%8B%9D-api-web-speech-api-%EB%82%98%EB%A7%8C%EC%9D%98-%EC%8B%9C%EB%A6%AC%EB%A5%BC-%EB%A7%8C%EB%93%A4-%EC%88%98-%EC%9E%88)`kr`
+
 #### 기술 메인
 
 
