@@ -6,6 +6,7 @@ import { select } from 'd3-selection';
 import 'rxjs/add/observable/interval';
 
 import { SpeechRecognitionService } from './../speech-recognition.service';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-random-charcters',
@@ -43,20 +44,22 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
 
 
   // Random Index Variables (SVG Inline Type)
-  randomFaceIndex: number;
-  randomHairIndex: number;
-  randomTorsoIndex: number;
-  randomEarIndex: number;
-  randomTopIndex: number;
-  randomEyeIndex: number;
-  randomMouthIndex: number;
-  randomNoseIndex: number;
-  randomShoesIndex: number;
-  randomBottomIndex: number;
-  randomHairAccIndex: number;
+  randomIndex = {
+    face: 0,
+    hair: 0,
+    torso: 0,
+    ear: 0,
+    top: 0,
+    eye: 0,
+    nose: 0,
+    shoes: 0,
+    bottom: 0,
+    hairAcc: 0
+  };
 
 
   constructor(
+    private appService: AppService,
     private speechRecognitionService: SpeechRecognitionService
   ) {
     this.showSearchButton = true;
@@ -64,7 +67,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() { 
-    this.activateSpeech();
+    // this.activateSpeech();
   }
   
 
@@ -111,7 +114,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
             this.activateSpeech();
         });
 }
-  // 랜덤 선택 최초 실행시
+  // 최초 '시작하기' 클릭 시
   setRandomState() {
     this.isRandom = true;
     this.isPlay = true;
@@ -127,12 +130,14 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     });
   }
 
-  // 랜덤 종료
+  // 랜덤 종료(선택하기 클릭 시)
   randomStop() {
     console.log('randomStop()');
+    console.log('randomFaceIndex', this.randomIndex);
     this.isPlay = false;
     this.timer$.unsubscribe();
     this.isComplete = true;
+    this.appService.setUserCharacter(this.randomIndex);
   }
   // 랜덤 다시시작
   randomRestart() {
@@ -142,22 +147,20 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     this.isComplete = false;
   }
 
- 
-
-
   // SVG Inline Type
   getRandomIndex() {
-    this.randomFaceIndex = Math.floor(Math.random() * 7);
-    this.randomHairIndex = Math.floor(Math.random() * 5);
-    this.randomTorsoIndex = Math.floor(Math.random() * 8);
-    this.randomEarIndex = Math.floor(Math.random() * 9);
-    this.randomTopIndex = Math.floor(Math.random() * 9);
-    this.randomEyeIndex = Math.floor(Math.random() * 10);
-    this.randomMouthIndex = Math.floor(Math.random() * 12);
-    this.randomNoseIndex = Math.floor(Math.random() * 15);
-    this.randomShoesIndex = Math.floor(Math.random() * 11);
-    this.randomBottomIndex = Math.floor(Math.random() * 9);
-    this.randomHairAccIndex = Math.floor(Math.random() * 4);
+    this.randomIndex['face'] = Math.floor(Math.random() * 7);
+    this.randomIndex['hair'] = Math.floor(Math.random() * 5);
+    this.randomIndex['torso'] = Math.floor(Math.random() * 8);
+    this.randomIndex['ear'] = Math.floor(Math.random() * 9);
+    this.randomIndex['top'] = Math.floor(Math.random() * 9);
+    this.randomIndex['eye'] = Math.floor(Math.random() * 10);
+    this.randomIndex['mouth'] = Math.floor(Math.random() * 12);
+    this.randomIndex['nose'] = Math.floor(Math.random() * 15);
+    this.randomIndex['shoes'] = Math.floor(Math.random() * 11);
+    this.randomIndex['bottom'] = Math.floor(Math.random() * 9);
+    this.randomIndex['hairAcc'] = Math.floor(Math.random() * 4);
+
   }
 
 

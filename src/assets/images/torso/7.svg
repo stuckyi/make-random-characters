@@ -5,7 +5,7 @@
 <style type="text/css">
 	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
-<g class="torso7" *ngIf="randomTorsoIndex === 7">
+<g>
 	<path class="st0" d="M407.7,658.6l148.8,117.1l-21.7,5L413,689.4v150.9H287.1V689.4l-121.8,91.3l-21.7-5l148.8-117.1
 		c0,0,11.6-10.8,57.6-10.8S407.7,658.6,407.7,658.6z"/>
 	<path class="st0" d="M182,768.3c0,0-16.6,12.5-23.3,22.3c-6.7,9.9-28.7,28-38.8,15.9c-10.1-12-2.7-23.7,7-25.2s16.9-5.6,16.9-5.6

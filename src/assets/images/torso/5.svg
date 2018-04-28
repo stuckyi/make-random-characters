@@ -5,7 +5,7 @@
 <style type="text/css">
 	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
-<g class="torso5" *ngIf="randomTorsoIndex === 5">
+<g>
 	<path class="st0" d="M407.6,658.6l100.6,85.3c5.4,4.6,6.6,12.5,2.7,18.5v0c-4.1,6.4-12.6,8.4-19.2,4.4L413,719.4v120.9H287V719.4
 		l-78.8,47.4c-6.5,3.9-15,2-19.2-4.4h0c-3.9-6-2.7-13.9,2.7-18.5l100.6-85.3c0,0,11.6-10.8,57.6-10.8S407.6,658.6,407.6,658.6z"/>
 	<polyline class="st0" points="371.4,657.5 369.4,571.7 330.6,571.7 328.6,657.5 	"/>

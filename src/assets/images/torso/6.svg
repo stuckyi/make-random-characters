@@ -7,7 +7,7 @@
 	.st1{fill:#1D1D1B;}
 	.st2{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
-<g class="torso6" *ngIf="randomTorsoIndex === 6">
+<g>
 	<g>
 		<line class="st0" x1="295.4" y1="664.2" x2="155.6" y2="778.4"/>
 		<circle class="st1" cx="155.6" cy="778.4" r="9.6"/>

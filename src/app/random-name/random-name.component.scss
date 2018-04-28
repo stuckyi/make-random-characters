@@ -1,0 +1,19 @@
+@import 'assets/scss/global';
+
+.result {
+  @include size(350px, 600px);
+  margin: 0 auto;
+  border: 2px solid royalblue;
+
+  .module {
+    @include size(350px, 600px);
+    margin: 0;
+    border: 2px solid gold;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    // @include scale(.4);
+
+  }
+}

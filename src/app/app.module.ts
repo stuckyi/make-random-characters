@@ -22,6 +22,8 @@ import { SpeechRecognitionComponent } from './speech-recognition/speech-recognit
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AppService } from './app.service';
+import { RandomNameComponent } from './random-name/random-name.component';
 
 
 
@@ -31,7 +33,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AppComponent,
     RandomCharctersComponent,
     MainComponent,
-    SpeechRecognitionComponent
+    SpeechRecognitionComponent,
+    RandomNameComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFirestoreModule,
     // AngularFireModul.initializeApp(environment.firebase)
   ],
-  providers: [SpeechService, SpeechRecognitionService],
+  providers: [SpeechService, SpeechRecognitionService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
