@@ -24,6 +24,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppService } from './app.service';
 import { RandomNameComponent } from './random-name/random-name.component';
+import { RouletteComponent } from './roulette/roulette.component';
 
 
 
@@ -34,7 +35,8 @@ import { RandomNameComponent } from './random-name/random-name.component';
     RandomCharctersComponent,
     MainComponent,
     SpeechRecognitionComponent,
-    RandomNameComponent
+    RandomNameComponent,
+    RouletteComponent
   ],
   imports: [
     BrowserModule,

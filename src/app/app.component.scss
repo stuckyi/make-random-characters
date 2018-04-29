@@ -14,5 +14,5 @@ $nav-bg-col: $turquoise;
 .section {
     @include size(100vw, 100vh);
     padding: none;
-    overflow: hidden;
+    // overflow: hidden;
 }

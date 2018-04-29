@@ -1,9 +1,17 @@
 @import 'assets/scss/_global';
 @import 'assets/scss/utils/characterStyle';
+@import 'assets/scss/utils/animations';
 
 $svgWidth: 273px;
 $svgHeight: 468px;
 
+
+.landingMotion {
+	@include size(30vw, 30vh);
+	margin: 10vh auto;
+	@include testBg();
+	
+}
 .container{
 	@include size(100vw, 90vh);
 
@@ -13,13 +21,13 @@ $svgHeight: 468px;
 		border: 2px solid royalblue;
 	
 		.module {
-		@include size($svgWidth, $svgHeight);
-		margin: 0;
-		border: 2px solid gold;
-		position: absolute;
-		background-repeat: no-repeat;
-		background-size: contain;
-	
+			@include size($svgWidth, $svgHeight);
+			margin: 0;
+			border: 2px solid gold;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: contain;
+		
 		// @include scale(.4);
 	
 		}
@@ -29,5 +37,6 @@ $svgHeight: 468px;
 .btn_user {
 	@include size(100vw, 10vh); 
 	position: absolute;
+	animation: bounceIn .6s ease-in-out 1.2s forwards running;
 	
 }

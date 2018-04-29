@@ -1,0 +1,11 @@
+@import 'assets/scss/global';
+@import 'assets/scss/utils/characterStyle';
+
+svg {
+  @include size(700px, 1200px);
+  margin: 0 auto;
+  @include testBorder();
+
+  @include scale(.4);
+}
+

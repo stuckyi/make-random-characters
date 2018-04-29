@@ -2,11 +2,63 @@
 $svgWidth: 392px;
 $svgHeight: 672px;
 
+
+//// Common Style
+
+$common-col: #FCD4A3;
+$common-stroke-col: #1D1D1B;
+$common-stroke-width: 3;
+$common-stroke-miterlimit: 10; 
+
+
+@mixin commonStyle(){
+	fill: $common-col;
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+@mixin hairStyle(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+@mixin torsoStyle(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+@mixin earStyle(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+
+
 /* Color */
-$face-col: #FCD4A3;
-$face-stroke-col: #1d1d18;
-$face-stroke-width: 3;
-$face-stroke-miterlimit: 10; 
+
+// Leg
+// Use Common Style
+
+// Face
+// Use Common Style
+
+// Hair
+$hair-col: #723B10;
+// $hair-stroke-col: #1D1D1B;
+// $hair-stroke-width: 3;
+// $hair-stroke-miterlimit: 10; 
+$hair-stroke-linecap: round;
+$hair-stroke-linejoin: round;
+
+
+
+svg > path {
+    fill: inherit;
+}
 
 
 .svg-container {
@@ -40,15 +92,24 @@ $face-stroke-miterlimit: 10;
 
 
 .leg {
-    fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;
+    @include commonStyle();
 }
 
 .face {
-    fill: $face-col;
-    stroke: $face-stroke-col;
-    stroke-width: $face-stroke-width;
-    stroke-miterlimit: $face-stroke-miterlimit;
+    @include commonStyle();
 }
+
+.hair {
+	@include hairStyle();
+}
+
+.torso {
+	@include torsoStyle();
+}
+.ear {
+	@include earStyle();
+}
+/*
 
 .hair0 {fill:#723B10;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 .hair1{fill:#AA3517;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
@@ -58,7 +119,8 @@ $face-stroke-miterlimit: 10;
 	.st1{fill:#66B22E;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
-
+*/
+/*
 .torso0 {
     .st0{fill:#008237;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -93,6 +155,7 @@ $face-stroke-miterlimit: 10;
 .torso7 {
     .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
+*/
 
 .ear0 { 
     .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}

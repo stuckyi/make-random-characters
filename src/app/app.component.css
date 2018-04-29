@@ -6135,7 +6135,6 @@ label.panel-block {
 .section {
   width: 100vw;
   height: 100vh;
-  padding: none;
-  overflow: hidden; }
+  padding: none; }
 
 /*# sourceMappingURL=app.component.css.map */

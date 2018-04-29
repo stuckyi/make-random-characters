@@ -1,3 +1,4 @@
+import { RouletteComponent } from './roulette/roulette.component';
 
 
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'main', component: MainComponent },
     { path: 'random-characters', component: RandomCharctersComponent },
     { path: 'random-name', component: RandomNameComponent },
+    { path: 'random-roulette', component: RouletteComponent },
     { path: 'speech-recognition', component: SpeechRecognitionComponent }
 ];
 
