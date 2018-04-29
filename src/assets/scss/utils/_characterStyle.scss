@@ -35,6 +35,11 @@ $common-stroke-miterlimit: 10;
     stroke-width: $common-stroke-width;
     stroke-miterlimit: $common-stroke-miterlimit;
 }
+@mixin topStyle(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
 
 
 
@@ -109,6 +114,10 @@ svg > path {
 .ear {
 	@include earStyle();
 }
+
+.top {
+	@include topStyle();
+}
 /*
 
 .hair0 {fill:#723B10;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -155,7 +164,7 @@ svg > path {
 .torso7 {
     .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
-*/
+
 
 .ear0 { 
     .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
@@ -236,6 +245,7 @@ svg > path {
 	.st0{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 	.st1{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 }
+*/
 
 .eye0 {
     .st0{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}

@@ -6170,6 +6170,16 @@ svg > path {
   stroke-width: 3;
   stroke-miterlimit: 10; }
 
+.ear {
+  stroke: #1D1D1B;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
+.top {
+  stroke: #1D1D1B;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
 /*
 
 .hair0 {fill:#723B10;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -6216,245 +6226,88 @@ svg > path {
 .torso7 {
     .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
+
+
+.ear0 { 
+    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+
+.ear1{
+	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+
+.ear2 { 
+	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.ear3 { 
+	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.ear4 { 
+	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.ear5 {
+	.st0{fill:#801810;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} 
+}
+.ear6 {
+	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+		.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.ear7 { 
+	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.ear8 { 
+	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+
+
+
+.top0 { 
+	.st0{fill:#E42320;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#F2E500;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+
+.top1 {
+	.st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.top2 { 
+	.st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.top3 { 
+	.st0{fill:#2AA84B;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#F2E500;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.top4 { 
+	.st0{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#E62380;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#E4281F;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.top5 {
+	.st0{fill:#3B73B8;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#6DC5D8;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#E62380;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:#E4281F;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.top6 { 
+	.st0{fill:#09050D;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#282E68;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#F6E71F;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+
+}
+.top7 { 
+	.st0{fill:#584394;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.top8 { 
+	.st0{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
 */
-.ear0 .st0 {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.ear1 .st0 {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.ear2 .st0 {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.ear3 .st0 {
-  fill: #F9F9F9;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.ear3 .st1 {
-  fill: #D178AE;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.ear4 .st0 {
-  fill: #F9F9F9;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.ear4 .st1 {
-  fill: #D178AE;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.ear4 .st2 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.ear5 .st0 {
-  fill: #801810;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.ear5 .st1 {
-  fill: #D178AE;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.ear6 .st0 {
-  fill: #F9F9F9;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.ear6 .st1 {
-  fill: #D178AE;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.ear7 .st0 {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.ear8 .st0 {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top0 .st0 {
-  fill: #E42320;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top0 .st1 {
-  fill: #F2E500;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.top1 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top2 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top2 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top3 .st0 {
-  fill: #2AA84B;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top3 .st1 {
-  fill: #F2E500;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top3 .st2 {
-  fill: #E42320;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top4 .st0 {
-  fill: #A55299;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.top4 .st1 {
-  fill: #C889BB;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.top4 .st2 {
-  fill: #E62380;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.top4 .st3 {
-  fill: #E4281F;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top5 .st0 {
-  fill: #3B73B8;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top5 .st1 {
-  fill: #6DC5D8;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top5 .st2 {
-  fill: #E62380;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top5 .st3 {
-  fill: #E4281F;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.top6 .st0 {
-  fill: #09050D;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.top6 .st1 {
-  fill: #282E68;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.top6 .st2 {
-  fill: #F6E71F;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.top7 .st0 {
-  fill: #584394;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.top8 .st0 {
-  fill: #C889BB;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.top8 .st1 {
-  fill: #A55299;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
 .eye0 .st0 {
   stroke: #000000;
   stroke-width: 3;
