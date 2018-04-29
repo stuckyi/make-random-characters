@@ -51,6 +51,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     ear: 0,
     top: 0,
     eye: 0,
+    mouth: 0,
     nose: 0,
     shoes: 0,
     bottom: 0,
@@ -123,7 +124,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   // 랜덤 시작
   randomStart() {
     console.log('randomStart()');
-    this.timer$ = timer(100, 100)
+    this.timer$ = timer(0, 140)
       .subscribe(val => {
         this.isLeg = true;
         this.getRandomIndex();
@@ -160,12 +161,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     this.randomIndex['shoes'] = Math.floor(Math.random() * 11);
     this.randomIndex['bottom'] = Math.floor(Math.random() * 9);
     this.randomIndex['hairAcc'] = Math.floor(Math.random() * 4);
-
   }
-
-
-
-
 
   // SVG File Import Type.
   getRandomUrl() {

@@ -1,22 +1,33 @@
 @import 'assets/scss/_global';
 @import 'assets/scss/utils/characterStyle';
 
+$svgWidth: 273px;
+$svgHeight: 468px;
 
+.container{
+	@include size(100vw, 90vh);
 
-.result {
-	@include size(350px, 600px);
-	margin: 0 auto;
-	border: 2px solid royalblue;
-  
-	.module {
-	  @include size(350px, 600px);
-	  margin: 0;
-	  border: 2px solid gold;
-	  position: absolute;
-	  background-repeat: no-repeat;
-	  background-size: contain;
-  
-	  // @include scale(.4);
-  
+	.result {
+		@include size($svgWidth, $svgHeight);
+		margin: 0 auto;
+		border: 2px solid royalblue;
+	
+		.module {
+		@include size($svgWidth, $svgHeight);
+		margin: 0;
+		border: 2px solid gold;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: contain;
+	
+		// @include scale(.4);
+	
+		}
 	}
-  }
+}
+
+.btn_user {
+	@include size(100vw, 10vh); 
+	position: absolute;
+	
+}

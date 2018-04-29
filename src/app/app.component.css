@@ -6125,10 +6125,17 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 .navbar {
+  position: fixed;
   padding: 10px; }
   .navbar a {
     color: #00d1b2; }
     .navbar a span {
       font-size: 2rem; }
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  padding: none;
+  overflow: hidden; }
 
 /*# sourceMappingURL=app.component.css.map */

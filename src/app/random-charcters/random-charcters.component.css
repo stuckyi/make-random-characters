@@ -7376,18 +7376,26 @@ label.panel-block {
   stroke-linejoin: round;
   stroke-miterlimit: 10; }
 
-.result {
-  width: 350px;
-  height: 600px;
-  margin: 0 auto;
-  border: 2px solid royalblue; }
-  .result .module {
-    width: 350px;
-    height: 600px;
-    margin: 0;
-    border: 2px solid gold;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain; }
+.container {
+  width: 100vw;
+  height: 90vh; }
+  .container .result {
+    width: 273px;
+    height: 468px;
+    margin: 0 auto;
+    border: 2px solid royalblue; }
+    .container .result .module {
+      width: 273px;
+      height: 468px;
+      margin: 0;
+      border: 2px solid gold;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain; }
+
+.btn_user {
+  width: 100vw;
+  height: 10vh;
+  position: absolute; }
 
 /*# sourceMappingURL=random-charcters.component.css.map */
