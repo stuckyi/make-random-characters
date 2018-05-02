@@ -4,8 +4,6 @@ import { timer } from 'rxjs/observable/timer';
 import { select } from 'd3-selection';
 
 import 'rxjs/add/observable/interval';
-
-import { SpeechRecognitionService } from './../speech-recognition.service';
 import { AppService } from '../app.service';
 
 @Component({
@@ -18,8 +16,6 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   
   startBtnUrl = 'assets/images/msg/start.png';
   
-  showSearchButton: boolean;
-  speechData: string;
 
   isRandom = false;
   isPlay = false;
@@ -27,29 +23,13 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
 
   isLeg = false;
 
-  // Random Object Variables (SVG File Import Type)
-  randomFaceUrl: string;
-  randomHairUrl: string;
-  randomEarUrl: string;
-  randomEyeUrl: string;
-  randomMouthUrl: string;
-  randomNoseUrl: string;
-  randomTorsoUrl: string;
-  randomLegUrl: string;
-  randomTopUrl: string;
-  randomBottomUrl: string;
-  randomShoesUrl: string;
-  randomHairAccUrl: string;
-
-
-
   // Random Index Variables (SVG Inline Type)
   randomIndex = {
-    face: 0,
     hair: 0,
     torso: 0,
     ear: 0,
     top: 0,
+    face: 0,
     eye: 0,
     mouth: 0,
     nose: 0,
@@ -61,60 +41,15 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
 
   constructor(
     private appService: AppService,
-    private speechRecognitionService: SpeechRecognitionService
-  ) {
-    this.showSearchButton = true;
-    this.speechData = '';
-  }
+  ) { }
 
   ngOnInit() { 
-    // this.activateSpeech();
   }
   
 
   ngOnDestroy() {
-    this.speechRecognitionService.DestroySpeechObject();
-    console.log('ngOnDestroy!');
   }
-  // 음성검색 활성화
-  activateSpeech(): void {
-    this.showSearchButton = false;
 
-    this.speechRecognitionService.record()
-        .subscribe(
-        // listener
-        (value) => {
-          this.speechData = value;
-
-          if (value === '시작하기' && !this.isRandom) {
-            this.setRandomState();
-          }
-
-          if (this.isRandom) {
-            if (value === '그만 그만' || value === '그만' && this.isPlay) {
-              this.randomStop();
-            }
-            if (value === '다시다시' || value === '다시 다시' && !this.isPlay) {
-              this.randomRestart();
-            }
-          }
-          console.log(value);
-        },
-        // errror
-        (err) => {
-            console.log(err);
-            if (err.error === 'no-speech') {
-                console.log('--restatring service--');
-                this.activateSpeech();
-            }
-        },
-        // completion
-        () => {
-            this.showSearchButton = true;
-            console.log('--complete--');
-            this.activateSpeech();
-        });
-}
   // 최초 '시작하기' 클릭 시
   setRandomState() {
     this.isRandom = true;
@@ -124,7 +59,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   // 랜덤 시작
   randomStart() {
     console.log('randomStart()');
-    this.timer$ = timer(0, 140)
+    this.timer$ = timer(0, 200)
       .subscribe(val => {
         this.isLeg = true;
         this.getRandomIndex();

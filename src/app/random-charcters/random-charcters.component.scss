@@ -15,6 +15,14 @@ $svgHeight: 468px;
 .container{
 	@include size(100vw, 90vh);
 
+	#svg-wrap {
+		@include size(700px, 1200px);
+		margin: 0 auto;
+		@include testBorder();
+
+		@include scale(.4);
+	}
+
 	.result {
 		@include size($svgWidth, $svgHeight);
 		margin: 0 auto;

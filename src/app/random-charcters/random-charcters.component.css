@@ -6460,6 +6460,16 @@ svg > path {
 .container {
   width: 100vw;
   height: 90vh; }
+  .container #svg-wrap {
+    width: 700px;
+    height: 1200px;
+    margin: 0 auto;
+    border: 0.5px dashed black;
+    -moz-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
   .container .result {
     width: 273px;
     height: 468px;
