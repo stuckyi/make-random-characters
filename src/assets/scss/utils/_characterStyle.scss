@@ -31,47 +31,6 @@ $common-stroke-miterlimit: 10;
 $eye-col: white;
 $eye-stroke-col: black;
 
-@mixin hairStyle(){
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-
-@mixin torsoStyle(){
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-
-@mixin earStyle(){
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-@mixin topStyle(){
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-@mixin faceStyle(){
-	fill: $common-col;
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-@mixin eyeStyle(){
-    stroke: $eye-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-@mixin mouthStyle(){
-    stroke: $common-stroke-col;
-    stroke-width: $common-stroke-width;
-    stroke-miterlimit: $common-stroke-miterlimit;
-}
-
-
-
 
 
 
@@ -133,328 +92,43 @@ svg > path {
 }
 
 .hair {
-	@include hairStyle();
+	@include commonStyleNoFill();
 }
 
 .torso {
-	@include torsoStyle();
+	@include commonStyleNoFill();
 }
 .ear {
-	@include earStyle();
+	@include commonStyleNoFill();
 }
 
 .top {
-	@include topStyle();
+	@include commonStyleNoFill();
 }
 
 
 .face {
-    @include faceStyle();
+    @include commonStyle();
 }
 .eye {
-	@include eyeStyle();
+	@include commonStyleNoFill();
 }
 .mouth {
-	@include mouthStyle();
+	@include commonStyleNoFill();
 }
 .nose {
 	@include commonStyleNoFill();
 }
+.shoes {
+	@include commonStyleNoFill();
+}
+.bottom {
+	@include commonStyleNoFill();
+}
+.hairAcc {
+	@include commonStyleNoFill();
+}
 /*
-
-.hair0 {fill:#723B10;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-.hair1{fill:#AA3517;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-.hair2 {fill:#AA3517;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
-.hair3 {
-    .st0{fill:#861811;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#66B22E;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-*/
-/*
-.torso0 {
-    .st0{fill:#008237;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso1 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso2 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso3 {
-    .st0{fill:#FCD4A3;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso4 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso5 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso6 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#1D1D1B;}
-	.st2{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.torso7 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-
-.ear0 { 
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-
-.ear1{
-	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-
-.ear2 { 
-	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.ear3 { 
-	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.ear4 { 
-	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.ear5 {
-	.st0{fill:#801810;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} 
-}
-.ear6 {
-	.st0{fill:#F9F9F9;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-		.st1{fill:#D178AE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.ear7 { 
-	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.ear8 { 
-	.st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-
-
-
-.top0 { 
-	.st0{fill:#E42320;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#F2E500;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.top1 {
-	.st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.top2 { 
-	.st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.top3 { 
-	.st0{fill:#2AA84B;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#F2E500;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.top4 { 
-	.st0{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st2{fill:#E62380;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st3{fill:#E4281F;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.top5 {
-	.st0{fill:#3B73B8;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#6DC5D8;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#E62380;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st3{fill:#E4281F;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.top6 { 
-	.st0{fill:#09050D;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#282E68;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#F6E71F;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-
-}
-.top7 { 
-	.st0{fill:#584394;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.top8 { 
-	.st0{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-
-
-.eye0 {
-    .st0{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-
-.eye1 {
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.eye2 { 
-    .st0{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-}
-.eye3 { 
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.eye4 {
-    .st0{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;}
- }
-.eye5 { 
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
-}
-.eye6 { 
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;}
-}
-.eye7 {
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.eye8 {
-    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.eye9 {.st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}  }
-
-
-.mouth0 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}  }
-.mouth1 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;} }
-.mouth2 { 
-    .st0{fill:#8D1812;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#D59EC7;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth3 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth4 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth5 { 
-    .st0{fill:#D59EC7;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#8D1812;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth6 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth7 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.mouth8 {
-    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.mouth9 {
-    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.mouth10 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.mouth11 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-
-
-.nose0 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}  }
-.nose1 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#1D1D1B;}
-}
-.nose2 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
- }
-.nose3 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#1D1D1B;}
- }
-.nose4 {
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.nose5 { 
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.nose6 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}  }
-.nose7 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose8 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose9 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose10 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose11 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose12 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
-.nose13 { 
-    .st0{display:none;}
-	.st1{display:inline;fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.nose14 { 
-    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-*/
-
-.shoes0 { 
-    .st0{fill:#0A997D;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.shoes1 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#ABFF08;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes2 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-}
-.shoes3 { .st0{fill:#C64847;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;} }
-.shoes4 {
-    .st0{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
- }
-.shoes5 { 
-    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#FCD4A3;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st2{fill:#294B9A;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes6 { 
-    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st2{fill:#EE7D80;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes7 { 
-    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes8 { 
-    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes9 { 
-    .st0{fill:#15A4CE;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#2C4797;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st2{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st3{fill:#78ADDA;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st4{fill:#15A4CE;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st5{fill:#43BFEE;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-}
-.shoes10 {
-    .st0{fill:#9D529A;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st1{fill:#564595;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st2{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st3{fill:#CB8EBE;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st4{fill:#C7B1D6;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
- }
-
 
 .bottom0 { 
     .st0{fill:none;}
@@ -528,3 +202,4 @@ svg > path {
 .hairAcc2 { 
     .st0{fill:#723B10;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
+*/
