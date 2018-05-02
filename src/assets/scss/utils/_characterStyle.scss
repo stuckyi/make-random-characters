@@ -10,13 +10,26 @@ $common-stroke-col: #1D1D1B;
 $common-stroke-width: 3;
 $common-stroke-miterlimit: 10; 
 
-
-@mixin commonStyle(){
-	fill: $common-col;
+@mixin commonStyle($col: $common-col){
+	fill: $col;
     stroke: $common-stroke-col;
     stroke-width: $common-stroke-width;
     stroke-miterlimit: $common-stroke-miterlimit;
 }
+
+
+@mixin commonStyleNoFill(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+
+
+// eye
+
+$eye-col: white;
+$eye-stroke-col: black;
 
 @mixin hairStyle(){
     stroke: $common-stroke-col;
@@ -40,6 +53,25 @@ $common-stroke-miterlimit: 10;
     stroke-width: $common-stroke-width;
     stroke-miterlimit: $common-stroke-miterlimit;
 }
+@mixin faceStyle(){
+	fill: $common-col;
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+@mixin eyeStyle(){
+    stroke: $eye-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+@mixin mouthStyle(){
+    stroke: $common-stroke-col;
+    stroke-width: $common-stroke-width;
+    stroke-miterlimit: $common-stroke-miterlimit;
+}
+
+
+
 
 
 
@@ -100,10 +132,6 @@ svg > path {
     @include commonStyle();
 }
 
-.face {
-    @include commonStyle();
-}
-
 .hair {
 	@include hairStyle();
 }
@@ -117,6 +145,20 @@ svg > path {
 
 .top {
 	@include topStyle();
+}
+
+
+.face {
+    @include faceStyle();
+}
+.eye {
+	@include eyeStyle();
+}
+.mouth {
+	@include mouthStyle();
+}
+.nose {
+	@include commonStyleNoFill();
 }
 /*
 
@@ -245,7 +287,7 @@ svg > path {
 	.st0{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 	.st1{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 }
-*/
+
 
 .eye0 {
     .st0{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -328,6 +370,7 @@ svg > path {
     .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 }
 
+
 .nose0 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}  }
 .nose1 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st1{fill:#1D1D1B;}
@@ -360,6 +403,7 @@ svg > path {
 .nose14 { 
     .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 }
+*/
 
 .shoes0 { 
     .st0{fill:#0A997D;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}

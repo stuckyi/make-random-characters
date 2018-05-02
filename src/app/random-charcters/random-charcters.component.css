@@ -6154,12 +6154,6 @@ svg > path {
   stroke-width: 3;
   stroke-miterlimit: 10; }
 
-.face {
-  fill: #FCD4A3;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
 .hair {
   stroke: #1D1D1B;
   stroke-width: 3;
@@ -6176,6 +6170,27 @@ svg > path {
   stroke-miterlimit: 10; }
 
 .top {
+  stroke: #1D1D1B;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
+.face {
+  fill: #FCD4A3;
+  stroke: #1D1D1B;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
+.eye {
+  stroke: black;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
+.mouth {
+  stroke: #1D1D1B;
+  stroke-width: 3;
+  stroke-miterlimit: 10; }
+
+.nose {
   stroke: #1D1D1B;
   stroke-width: 3;
   stroke-miterlimit: 10; }
@@ -6307,391 +6322,123 @@ svg > path {
 	.st0{fill:#C889BB;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 	.st1{fill:#A55299;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 }
+
+
+.eye0 {
+    .st0{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+
+.eye1 {
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.eye2 { 
+    .st0{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+}
+.eye3 { 
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.eye4 {
+    .st0{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+ }
+.eye5 { 
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+}
+.eye6 { 
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+}
+.eye7 {
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.eye8 {
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.eye9 {.st0{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}  }
+
+
+.mouth0 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}  }
+.mouth1 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;} }
+.mouth2 { 
+    .st0{fill:#8D1812;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#D59EC7;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth3 { 
+    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth4 { 
+    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth5 { 
+    .st0{fill:#D59EC7;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#8D1812;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth6 { 
+    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth7 { 
+    .st0{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.mouth8 {
+    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.mouth9 {
+    .st0{fill:#E42320;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.mouth10 {
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+.mouth11 {
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+}
+
+
+.nose0 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}  }
+.nose1 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#1D1D1B;}
+}
+.nose2 {
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+ }
+.nose3 {
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#1D1D1B;}
+ }
+.nose4 {
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+ }
+.nose5 { 
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.nose6 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}  }
+.nose7 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose8 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose9 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose10 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose11 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose12 { .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} }
+.nose13 { 
+    .st0{display:none;}
+	.st1{display:inline;fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+.nose14 { 
+    .st0{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
 */
-.eye0 .st0 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.eye1 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye1 .st1 {
-  fill: none;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye1 .st2 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.eye2 .st0 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-.eye2 .st1 {
-  fill: #FFFFFF; }
-
-.eye3 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.eye4 .st0 {
-  fill: none;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye4 .st1 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye4 .st2 {
-  fill: #FFFFFF; }
-
-.eye5 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye5 .st1 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.eye6 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye6 .st1 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye6 .st2 {
-  fill: #FFFFFF; }
-
-.eye7 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.eye7 .st1 {
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.eye8 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.eye9 .st0 {
-  fill: #FFFFFF;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth0 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.mouth1 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.mouth2 .st0 {
-  fill: #8D1812;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth2 .st1 {
-  fill: #D59EC7;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth3 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth3 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth4 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth4 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth5 .st0 {
-  fill: #D59EC7;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth5 .st1 {
-  fill: #8D1812;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth6 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth6 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth7 .st0 {
-  fill: #FFFFFF;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth7 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth8 .st0 {
-  fill: #E42320;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth8 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth9 .st0 {
-  fill: #E42320;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.mouth9 .st1 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.mouth10 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.mouth11 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.nose0 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose1 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.nose1 .st1 {
-  fill: #1D1D1B; }
-
-.nose2 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-miterlimit: 10; }
-
-.nose3 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.nose3 .st1 {
-  fill: #1D1D1B; }
-
-.nose4 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose5 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose6 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose7 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose8 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose9 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose10 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose11 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose12 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose13 .st0 {
-  display: none; }
-.nose13 .st1 {
-  display: inline;
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-.nose13 .st2 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
-.nose14 .st0 {
-  fill: none;
-  stroke: #1D1D1B;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
 .shoes0 .st0 {
   fill: #0A997D;
   stroke: #1D1D1B;
