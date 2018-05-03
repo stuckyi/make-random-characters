@@ -1,19 +1,50 @@
 @import 'assets/scss/global';
+@import 'assets/scss/utils/characterStyle';
+@import 'assets/scss/utils/animations';
 
-.result {
-  @include size(350px, 600px);
-  margin: 0 auto;
-  border: 2px solid royalblue;
 
-  .module {
-    @include size(350px, 600px);
-    margin: 0;
-    border: 2px solid gold;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
+$svgWidth: 292px;
+$svgHeight: 500px;
 
-    // @include scale(.4);
+.btn_user {
+	@include size(100vw, 10vh); 
+	position: absolute;
+	animation: bounceIn .6s ease-in-out 1.2s forwards running;
+}
+.wrap {
+	@include size(100vw, 100vh);
+	@include flex(flex, column nowrap);
+	justify-content: center;
+	align-content: center;
+
+	margin: 0 auto;
+
+
+	.character {
+		// 미디어쿼리 적용
+		@include size($svgWidth, $svgHeight);
+		margin: 0 auto;
+		@include testBorder();
+		// @include scale(.4);
+  }
+
+  .boxs {
+    @include size(30vh, auto);
+    @include flex(flex, row nowrap);
+    justify-content: space-between;
+    align-content: center;
+
+    .random-text {
+      border: 2px solid black;
+    }
 
   }
+  
+	.btn_container {
+		@include size(30vw, auto);
+		margin: 0 auto;
+		@include testBg();
+
+	}
+
 }

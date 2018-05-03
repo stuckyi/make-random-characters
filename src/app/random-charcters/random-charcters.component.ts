@@ -12,10 +12,9 @@ import { AppService } from '../app.service';
   styleUrls: ['./random-charcters.component.css']
 })
 export class RandomCharctersComponent implements OnInit, OnDestroy {
-  timer$;
-  
+  timer$; 
   startBtnUrl = 'assets/images/msg/start.png';
-  
+
 
   isRandom = false;
   isPlay = false;
@@ -59,7 +58,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   // 랜덤 시작
   randomStart() {
     console.log('randomStart()');
-    this.timer$ = timer(0, 200)
+    this.timer$ = timer(0, 140)
       .subscribe(val => {
         this.isLeg = true;
         this.getRandomIndex();
@@ -72,6 +71,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     console.log('randomFaceIndex', this.randomIndex);
     this.isPlay = false;
     this.timer$.unsubscribe();
+    this.timer$ = null;
     this.isComplete = true;
     this.appService.setUserCharacter(this.randomIndex);
   }
@@ -98,25 +98,6 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     this.randomIndex['hairAcc'] = Math.floor(Math.random() * 4);
   }
 
-  // SVG File Import Type.
-  getRandomUrl() {
-    this.randomFaceUrl = Math.floor(Math.random() * 7) + '.svg';
-    this.randomHairUrl = Math.floor(Math.random() * 4) + '.svg';
-
-    this.randomEarUrl = Math.floor(Math.random() * 9) + '.svg';
-    this.randomEyeUrl = Math.floor(Math.random() * 10) + '.svg';
-    this.randomMouthUrl = Math.floor(Math.random() * 12) + '.svg';
-    this.randomNoseUrl = Math.floor(Math.random() * 15) + '.svg';
-
-    this.randomTorsoUrl = Math.floor(Math.random() * 8) + '.svg';
-    this.randomLegUrl = '0.svg'; // leg is only one type.
-
-    this.randomTopUrl = Math.floor(Math.random() * 9) + '.svg';
-    this.randomBottomUrl = Math.floor(Math.random() * 9) + '.svg';
-
-    this.randomShoesUrl = Math.floor(Math.random() * 11) + '.svg';
-    this.randomHairAccUrl = Math.floor(Math.random() * 3) + '.svg';
-  }  
 
 
   

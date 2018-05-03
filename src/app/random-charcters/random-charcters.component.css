@@ -6451,43 +6451,29 @@ svg > path {
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn; }
 
-.landingMotion {
-  width: 30vw;
-  height: 30vh;
-  margin: 10vh auto;
-  background-color: rgba(236, 236, 236, 0.8); }
-
-.container {
-  width: 100vw;
-  height: 90vh; }
-  .container #svg-wrap {
-    width: 700px;
-    height: 1200px;
-    margin: 0 auto;
-    border: 0.5px dashed black;
-    -moz-transform: scale(0.4);
-    -o-transform: scale(0.4);
-    -ms-transform: scale(0.4);
-    -webkit-transform: scale(0.4);
-    transform: scale(0.4); }
-  .container .result {
-    width: 273px;
-    height: 468px;
-    margin: 0 auto;
-    border: 2px solid royalblue; }
-    .container .result .module {
-      width: 273px;
-      height: 468px;
-      margin: 0;
-      border: 2px solid gold;
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: contain; }
-
 .btn_user {
   width: 100vw;
   height: 10vh;
   position: absolute;
   animation: bounceIn .6s ease-in-out 1.2s forwards running; }
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto; }
+  .wrap .character {
+    width: 292px;
+    height: 500px;
+    margin: 0 auto;
+    border: 0.5px dashed black; }
+  .wrap .btn_container {
+    width: 30vw;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(236, 236, 236, 0.8); }
 
 /*# sourceMappingURL=random-charcters.component.css.map */

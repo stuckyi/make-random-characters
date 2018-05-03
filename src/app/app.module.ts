@@ -29,6 +29,7 @@ import { RouletteComponent } from './roulette/roulette.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import { RouletteComponent } from './roulette/roulette.component';
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFirestoreModule
     // AngularFireModul.initializeApp(environment.firebase)
   ],
   providers: [SpeechService, SpeechRecognitionService, AppService],

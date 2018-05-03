@@ -1,35 +1,73 @@
+import { Character, Module } from './model/character';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class AppService {
-  selectedCharacter: any;
 
-  private subject = new Subject<any>();
+  selectedCharacter: Module;
+  selectedName: string;
+
+  // afs
+  characters: AngularFirestoreCollection<Character>;
+
+  constructor(private afs: AngularFirestore) {
+    this.afs.firestore.settings({ timestampsInSnapshots: true });
+    this.characters = this.afs.collection<Character>('characters');
+  }
 
 
-  constructor() { }
+  // afs database
+  getCharacters() {
+    return this.characters.valueChanges();
+  }
 
-  setUserCharacter(selectedCharacter: any) {
+  addCharacter(newCharacter: Character) {
+    return this.characters.add(newCharacter);
+  }
+
+
+  /*
+
+
+  getSnapshot() {
+    return this.characters.snapshotChanges()
+      .map(actions => {
+        return actions.map(a => {
+          return { id: a.payload.doc.id, ...a.payload.doc.data() };
+        });
+      });
+  }
+
+
+
+  updateCup(id, data) {
+    data.updatedAt = new Date();
+    return this.getCupById(id).update(data);
+  }
+  deleteCup(id) {
+    return this.getCupById(id).delete();
+  }
+
+  getCharacterById(id: any) {
+    return this.afs.doc<any>('characters/' + id);
+  }
+  */
+
+
+  // App method
+  setUserCharacter(selectedCharacter: Module) {
     this.selectedCharacter = selectedCharacter;
   }
+  setUserName(selectedName: string) {
+    console.log(selectedName);
+    this.selectedName = selectedName;
+  }
+
   getCurrentCharacter() {
     return this.selectedCharacter;
-  }
-
-
-  // using subject
-  sendData(value: any) {
-    this.subject.next(value);
-  }
-  clearData() {
-    this.subject.next();
-  }
-  getData(): Observable<any> {
-    return this.subject.asObservable();
   }
 
 }

@@ -10,10 +10,10 @@
 </section>
 
 <div *ngIf="isRandom">
-    <div *ngIf="randomIndex">
+    <div class="wrap" *ngIf="randomIndex">
 
       <!-- svg 접근성 체크하기 -->
-      <svg id="svg-wrap" viewBox="0 0 700 1200">
+      <svg class="character" viewBox="0 0 700 1200">
           <title lang="ko">랜덤 캐릭터 부분별 그래픽</title>
           <desc lang="ko">여기서는 랜덤 캐릭터의 부분 별 그래픽 요소를 정리합니다.</desc>
           <defs>
@@ -1245,21 +1245,22 @@
               <use *ngIf="randomIndex.hairAcc === 3" xlink:href="#hairAcc3"/>
           </g>
 
-        </svg>
+      </svg>
+
+      <div *ngIf="isRandom" class="btn_container">
+            <a class="button is-primary"  *ngIf="!isComplete" (click)="randomStop()">선택하기</a>
+            <div *ngIf="isComplete">
+            <a class="button is-light" (click)="randomRestart()">RETRY</a>
+            <a routerLink="/random-name" class="button is-primary">NEXT</a>
+            </div>
+      </div>
+
     </div>
+
 </div>
 
 
 
-<section class="btn_user" *ngIf="isRandom">
-    <div class="btn_container">
-      <a class="button is-primary"  *ngIf="!isComplete" (click)="randomStop()">선택하기</a>
-      <div *ngIf="isComplete">
-          <a class="button is-light" (click)="randomRestart()">RETRY</a>
-          <a routerLink="/random-name" class="button is-primary">NEXT</a>
-      </div>
-    </div>
-  </section>
 
 
 <!--
