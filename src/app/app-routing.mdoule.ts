@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { RandomCharctersComponent } from './random-charcters/random-charcters.component';
 import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
 import { RandomNameComponent } from './random-name/random-name.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'main', component: MainComponent },
     { path: 'random-characters', component: RandomCharctersComponent },
     { path: 'random-name', component: RandomNameComponent },
+    { path: 'archive', component: ArchiveComponent },
     { path: 'random-roulette', component: RouletteComponent },
     { path: 'speech-recognition', component: SpeechRecognitionComponent }
 ];

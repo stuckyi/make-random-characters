@@ -1,9 +1,8 @@
-
-
-<div class="wrap" >
-
+<section *ngIf="characters">
+  <div *ngFor="let character of characters" class="character">
+    {{character.name}}
   <!-- svg 접근성 체크하기 -->
-  <svg *ngIf="currentModule" class="character" viewBox="0 0 700 1200">
+  <svg *ngIf="character.modules" viewBox="0 0 700 1200">
       <title lang="ko">랜덤 캐릭터 부분별 그래픽</title>
       <desc lang="ko">여기서는 랜덤 캐릭터의 부분 별 그래픽 요소를 정리합니다.</desc>
       <defs>
@@ -906,52 +905,41 @@
         </g>
         <g id="bottom3">
               <g>
-                    <path class="bottom" fill="#2CAAE1" d="M274.6,849.8l-6.2,227.6c0,0,39,23.7,73.3,0V928.8c0,0,10,2.7,15.1,0.9l5.1,148c0,0,55.7,21.2,75.9-1.4
-                          l-18.9-223.5L274.6,849.8z"/>
+                    <path class="bottom" fill="#2CAAE1" d="M274.6,849.8l-6.2,227.6c0,0,39,23.7,73.3,0V928.8c0,0,10,2.7,15.1,0.9l5.1,148c0,0,55.7,21.2,75.9-1.4l-18.9-223.5L274.6,849.8z"/>
                     <path class="bottom" fill="#B6DFED" d="M275.1,839.4l144.4,0.5c0,0,3.6,9.1,0.5,27.5H274.1C274.1,867.4,271.2,853.9,275.1,839.4z"/>
-                    <path class="bottom" fill="#FFFFFF" d="M366,866.8c0,3-2.4,5.4-5.3,5.4h-26.2c-2.9,0-5.3-2.4-5.3-5.4v-27.2c0-3,2.4-5.4,5.3-5.4h26.2
-                          c2.9,0,5.3,2.4,5.3,5.4V866.8z"/>
+                    <path class="bottom" fill="#FFFFFF" d="M366,866.8c0,3-2.4,5.4-5.3,5.4h-26.2c-2.9,0-5.3-2.4-5.3-5.4v-27.2c0-3,2.4-5.4,5.3-5.4h26.2c2.9,0,5.3,2.4,5.3,5.4V866.8z"/>
                     <path class="bottom" fill="#B6DFED" d="M360,861c0,2.8-2.2,5-5,5h-14.6c-2.8,0-5-2.3-5-5v-15.4c0-2.8,2.2-5,5-5H355c2.8,0,5,2.3,5,5V861z"/>
                     <path class="bottom" fill="#FFFFFF" d="M324.8,850.4c0,0,10.2,2,14.3,0v4.3c0,0-11.7,1.8-14.3-0.8V850.4z"/>
                     <path class="bottom" fill="#2CAAE1" d="M299.3,837.8c0,0-5.6,24,0,33h4.9c0,0-7.2-14.1,0-33H299.3z"/>
                     <path class="bottom" fill="#2CAAE1" d="M394.3,837.8h-5.3c0,0,11.2,20.7,0.9,33h4.4C394.3,870.9,406.1,859.7,394.3,837.8z"/>
                     <path class="bottom" fill="transparent" d="M329,923.7c0,0,12.5,5.2,14.7,5.6v-55.7"/>
                     <path class="bottom" fill="transparent" d="M362.8,926.3c0,0-4.1,4.3-9.8,4"/>
-                    <path class="bottom" fill="#FAC68D" d="M262.5,1067.4c-2.8,0.1-4.3,2.4-4,9.1c0,0-3.1,18.1,5.8,20.8c14.3,4.9,29.8,8,44.9,8.4
-                          c9.5,0.3,17.5-1.4,26.6-3.9c7.9-2.2,10.8-2,11.8-11.4c0.5-4.2,1.9-19.1-2.7-21.6c-2.5-1.4-8.5,2.3-11,2.9c-7,1.9-14.1,3.2-21.3,4
-                          c-9,0.9-18.2,0.9-27.1-0.8c-4.5-0.8-9.8-1.9-13.9-4.2C268,1068.9,264.8,1067.4,262.5,1067.4z"/>
-                    <path class="bottom" fill="#FAC68D" d="M362.4,1068.7c-2.8,0.1-4.3,2.4-4,9.1c0,0-3.1,18.1,5.8,20.8c14.3,4.9,29.8,8,44.9,8.4
-                          c9.5,0.3,17.5-1.4,26.6-3.9c7.9-2.2,10.8-2,11.8-11.4c0.5-4.2,1.9-19.1-2.7-21.6c-2.5-1.4-8.5,2.3-11,2.9c-7,1.9-14.1,3.2-21.3,4
-                          c-9,0.9-18.2,0.9-27.1-0.8c-4.5-0.8-9.8-1.9-13.9-4.2C367.9,1070.2,364.8,1068.7,362.4,1068.7z"/>
+                    <path class="bottom" fill="#FAC68D" d="M262.5,1067.4c-2.8,0.1-4.3,2.4-4,9.1c0,0-3.1,18.1,5.8,20.8c14.3,4.9,29.8,8,44.9,8.4c9.5,0.3,17.5-1.4,26.6-3.9c7.9-2.2,10.8-2,11.8-11.4c0.5-4.2,1.9-19.1-2.7-21.6c-2.5-1.4-8.5,2.3-11,2.9c-7,1.9-14.1,3.2-21.3,4c-9,0.9-18.2,0.9-27.1-0.8c-4.5-0.8-9.8-1.9-13.9-4.2C268,1068.9,264.8,1067.4,262.5,1067.4z"/>
+                    <path class="bottom" fill="#FAC68D" d="M362.4,1068.7c-2.8,0.1-4.3,2.4-4,9.1c0,0-3.1,18.1,5.8,20.8c14.3,4.9,29.8,8,44.9,8.4c9.5,0.3,17.5-1.4,26.6-3.9c7.9-2.2,10.8-2,11.8-11.4c0.5-4.2,1.9-19.1-2.7-21.6c-2.5-1.4-8.5,2.3-11,2.9c-7,1.9-14.1,3.2-21.3,4c-9,0.9-18.2,0.9-27.1-0.8c-4.5-0.8-9.8-1.9-13.9-4.2C367.9,1070.2,364.8,1068.7,362.4,1068.7z"/>
               </g>
                     <path class="bottom" fill="#C876AB" d="M404.8,893.4c5,1.9,10.5,2.3,15.6,2.3c-0.5,0.6,3.6,7.1,4,8.1c4.1,11.4-17.3,6.7-22.5,6.1
                     c-5.8-0.6-10.6-3.3-14-8c-2.1-2.9-3.9-6.2-5-9.7c-1.2-3.5-3.2-7.3-3.8-10.9c2.9-0.9,5.8-3.3,8.3-4.9c0.9-0.6,1.8-1.3,2.7-1.9
                     c0.5,1.6,1.9,3.2,2.9,4.7c1.3,2.1,2.1,4.6,3.5,6.7C398.5,888.9,401,892.3,404.8,893.4z"/>
                     
                     <ellipse transform="matrix(0.8161 -0.5779 0.5779 0.8161 -447.8714 394.9644)" class="bottom" fill="#FFFFFF" cx="396.7" cy="901.3" rx="2.5" ry="2.6"/>
-                    <path class="bottom" fill="#C876AB" d="M313.6,871.5c0,0,1.7-0.3,3.8,3.9c0,0,3.3,4.5,3,7.2c0,0-13.7,19.9-17.1,21.4c0,0-2.4,2.1-8,0.4
-                    c-4.3-1.3-8.9-0.4-13.2-1.6c-1.3-0.4-4.3-0.7-5.2-1.2c-2.9-1.6-5.3-7-3.8-10.1c2.8-0.6,6.4-1.3,8.9-2.5c3.8-1.8,7.6-3.6,11.5-5.2
+                    <path class="bottom" fill="#C876AB" d="M313.6,871.5c0,0,1.7-0.3,3.8,3.9c0,0,3.3,4.5,3,7.2c0,0-13.7,19.9-17.1,21.4c0,0-2.4,2.1-8,0.4c-4.3-1.3-8.9-0.4-13.2-1.6c-1.3-0.4-4.3-0.7-5.2-1.2c-2.9-1.6-5.3-7-3.8-10.1c2.8-0.6,6.4-1.3,8.9-2.5c3.8-1.8,7.6-3.6,11.5-5.2
                     C299.5,881.1,310,877.7,313.6,871.5z"/>
                     
                     <ellipse transform="matrix(0.9231 -0.3846 0.3846 0.9231 -321.8896 184.4331)" class="bottom" fill="#FFFFFF" cx="300.2" cy="897.1" rx="3.1" ry="3.5"/>
-                    <path class="bottom" fill="#FFFFFF" d="M304.3,1105.6c0,0-7-8.4-14.6-16.6l10.8-12.5c-6.1,0.2-15.1-1.4-15.1-1.4c-1.4,1.4-2.9,3-4.5,4.6l-4.5-6.8
-                    l-12.1-5.6c0,0,3.4,12.8,9.6,19.8c-5.2,5.5-9.6,10.2-9.6,10.2l14.5,4.2l4.6-5.3c3.3,4,5.2,7.3,5.2,7.3S302,1105.4,304.3,1105.6z"/>
+                    <path class="bottom" fill="#FFFFFF" d="M304.3,1105.6c0,0-7-8.4-14.6-16.6l10.8-12.5c-6.1,0.2-15.1-1.4-15.1-1.4c-1.4,1.4-2.9,3-4.5,4.6l-4.5-6.8l-12.1-5.6c0,0,3.4,12.8,9.6,19.8c-5.2,5.5-9.6,10.2-9.6,10.2l14.5,4.2l4.6-5.3c3.3,4,5.2,7.3,5.2,7.3S302,1105.4,304.3,1105.6z"/>
                     <path class="bottom" fill="transparent" d="M264.3,1097.3c0,0,13.5-14.4,21.2-22.2c0,0,9.1,1.5,15.1,1.4l-21.8,25.1L264.3,1097.3z"/>
                     <path class="bottom" fill="transparent" d="M264.3,1067.4c0,0,4.4,16.4,12.1,22.2s12.1,14,12.1,14s13.4,1.8,15.7,1.9c0,0-13.6-16.3-23.2-25.4l-4.7-7.1
                     L264.3,1067.4z"/>
-                    <path class="bottom" fill="#FFFFFF" d="M333.8,1071.9c0,0-1.9,2.4-4.3,5.6l-4.8-3.4l-15.8,2.2c0,0,5.5,5.8,12.6,12c-1.7,2.4-2.9,4.4-3.3,5.5
-                    c-1.5,4-9.1,12.1-9.1,12.1s16.1-0.1,17.8-1.7c0.5-0.5,2.6-3.4,5.3-7.3c2.3,1.6,4.6,3.1,6.8,4.2c0,0,7.9-1.3,8.5-10.4l-7.4-5.3
+                    <path class="bottom" fill="#FFFFFF" d="M333.8,1071.9c0,0-1.9,2.4-4.3,5.6l-4.8-3.4l-15.8,2.2c0,0,5.5,5.8,12.6,12c-1.7,2.4-2.9,4.4-3.3,5.5c-1.5,4-9.1,12.1-9.1,12.1s16.1-0.1,17.8-1.7c0.5-0.5,2.6-3.4,5.3-7.3c2.3,1.6,4.6,3.1,6.8,4.2c0,0,7.9-1.3,8.5-10.4l-7.4-5.3
                     c4.1-6,7.6-11.2,7.6-11.2S348,1062.8,333.8,1071.9z"/>
                     <path class="bottom" fill="transparent" d="M309,1076.2c0,0,17.2,18.1,30.1,24.8c0,0,7.9-1.3,8.5-10.4l-22.8-16.5L309,1076.2z"/>
-                    <path class="bottom" fill="transparent" d="M333.8,1071.9c0,0-14.1,17.8-15.6,21.8c-1.5,4-9.1,12.1-9.1,12.1s16.1-0.1,17.8-1.7c1.7-1.6,20.8-30,20.8-30
-                    S348,1062.8,333.8,1071.9z"/>
+                    <path class="bottom" fill="transparent" d="M333.8,1071.9c0,0-14.1,17.8-15.6,21.8c-1.5,4-9.1,12.1-9.1,12.1s16.1-0.1,17.8-1.7c1.7-1.6,20.8-30,20.8-30S348,1062.8,333.8,1071.9z"/>
                     <path class="bottom" fill="#FFFFFF" d="M403.8,1106.6c0,0-7-8.3-14.6-16.4l10.8-12.3c-6.1,0.2-15.1-1.4-15.1-1.4c-1.4,1.4-2.9,2.9-4.5,4.6l-4.5-6.7
                     l-12.1-5.6c0,0,3.4,12.6,9.6,19.5c-5.2,5.4-9.6,10-9.6,10l14.5,4.2l4.6-5.2c3.3,3.9,5.2,7.3,5.2,7.3S401.5,1106.4,403.8,1106.6z"/>
                     <path class="bottom" fill="transparent" d="M363.8,1098.5c0,0,13.5-14.2,21.2-21.9c0,0,9.1,1.5,15.1,1.4l-21.8,24.7L363.8,1098.5z"/>
                     <path class="bottom" fill="transparent" d="M363.8,1068.9c0,0,4.4,16.2,12.1,21.9c7.7,5.7,12.1,13.8,12.1,13.8s13.4,1.8,15.7,1.9c0,0-13.6-16.1-23.2-25.1
                     l-4.7-7L363.8,1068.9z"/>
-                    <path class="bottom" fill="#FFFFFF" d="M433.3,1073.4c0,0-1.9,2.3-4.3,5.5l-4.8-3.4l-15.8,2.2c0,0,5.5,5.7,12.6,11.9c-1.7,2.4-2.9,4.4-3.3,5.4
-                    c-1.5,3.9-9.1,11.9-9.1,11.9s16.1-0.1,17.8-1.7c0.5-0.5,2.6-3.4,5.3-7.2c2.3,1.6,4.6,3,6.8,4.2c0,0,7.9-1.3,8.5-10.3l-7.4-5.3
+                    <path class="bottom" fill="#FFFFFF" d="M433.3,1073.4c0,0-1.9,2.3-4.3,5.5l-4.8-3.4l-15.8,2.2c0,0,5.5,5.7,12.6,11.9c-1.7,2.4-2.9,4.4-3.3,5.4c-1.5,3.9-9.1,11.9-9.1,11.9s16.1-0.1,17.8-1.7c0.5-0.5,2.6-3.4,5.3-7.2c2.3,1.6,4.6,3,6.8,4.2c0,0,7.9-1.3,8.5-10.3l-7.4-5.3
                     c4.1-6,7.6-11,7.6-11S447.4,1064.4,433.3,1073.4z"/>
                     <path class="bottom" fill="transparent" d="M408.4,1077.6c0,0,17.2,17.9,30.1,24.5c0,0,7.9-1.3,8.5-10.3l-22.8-16.3L408.4,1077.6z"/>
                     <path class="bottom" fill="transparent" d="M433.3,1073.4c0,0-14.1,17.6-15.6,21.5c-1.5,3.9-9.1,11.9-9.1,11.9s16.1-0.1,17.8-1.7
@@ -1106,168 +1094,143 @@
 
       <!-- content projection area -->
 
-      <g class="legs">
-          <use xlink:href="#legs" /> 
-      </g>
-      <g class="hairs">
-          <use *ngIf="currentModule.hair === 0" xlink:href="#hair0" /> 
-          <use *ngIf="currentModule.hair === 1" xlink:href="#hair1" />
-          <use *ngIf="currentModule.hair === 2" xlink:href="#hair2" />
-          <use *ngIf="currentModule.hair === 3" xlink:href="#hair3" />
-          <use *ngIf="currentModule.hair === 4" xlink:href="#hair4" /> 
+      <g class="module-container">
+
+        <g class="legs">
+            <use xlink:href="#legs" /> 
+        </g>
+        <g class="hairs">
+            <use *ngIf="character.modules.hair === 0" xlink:href="#hair0" /> 
+            <use *ngIf="character.modules.hair === 1" xlink:href="#hair1" />
+            <use *ngIf="character.modules.hair === 2" xlink:href="#hair2" />
+            <use *ngIf="character.modules.hair === 3" xlink:href="#hair3" />
+            <use *ngIf="character.modules.hair === 4" xlink:href="#hair4" /> 
+            
+        </g>
+        <g class="torsos">
+            <use *ngIf="character.modules.torso === 0" xlink:href="#torso0" /> 
+            <use *ngIf="character.modules.torso === 1" xlink:href="#torso1" />
+            <use *ngIf="character.modules.torso === 2" xlink:href="#torso2" />
+            <use *ngIf="character.modules.torso === 3" xlink:href="#torso3" />
+            <use *ngIf="character.modules.torso === 4" xlink:href="#torso4" />
+            <use *ngIf="character.modules.torso === 5" xlink:href="#torso5" />
+            <use *ngIf="character.modules.torso === 6" xlink:href="#torso6" />
+            <use *ngIf="character.modules.torso === 7" xlink:href="#torso7" />
+        </g>
+
+        <g class="ears">
+            <use *ngIf="character.modules.ear === 0" xlink:href="#ear0"/>
+            <use *ngIf="character.modules.ear === 1" xlink:href="#ear1"/>
+            <use *ngIf="character.modules.ear === 2" xlink:href="#ear2"/>
+            <use *ngIf="character.modules.ear === 3" xlink:href="#ear3"/>
+            <use *ngIf="character.modules.ear === 4" xlink:href="#ear4"/>
+            <use *ngIf="character.modules.ear === 5" xlink:href="#ear5"/>
+            <use *ngIf="character.modules.ear === 6" xlink:href="#ear6"/>
+            <use *ngIf="character.modules.ear === 7" xlink:href="#ear7"/>
+        </g>
+        
+        <g class="tops">
+            <use *ngIf="character.modules.top === 0" xlink:href="#top0"/>
+            <use *ngIf="character.modules.top === 1" xlink:href="#top1"/>
+            <use *ngIf="character.modules.top === 2" xlink:href="#top2"/>
+            <use *ngIf="character.modules.top === 3" xlink:href="#top3"/>
+            <use *ngIf="character.modules.top === 4" xlink:href="#top4"/>
+            <use *ngIf="character.modules.top === 5" xlink:href="#top5"/>
+            <use *ngIf="character.modules.top === 6" xlink:href="#top6"/>
+            <use *ngIf="character.modules.top === 7" xlink:href="#top7"/>
+            <use *ngIf="character.modules.top === 8" xlink:href="#top8"/>
+        </g>
+
+        <g class="faces">
+            <use *ngIf="character.modules.face === 0" xlink:href="#face0"/>
+            <use *ngIf="character.modules.face === 1" xlink:href="#face1"/>
+            <use *ngIf="character.modules.face === 2" xlink:href="#face2"/>
+            <use *ngIf="character.modules.face === 3" xlink:href="#face3"/>
+            <use *ngIf="character.modules.face === 4" xlink:href="#face4"/>
+            <use *ngIf="character.modules.face === 5" xlink:href="#face5"/>
+            <use *ngIf="character.modules.face === 6" xlink:href="#face6"/>
+        </g>
+
+        <g class="eyes">
+            <use *ngIf="character.modules.eye === 0" xlink:href="#eye0"/>
+            <use *ngIf="character.modules.eye === 1" xlink:href="#eye1"/>
+            <use *ngIf="character.modules.eye === 2" xlink:href="#eye2"/>
+            <use *ngIf="character.modules.eye === 3" xlink:href="#eye3"/>
+            <use *ngIf="character.modules.eye === 4" xlink:href="#eye4"/>
+            <use *ngIf="character.modules.eye === 5" xlink:href="#eye5"/>
+            <use *ngIf="character.modules.eye === 6" xlink:href="#eye6"/>
+            <use *ngIf="character.modules.eye === 7" xlink:href="#eye7"/>
+            <use *ngIf="character.modules.eye === 8" xlink:href="#eye8"/>
+            <use *ngIf="character.modules.eye === 9" xlink:href="#eye9"/>
+        </g>
+        <g class="mouths">
+            <use *ngIf="character.modules.mouth === 0" xlink:href="#mouth0"/>
+            <use *ngIf="character.modules.mouth === 1" xlink:href="#mouth1"/>
+            <use *ngIf="character.modules.mouth === 2" xlink:href="#mouth2"/>
+            <use *ngIf="character.modules.mouth === 3" xlink:href="#mouth3"/>
+            <use *ngIf="character.modules.mouth === 4" xlink:href="#mouth4"/>
+            <use *ngIf="character.modules.mouth === 5" xlink:href="#mouth5"/>
+            <use *ngIf="character.modules.mouth === 6" xlink:href="#mouth6"/>
+            <use *ngIf="character.modules.mouth === 7" xlink:href="#mouth7"/>
+            <use *ngIf="character.modules.mouth === 8" xlink:href="#mouth8"/>
+            <use *ngIf="character.modules.mouth === 9" xlink:href="#mouth9"/>
+            <use *ngIf="character.modules.mouth === 10" xlink:href="#mouth10"/>
+            <use *ngIf="character.modules.mouth === 11" xlink:href="#mouth11"/>
+        </g>
+        <g class="nose">
+            <use *ngIf="character.modules.nose === 0" xlink:href="#nose0"/>
+            <use *ngIf="character.modules.nose === 1" xlink:href="#nose1"/>
+            <use *ngIf="character.modules.nose === 2" xlink:href="#nose2"/>
+            <use *ngIf="character.modules.nose === 3" xlink:href="#nose3"/>
+            <use *ngIf="character.modules.nose === 4" xlink:href="#nose4"/>
+            <use *ngIf="character.modules.nose === 5" xlink:href="#nose5"/>
+            <use *ngIf="character.modules.nose === 6" xlink:href="#nose6"/>
+            <use *ngIf="character.modules.nose === 7" xlink:href="#nose7"/>
+            <use *ngIf="character.modules.nose === 8" xlink:href="#nose8"/>
+            <use *ngIf="character.modules.nose === 9" xlink:href="#nose9"/>
+            <use *ngIf="character.modules.nose === 10" xlink:href="#nose10"/>
+            <use *ngIf="character.modules.nose === 11" xlink:href="#nose11"/>
+            <use *ngIf="character.modules.nose === 12" xlink:href="#nose12"/>
+            <use *ngIf="character.modules.nose === 13" xlink:href="#nose13"/>
+            <use *ngIf="character.modules.nose === 14" xlink:href="#nose14"/>
+        </g>
+        <g class="shoes">
+            <use *ngIf="character.modules.shoes === 0" xlink:href="#shoes0"/>
+            <use *ngIf="character.modules.shoes === 1" xlink:href="#shoes1"/>
+            <use *ngIf="character.modules.shoes === 2" xlink:href="#shoes2"/>
+            <use *ngIf="character.modules.shoes === 3" xlink:href="#shoes3"/>
+            <use *ngIf="character.modules.shoes === 4" xlink:href="#shoes4"/>
+            <use *ngIf="character.modules.shoes === 5" xlink:href="#shoes5"/>
+            <use *ngIf="character.modules.shoes === 6" xlink:href="#shoes6"/>
+            <use *ngIf="character.modules.shoes === 7" xlink:href="#shoes7"/>
+            <use *ngIf="character.modules.shoes === 8" xlink:href="#shoes8"/>
+            <use *ngIf="character.modules.shoes === 9" xlink:href="#shoes9"/>
+            <use *ngIf="character.modules.shoes === 10" xlink:href="#shoes10"/>
+        </g>
+        <g class="bottom">
+            <use *ngIf="character.modules.bottom === 0" xlink:href="#bottom0"/>
+            <use *ngIf="character.modules.bottom === 1" xlink:href="#bottom1"/>
+            <use *ngIf="character.modules.bottom === 2" xlink:href="#bottom2"/>
+            <use *ngIf="character.modules.bottom === 3" xlink:href="#bottom3"/>
+            <use *ngIf="character.modules.bottom === 4" xlink:href="#bottom4"/>
+            <use *ngIf="character.modules.bottom === 5" xlink:href="#bottom5"/>
+            <use *ngIf="character.modules.bottom === 6" xlink:href="#bottom6"/>
+            <use *ngIf="character.modules.bottom === 7" xlink:href="#bottom7"/>
+            <use *ngIf="character.modules.bottom === 8" xlink:href="#bottom8"/>
+        </g>
+        <g class="hairAcc">
+            <use *ngIf="character.modules.hairAcc === 0" xlink:href="#hairAcc0"/>
+            <use *ngIf="character.modules.hairAcc === 1" xlink:href="#hairAcc1"/>
+            <use *ngIf="character.modules.hairAcc === 2" xlink:href="#hairAcc2"/>
+            <use *ngIf="character.modules.hairAcc === 3" xlink:href="#hairAcc3"/>
+        </g>
+
           
       </g>
-      <g class="torsos">
-          <use *ngIf="currentModule.torso === 0" xlink:href="#torso0" /> 
-          <use *ngIf="currentModule.torso === 1" xlink:href="#torso1" />
-          <use *ngIf="currentModule.torso === 2" xlink:href="#torso2" />
-          <use *ngIf="currentModule.torso === 3" xlink:href="#torso3" />
-          <use *ngIf="currentModule.torso === 4" xlink:href="#torso4" />
-          <use *ngIf="currentModule.torso === 5" xlink:href="#torso5" />
-          <use *ngIf="currentModule.torso === 6" xlink:href="#torso6" />
-          <use *ngIf="currentModule.torso === 7" xlink:href="#torso7" />
-      </g>
-
-      <g class="ears">
-          <use *ngIf="currentModule.ear === 0" xlink:href="#ear0"/>
-          <use *ngIf="currentModule.ear === 1" xlink:href="#ear1"/>
-          <use *ngIf="currentModule.ear === 2" xlink:href="#ear2"/>
-          <use *ngIf="currentModule.ear === 3" xlink:href="#ear3"/>
-          <use *ngIf="currentModule.ear === 4" xlink:href="#ear4"/>
-          <use *ngIf="currentModule.ear === 5" xlink:href="#ear5"/>
-          <use *ngIf="currentModule.ear === 6" xlink:href="#ear6"/>
-          <use *ngIf="currentModule.ear === 7" xlink:href="#ear7"/>
-      </g>
       
-      <g class="tops">
-          <use *ngIf="currentModule.top === 0" xlink:href="#top0"/>
-          <use *ngIf="currentModule.top === 1" xlink:href="#top1"/>
-          <use *ngIf="currentModule.top === 2" xlink:href="#top2"/>
-          <use *ngIf="currentModule.top === 3" xlink:href="#top3"/>
-          <use *ngIf="currentModule.top === 4" xlink:href="#top4"/>
-          <use *ngIf="currentModule.top === 5" xlink:href="#top5"/>
-          <use *ngIf="currentModule.top === 6" xlink:href="#top6"/>
-          <use *ngIf="currentModule.top === 7" xlink:href="#top7"/>
-          <use *ngIf="currentModule.top === 8" xlink:href="#top8"/>
-      </g>
-
-      <g class="faces">
-          <use *ngIf="currentModule.face === 0" xlink:href="#face0"/>
-          <use *ngIf="currentModule.face === 1" xlink:href="#face1"/>
-          <use *ngIf="currentModule.face === 2" xlink:href="#face2"/>
-          <use *ngIf="currentModule.face === 3" xlink:href="#face3"/>
-          <use *ngIf="currentModule.face === 4" xlink:href="#face4"/>
-          <use *ngIf="currentModule.face === 5" xlink:href="#face5"/>
-          <use *ngIf="currentModule.face === 6" xlink:href="#face6"/>
-      </g>
-
-      <g class="eyes">
-          <use *ngIf="currentModule.eye === 0" xlink:href="#eye0"/>
-          <use *ngIf="currentModule.eye === 1" xlink:href="#eye1"/>
-          <use *ngIf="currentModule.eye === 2" xlink:href="#eye2"/>
-          <use *ngIf="currentModule.eye === 3" xlink:href="#eye3"/>
-          <use *ngIf="currentModule.eye === 4" xlink:href="#eye4"/>
-          <use *ngIf="currentModule.eye === 5" xlink:href="#eye5"/>
-          <use *ngIf="currentModule.eye === 6" xlink:href="#eye6"/>
-          <use *ngIf="currentModule.eye === 7" xlink:href="#eye7"/>
-          <use *ngIf="currentModule.eye === 8" xlink:href="#eye8"/>
-          <use *ngIf="currentModule.eye === 9" xlink:href="#eye9"/>
-      </g>
-      <g class="mouths">
-          <use *ngIf="currentModule.mouth === 0" xlink:href="#mouth0"/>
-          <use *ngIf="currentModule.mouth === 1" xlink:href="#mouth1"/>
-          <use *ngIf="currentModule.mouth === 2" xlink:href="#mouth2"/>
-          <use *ngIf="currentModule.mouth === 3" xlink:href="#mouth3"/>
-          <use *ngIf="currentModule.mouth === 4" xlink:href="#mouth4"/>
-          <use *ngIf="currentModule.mouth === 5" xlink:href="#mouth5"/>
-          <use *ngIf="currentModule.mouth === 6" xlink:href="#mouth6"/>
-          <use *ngIf="currentModule.mouth === 7" xlink:href="#mouth7"/>
-          <use *ngIf="currentModule.mouth === 8" xlink:href="#mouth8"/>
-          <use *ngIf="currentModule.mouth === 9" xlink:href="#mouth9"/>
-          <use *ngIf="currentModule.mouth === 10" xlink:href="#mouth10"/>
-          <use *ngIf="currentModule.mouth === 11" xlink:href="#mouth11"/>
-      </g>
-      <g class="nose">
-          <use *ngIf="currentModule.nose === 0" xlink:href="#nose0"/>
-          <use *ngIf="currentModule.nose === 1" xlink:href="#nose1"/>
-          <use *ngIf="currentModule.nose === 2" xlink:href="#nose2"/>
-          <use *ngIf="currentModule.nose === 3" xlink:href="#nose3"/>
-          <use *ngIf="currentModule.nose === 4" xlink:href="#nose4"/>
-          <use *ngIf="currentModule.nose === 5" xlink:href="#nose5"/>
-          <use *ngIf="currentModule.nose === 6" xlink:href="#nose6"/>
-          <use *ngIf="currentModule.nose === 7" xlink:href="#nose7"/>
-          <use *ngIf="currentModule.nose === 8" xlink:href="#nose8"/>
-          <use *ngIf="currentModule.nose === 9" xlink:href="#nose9"/>
-          <use *ngIf="currentModule.nose === 10" xlink:href="#nose10"/>
-          <use *ngIf="currentModule.nose === 11" xlink:href="#nose11"/>
-          <use *ngIf="currentModule.nose === 12" xlink:href="#nose12"/>
-          <use *ngIf="currentModule.nose === 13" xlink:href="#nose13"/>
-          <use *ngIf="currentModule.nose === 14" xlink:href="#nose14"/>
-      </g>
-      <g class="shoes">
-          <use *ngIf="currentModule.shoes === 0" xlink:href="#shoes0"/>
-          <use *ngIf="currentModule.shoes === 1" xlink:href="#shoes1"/>
-          <use *ngIf="currentModule.shoes === 2" xlink:href="#shoes2"/>
-          <use *ngIf="currentModule.shoes === 3" xlink:href="#shoes3"/>
-          <use *ngIf="currentModule.shoes === 4" xlink:href="#shoes4"/>
-          <use *ngIf="currentModule.shoes === 5" xlink:href="#shoes5"/>
-          <use *ngIf="currentModule.shoes === 6" xlink:href="#shoes6"/>
-          <use *ngIf="currentModule.shoes === 7" xlink:href="#shoes7"/>
-          <use *ngIf="currentModule.shoes === 8" xlink:href="#shoes8"/>
-          <use *ngIf="currentModule.shoes === 9" xlink:href="#shoes9"/>
-          <use *ngIf="currentModule.shoes === 10" xlink:href="#shoes10"/>
-      </g>
-      <g class="bottom">
-          <use *ngIf="currentModule.bottom === 0" xlink:href="#bottom0"/>
-          <use *ngIf="currentModule.bottom === 1" xlink:href="#bottom1"/>
-          <use *ngIf="currentModule.bottom === 2" xlink:href="#bottom2"/>
-          <use *ngIf="currentModule.bottom === 3" xlink:href="#bottom3"/>
-          <use *ngIf="currentModule.bottom === 4" xlink:href="#bottom4"/>
-          <use *ngIf="currentModule.bottom === 5" xlink:href="#bottom5"/>
-          <use *ngIf="currentModule.bottom === 6" xlink:href="#bottom6"/>
-          <use *ngIf="currentModule.bottom === 7" xlink:href="#bottom7"/>
-          <use *ngIf="currentModule.bottom === 8" xlink:href="#bottom8"/>
-      </g>
-      <g class="hairAcc">
-          <use *ngIf="currentModule.hairAcc === 0" xlink:href="#hairAcc0"/>
-          <use *ngIf="currentModule.hairAcc === 1" xlink:href="#hairAcc1"/>
-          <use *ngIf="currentModule.hairAcc === 2" xlink:href="#hairAcc2"/>
-          <use *ngIf="currentModule.hairAcc === 3" xlink:href="#hairAcc3"/>
-      </g>
-
   </svg>
 
-  <div class="boxs" *ngIf="randomNameIndex" >
-    <div class="random-text">
-      <p *ngIf="isFirst">{{ dataset.charAt(randomNameIndex.first) }}</p>
-      <p *ngIf="!isFirst" class="question-mark">?</p>
-    </div>
-    <div class="random-text">
-      <p *ngIf="isMiddle">{{ dataset.charAt(randomNameIndex.middle) }}</p>
-      <p *ngIf="!isMiddle" class="question-mark">?</p>
-    </div>
-    <div class="random-text">
-      <p *ngIf="isLast">{{ dataset.charAt(randomNameIndex.last) }}</p>
-      <p *ngIf="!isLast"  class="question-mark">?</p>
-    </div>
-  </div>
-
-  <div class="btn_container">
-    <a *ngIf="!isSave" class="button is-primary" (click)="stop()">선택하기</a>
-    <a *ngIf="isSave" class="button is-primary" (click)="restart()">이름 다시짓기</a>
-    <a *ngIf="isSave" class="button is-primary" (click)="saveCharacter()">저장하기</a>
 
   </div>
-<!--
-  <div *ngIf="isRandom" class="btn_container">
-        <a class="button is-primary"  *ngIf="!isComplete" (click)="randomStop()">선택하기</a>
-        <div *ngIf="isComplete">
-        <a class="button is-light" (click)="randomRestart()">RETRY</a>
-        <a routerLink="/random-name" class="button is-primary">NEXT</a>
-        </div>
-  </div>
--->
-</div>
-
-
+</section>
 

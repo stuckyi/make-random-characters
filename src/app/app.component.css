@@ -6124,13 +6124,20 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+* {
+  font-family: Arial, sans-serif; }
+
+@media (min-width: 769px) {
+  * {
+    font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+    font-weight: 100; } }
 .navbar {
   position: fixed;
   padding: 10px; }
   .navbar a {
     color: #00d1b2; }
     .navbar a span {
-      font-size: 2rem; }
+      font-size: 1.125rem; }
 
 .section {
   width: 100vw;

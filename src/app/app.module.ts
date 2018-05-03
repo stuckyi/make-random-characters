@@ -25,6 +25,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppService } from './app.service';
 import { RandomNameComponent } from './random-name/random-name.component';
 import { RouletteComponent } from './roulette/roulette.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 
@@ -37,7 +38,8 @@ import { RouletteComponent } from './roulette/roulette.component';
     MainComponent,
     SpeechRecognitionComponent,
     RandomNameComponent,
-    RouletteComponent
+    RouletteComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

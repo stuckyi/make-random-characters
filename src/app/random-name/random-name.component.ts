@@ -26,7 +26,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
   isPlay: boolean;
   isSave: boolean;
 
-  step;
+  step: number;
   randomNameIndex = { first: 0, middle: 0, last: 0 };
 
 
@@ -97,13 +97,26 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
   // 클릭시 생성한 캐릭터, 이름을 서버에 저장한다.
   saveCharacter() {
-    const result = { name: this.currentName, modules: this.currentModule };
+    const result = {
+      name: this.currentName,
+      modules: this.currentModule,
+      createdAt: new Date()
+    };
     this.appService.addCharacter(result);
-    // this.appService.addCharacter(this.sele);
   }
   restart() {
-    console.log('restart()! 아직 기능없음');
+    console.log('restart()');
+    this.step = 0;
+    this.isSave = false;
+
+    this.isFirst = false;
+    this.isMiddle = false;
+    this.isLast = false;
+
+    this.play(this.step);
   }
+
+
 
 
 

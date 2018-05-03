@@ -15,4 +15,5 @@ export interface Module {
 export interface Character {
   name: string;
   modules: Module;
+  createdAt: any;
 }

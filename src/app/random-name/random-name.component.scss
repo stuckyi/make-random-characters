@@ -25,17 +25,30 @@ $svgHeight: 500px;
 		@include size($svgWidth, $svgHeight);
 		margin: 0 auto;
 		@include testBorder();
-		// @include scale(.4);
+
   }
 
   .boxs {
-    @include size(30vh, auto);
+    @include size(50vh, auto);
     @include flex(flex, row nowrap);
+    margin: 0 auto;
+
     justify-content: space-between;
     align-content: center;
 
     .random-text {
+      @include size(33%, auto);
       border: 2px solid black;
+      text-align: center;
+      
+      p {
+        font-size: 6rem;
+        font-weight: 100; 
+        padding: 1rem;
+        &.question-mark { 
+          opacity: .2;
+        }
+      }
     }
 
   }
