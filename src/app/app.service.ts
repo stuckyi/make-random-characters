@@ -12,14 +12,13 @@ export class AppService {
 
   // afs
   characters: AngularFirestoreCollection<Character>;
-  
 
 
   constructor(private afs: AngularFirestore) {
     this.afs.firestore.settings({ timestampsInSnapshots: true });
 
     this.characters = this.afs.collection<Character>('characters',
-      ref => ref.orderBy('createdAt'));
+      ref => ref.orderBy('createdAt', 'desc'));
   }
 
 
@@ -28,14 +27,6 @@ export class AppService {
   // afs database
   getCharacters() {
     return this.characters.valueChanges();
-  }
-
-  getCharactersCount() {
-    return this.characters.valueChanges()
-      .subscribe(val => {
-        console.log(val.length);
-        
-      });
   }
   
   

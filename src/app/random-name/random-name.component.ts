@@ -112,7 +112,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
 
   openModal() {
-    console.log(this.appService.getCharactersCount());
+    console.log(this.appService.getCharacters());
     this.isModal = true;
 
     setTimeout(() => {
@@ -131,6 +131,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
     this.appService.addCharacter(result)
       .then(() => {
+        console.log("저장 완료!");
         this.isComplete = true;
       })
       .catch(console.error);

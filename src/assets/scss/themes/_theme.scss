@@ -6,6 +6,9 @@ $btn-size: 8.125rem;
 $btn-col: $black;
 // $btn-bgCol: none;
 
+
+@include scrollbars(.1, $main-color, transparent);
+
 .btn {
   @include size($btn-size, $btn-size);
   @include border-radius(50%);

@@ -6134,6 +6134,20 @@ label.panel-block {
 /* color */
 /* z-index */
 /* svg size */
+::-webkit-scrollbar {
+  width: 0.1;
+  height: 0.1; }
+
+::-webkit-scrollbar-thumb {
+  background: #33FFBC; }
+
+::-webkit-scrollbar-track {
+  background: transparent; }
+
+body {
+  scrollbar-face-color: #33FFBC;
+  scrollbar-track-color: transparent; }
+
 .btn {
   width: 8.125rem;
   height: 8.125rem;
@@ -6568,31 +6582,85 @@ svg > path {
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox; }
 
-section {
+.archive {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   overflow: hidden;
-  background-color: #EC8341; }
-  section .character {
-    width: 292px;
-    height: 500px;
-    margin: 0 auto;
-    border: 0.5px dashed black; }
-    section .character svg {
-      border: 3px solid red; }
-      section .character svg .module-container {
-        border: 3px solid magenta; }
+  background-color: #33FFBC; }
+  .archive .archive-body {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    overflow: hidden; }
+    .archive .archive-body .characters {
+      border: 0.5px dashed black;
+      width: 100vw;
+      height: 480px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-content: center;
+      margin: 0 auto;
+      overflow: visible; }
+      .archive .archive-body .characters .character {
+        width: 280px;
+        height: 480px;
+        margin: 0 auto;
+        opacity: .8; }
+  .archive .archive-foot {
+    width: 100vw;
+    height: 10vh; }
+    .archive .archive-foot .btn_container {
+      z-index: 900;
+      width: 100vw;
+      height: 10vh;
+      margin: 0 auto;
+      -moz-transform: translate(0, 200%);
+      -o-transform: translate(0, 200%);
+      -ms-transform: translate(0, 200%);
+      -webkit-transform: translate(0, 200%);
+      transform: translate(0, 200%);
+      opacity: 0; }
+      .archive .archive-foot .btn_container.active {
+        transform-origin: center;
+        animation: buttonUp 0.8s cubic-bezier(1, 0.015, 0.295, 1.225) 3.2s forwards running; }
 
-.btn_container {
-  width: 100vw;
-  height: auto;
-  margin: 0 auto;
-  bottom: 0;
-  position: fixed;
-  z-index: 100; }
+.mennemAct {
+  z-index: 1200;
+  width: 10vw;
+  height: 10vw;
+  -moz-transform: translate(-30%, -350%);
+  -o-transform: translate(-30%, -350%);
+  -ms-transform: translate(-30%, -350%);
+  -webkit-transform: translate(-30%, -350%);
+  transform: translate(-30%, -350%);
+  border: 0.5px dashed black;
+  transform-origin: center;
+  animation: mennemAct 2s linear forwards running; }
+  .mennemAct img {
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2); }
+
+@keyframes mennemAct {
+  0% {
+    transform: translateX(-30%) translateY(-350%); }
+  100% {
+    transform: translateX(120%) translateY(-350%); } }
+@keyframes buttonUp {
+  0% {
+    opacity: 0;
+    transform: translateY(200%); }
+  100% {
+    opacity: 1;
+    transform: translateY(-200%); } }
 
 /*# sourceMappingURL=archive.component.css.map */

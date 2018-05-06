@@ -6134,6 +6134,20 @@ label.panel-block {
 /* color */
 /* z-index */
 /* svg size */
+::-webkit-scrollbar {
+  width: 0.1;
+  height: 0.1; }
+
+::-webkit-scrollbar-thumb {
+  background: #33FFBC; }
+
+::-webkit-scrollbar-track {
+  background: transparent; }
+
+body {
+  scrollbar-face-color: #33FFBC;
+  scrollbar-track-color: transparent; }
+
 .btn {
   width: 8.125rem;
   height: 8.125rem;

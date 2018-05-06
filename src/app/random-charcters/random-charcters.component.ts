@@ -133,10 +133,10 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   randomRestart() {
     console.log('randomRestart()');
     this.dynamicClass = 'off';
+    this.isPlay = true;
+    this.isComplete = false;
     setTimeout(() => { 
       this.randomStart();
-      this.isPlay = true;
-      this.isComplete = false;
     }, 600);
   }
 

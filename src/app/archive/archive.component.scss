@@ -1,42 +1,84 @@
 @import 'assets/scss/global';
 @import 'assets/scss/utils/characterStyle';
 @import 'assets/scss/utils/animations';
-$svgWidth: 292px;
-$svgHeight: 500px;
 
-$bg-col: #EC8341;
-section {
-  @include size(100vw, 100vh);
-	@include flex(flex, row nowrap);
+
+.archive {
+	@include size(100vw, 100vh);
+	@include flex(flex, column nowrap);
 	justify-content: center;
   align-content: center;
 	overflow: hidden;
-	background-color: $bg-col;
+	background-color: $main-color;
 
+	.archive-body {
+		@include size(100vw, 90vh);
+		@include flex(flex, column nowrap);
+		justify-content: flex-end;
+		overflow: hidden;
 
-  
+		// 최근 캐릭터들 (방금 생성산 캐릭터 제외)
+		.characters {
+			@include testBorder();
+			@include size(100vw, $svg-size2-h);
+			@include flex(flex, row nowrap);
+			justify-content: flex-start;
+			align-content: center;
+			margin: 0 auto;
+			overflow: visible;
+			// overflow-x: scroll;
+			// overflow-y: hidden;
 
-	.character {
-		// 미디어쿼리 적용
-		@include size($svgWidth, $svgHeight);
-		margin: 0 auto;
-		@include testBorder();
-
-
-		svg {
-			border: 3px solid red;
-			.module-container {
-				border: 3px solid magenta;
+			.character {
+				@include size($svg-size2-w, $svg-size2-h);
+				margin: 0 auto;
+				opacity: .8;
 			}
 		}
-		// @include scale(.4);
-  }
+
+	}
+
+	.archive-foot {
+		@include size(100vw, 10vh);
+		.btn_container {
+			z-index: $z-archive-btn;
+			@include size(100vw, 10vh);
+			margin: 0 auto;
+			@include translate(0, 200%);
+			opacity: 0;
+			&.active {
+				transform-origin: center;
+				animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3.2s forwards running;
+			}
+		}
+	}
+
+
 }
 
-.btn_container {
-	@include size(100vw, auto);
-	margin: 0 auto;
-	bottom: 0;
-	position: fixed;
-	z-index: 100;
+
+.mennemAct {
+	z-index: 1200;
+	@include size(10vw, 10vw);
+	@include translate(-30%, -350%);
+	@include testBorder();
+
+	img {
+		// @include size(249px, 364px);
+		@include scale(2);
+	}
+
+	transform-origin: center;
+	animation: mennemAct 2s linear forwards running;
+
+}
+
+
+@keyframes mennemAct{
+  0% {    transform: translateX(-30%) translateY(-350%); }
+  100%  { transform: translateX(120%) translateY(-350%); }
+}
+@keyframes buttonUp{
+  0% {    opacity: 0; transform: translateY(200%); }
+  100%  { opacity: 1; transform: translateY(-200%); }
 }
