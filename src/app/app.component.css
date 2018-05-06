@@ -6125,18 +6125,72 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 * {
-  font-family: Arial, sans-serif; }
+  font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif; }
 
 @media (min-width: 769px) {
   * {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
+/* color */
+/* z-index */
+/* svg size */
+.btn {
+  width: 8.125rem;
+  height: 8.125rem;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  font-family: "Black Han Sans", sans-serif !important;
+  font-size: 2.25rem;
+  font-weight: 400;
+  text-align: center; }
+  .btn.primary {
+    background-color: #33FFBC;
+    color: #0a0a0a; }
+  .btn.light {
+    background-color: #F6F6F6;
+    color: #4A4A4A; }
+
+.custom-modal {
+  width: 100vw;
+  height: 0;
+  background-color: gold;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1000;
+  transition: height .4s ease-in-out; }
+  .custom-modal.active {
+    top: 0;
+    height: 100vh; }
+  .custom-modal.inactive {
+    top: 0;
+    height: 0; }
+  .custom-modal p {
+    font-size: 6rem;
+    text-align: center; }
+
+.hero-foot .btn_container {
+  width: 20vw;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0 auto; }
+
 .navbar {
+  background: none;
   position: fixed;
   padding: 10px; }
-  .navbar a {
-    color: #00d1b2; }
-    .navbar a span {
+  .navbar .navbar-item {
+    background: none;
+    color: white; }
+    .navbar .navbar-item span {
       font-size: 1.125rem; }
 
 .section {

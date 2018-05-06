@@ -12,17 +12,33 @@ export class AppService {
 
   // afs
   characters: AngularFirestoreCollection<Character>;
+  
+
 
   constructor(private afs: AngularFirestore) {
     this.afs.firestore.settings({ timestampsInSnapshots: true });
-    this.characters = this.afs.collection<Character>('characters');
+
+    this.characters = this.afs.collection<Character>('characters',
+      ref => ref.orderBy('createdAt'));
   }
+
+
 
 
   // afs database
   getCharacters() {
     return this.characters.valueChanges();
   }
+
+  getCharactersCount() {
+    return this.characters.valueChanges()
+      .subscribe(val => {
+        console.log(val.length);
+        
+      });
+  }
+  
+  
 
   addCharacter(newCharacter: Character) {
     return this.characters.add(newCharacter);

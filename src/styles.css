@@ -1,32 +1,157 @@
 @import url(~@angular/material/prebuilt-themes/indigo-pink.css);
-body {
-  margin: 0;
-  text-align: center; }
+.hover-enter {
+  transform-origin: center;
+  animation: spring-up 0.4s cubic-bezier(1, 0.015, 0.295, 1.225) forwards running; }
 
-.spinner {
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center; }
-  .spinner .ball {
-    width: 20px;
-    height: 20px;
-    background-color: turquoise;
-    border-radius: 50%;
-    display: inline-block;
-    -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-    animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
-  .spinner p {
-    color: turquoise;
-    margin-top: 5px;
-    font-family: sans-serif;
-    letter-spacing: 3px;
-    font-size: 10px; }
+.hover-leave {
+  transform-origin: center;
+  animation: spring-down 0.8s cubic-bezier(1, 0.015, 0.295, 1.225) forwards running; }
+
+.hover-enter-slide {
+  transform-origin: center;
+  animation: spring-up-slide 0.2s cubic-bezier(1, 0.015, 0.295, 1.225) forwards running; }
+
+.hover-leave-slide {
+  transform-origin: center;
+  animation: spring-down-slide 0.4s cubic-bezier(1, 0.015, 0.295, 1.225) forwards running; }
+
+@keyframes spring-up {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-50px) scale(1.05); } }
+@keyframes spring-down {
+  0% {
+    transform: translateY(-50px) scale(1.05); }
+  100% {
+    transform: translateY(0) scale(1); } }
+@keyframes spring-up-slide {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-25px); } }
+@keyframes spring-down-slide {
+  0% {
+    transform: translateY(-25px); }
+  100% {
+    transform: translateY(0); } }
+.fadeIn {
+  animation: fadeIn 0.7s cubic-bezier(1, 0.015, 0.295, 1.225) forwards running; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.fadeInDown {
+  animation-name: fadeInDown; }
+
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+.fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+.slideInDown {
+  animation-name: slideInDown; }
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0); } }
+.slideOutUp {
+  animation-name: slideOutUp; }
+
+/*
+
+@keyframes spring-up{
+  0% {transform: translate(0,0); }
+  100%{transform: translate(0,-50px) scale(1.05);}
+}
+
+@keyframes spring-down{
+   0% {transform: translate(0,-50px) scale(1.05);}
+  100%{transform: translate(0,0) scale(1);}
+}
+*/
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0); }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0); } }
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake; }
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1); }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03); }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+.bounceIn {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+.motion {
+  -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
 
 @-webkit-keyframes motion {
   0% {
@@ -60,5 +185,68 @@ body {
   100% {
     -webkit-transform: translateX(0) scale(1);
     transform: translateX(0) scale(1); } }
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom; }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom; }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+.jackInTheBox {
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox; }
+
+body {
+  margin: 0;
+  text-align: center; }
+
+.spinner {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center; }
+  .spinner .ball {
+    width: 20px;
+    height: 20px;
+    background-color: turquoise;
+    border-radius: 50%;
+    display: inline-block; }
+  .spinner p {
+    color: turquoise;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    font-size: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

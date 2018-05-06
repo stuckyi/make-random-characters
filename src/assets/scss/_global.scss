@@ -5,5 +5,7 @@
 
 @import './base/typo';
 @import './utils/mixins';
-// @import './utils/characterStyle';
+@import './utils/variables';
+
+@import './themes/theme';
 

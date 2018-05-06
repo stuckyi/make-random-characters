@@ -1,8 +1,14 @@
 @import 'assets/scss/_global';
 
-
+.hero {
+    // background-image: url('../../assets/images/landing/modules.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+}
 .main-title {
     font-size: 60px;
     font-weight: $weight-bold;
     letter-spacing: -1px;
 }
+
+

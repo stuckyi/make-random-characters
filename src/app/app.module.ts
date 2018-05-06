@@ -2,6 +2,7 @@ import { environment } from './../environments/environment.prod';
 
 import { AppRoutingModule } from './app-routing.mdoule';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -43,6 +44,7 @@ import { ArchiveComponent } from './archive/archive.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     HttpClientModule,

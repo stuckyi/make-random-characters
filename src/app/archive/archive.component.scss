@@ -32,3 +32,11 @@ section {
 		// @include scale(.4);
   }
 }
+
+.btn_container {
+	@include size(100vw, auto);
+	margin: 0 auto;
+	bottom: 0;
+	position: fixed;
+	z-index: 100;
+}

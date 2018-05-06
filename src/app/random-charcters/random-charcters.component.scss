@@ -2,37 +2,20 @@
 @import 'assets/scss/utils/characterStyle';
 @import 'assets/scss/utils/animations';
 
-
-$svgWidth: 292px;
-$svgHeight: 500px;
-
-.btn_user {
-	@include size(100vw, 10vh); 
-	position: absolute;
-	animation: bounceIn .6s ease-in-out 1.2s forwards running;
-	
-}
-.wrap {
-	@include size(100vw, 100vh);
-	@include flex(flex, column nowrap);
-	justify-content: center;
-	align-content: center;
-
-	margin: 0 auto;
-
-
+.container {
 	.character {
 		// 미디어쿼리 적용
-		@include size($svgWidth, $svgHeight);
+		@include size($svg-size3-w, $svg-size3-h);
 		margin: 0 auto;
-		@include testBorder();
-		// @include scale(.4);
-	}
-	.btn_container {
-		@include size(30vw, auto);
-		margin: 0 auto;
-		@include testBg();
+		
+		&.inactive {
+			opacity: 0.8;
+			@include scale(.8);
+		}
+		&.active {
+			opacity: 1;
+			@include scale(1);
+		}
 
 	}
-
 }

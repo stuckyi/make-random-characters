@@ -5,15 +5,52 @@ import { select } from 'd3-selection';
 
 import 'rxjs/add/observable/interval';
 import { AppService } from '../app.service';
+import {trigger, state, stagger, animate, style, group, query as q, transition, keyframes} from '@angular/animations';
+import { Router } from '@angular/router';
+
+
+
+// const customAnimation = '1s ease';
+// const customAnimation = '1s cubic-bezier(1,.015,.295,1.225)';
+
+
+const customAni = {
+  on:   { aniName: '.6s cubic-bezier(1,.07,.83,.76)', scale: 'scale(1)',  opacity: 1 },
+  off:  { aniName: '.6s ease-out', scale: 'scale(.6)', opacity: .2 }
+};
+
+
+export const chracterTransition = trigger('dynamicClass', [
+  state('on', style({ transform: customAni.on.scale, opacity: customAni.on.opacity })),
+  state('off', style({ transform: customAni.off.scale, opacity: customAni.off.opacity })),
+  transition('on => off',
+    animate(customAni.on.aniName, keyframes([
+      style({ transform: customAni.on.scale, opacity: customAni.on.opacity, offset: 0, }),
+      style({ transform: customAni.off.scale, opacity: customAni.off.opacity,  offset: 1 })
+    ])),
+  ),
+  transition('off => on',
+    animate(customAni.off.aniName, keyframes([
+      style({ transform: customAni.off.scale, opacity: customAni.off.opacity, offset: 0, }),
+      style({ transform: customAni.on.scale, opacity: customAni.on.opacity,  offset: 1 })
+    ])),
+  )
+]);
+
+
 
 @Component({
   selector: 'app-random-charcters',
   templateUrl: './random-charcters.component.html',
-  styleUrls: ['./random-charcters.component.css']
+  styleUrls: ['./random-charcters.component.css'],
+  animations: [chracterTransition]
 })
 export class RandomCharctersComponent implements OnInit, OnDestroy {
   timer$; 
+  isModal: boolean;
   startBtnUrl = 'assets/images/msg/start.png';
+
+  dynamicClass = 'init';
 
 
   isRandom = false;
@@ -39,6 +76,7 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
 
 
   constructor(
+    private router: Router,
     private appService: AppService,
   ) { }
 
@@ -49,10 +87,24 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
   }
 
+  // 시작하기 클릭시 모달창이 열려서 설명하고, 1초 후에 닫힌다.
+  // 이미 랜덤이 돌아가고 있다.
+  openModal() {
+    this.isModal = true;
+
+    setTimeout(() => {
+      this.isModal = false;
+      this.setRandomState();
+    }, 3000);
+  }
+  closeModal() {
+    this.isModal = false;
+  }
   // 최초 '시작하기' 클릭 시
   setRandomState() {
     this.isRandom = true;
     this.isPlay = true;
+    this.dynamicClass = 'off';
     this.randomStart();
   }
   // 랜덤 시작
@@ -70,17 +122,28 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     console.log('randomStop()');
     console.log('randomFaceIndex', this.randomIndex);
     this.isPlay = false;
+    this.dynamicClass = 'on';
     this.timer$.unsubscribe();
     this.timer$ = null;
     this.isComplete = true;
     this.appService.setUserCharacter(this.randomIndex);
   }
+
   // 랜덤 다시시작
   randomRestart() {
     console.log('randomRestart()');
-    this.randomStart();
-    this.isPlay = true;
-    this.isComplete = false;
+    this.dynamicClass = 'off';
+    setTimeout(() => { 
+      this.randomStart();
+      this.isPlay = true;
+      this.isComplete = false;
+    }, 600);
+  }
+
+
+  moveTo(targetPage: string) {
+    const link = '/' + targetPage;
+    this.router.navigate([link]);
   }
 
   // SVG Inline Type

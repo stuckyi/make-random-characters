@@ -3,6 +3,7 @@ import { timer } from 'rxjs/observable/timer';
 import { NAMES } from './name';
 import { AppService } from './../app.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-random-name',
@@ -25,16 +26,25 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
   isPlay: boolean;
   isSave: boolean;
+  isModal: boolean;
+  isComplete: boolean; // 저장중 or 저장 완료
+
+
 
   step: number;
   randomNameIndex = { first: 0, middle: 0, last: 0 };
 
 
-  constructor(private appService: AppService) {
+  constructor(
+    private router: Router,
+    private appService: AppService) {
     this.currentModule = this.appService.getCurrentCharacter();
   }
 
   ngOnInit() {
+    if (!this.currentModule) {
+      this.router.navigate(['/random-characters']);
+    }
     this.step = 0;
     this.play(this.step);
   }
@@ -49,6 +59,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
   // 랜덤 시작
   play(stepLev: number) {
+    this.isPlay = true;
     const _delay = 100;
     const _interval = 140;
 
@@ -95,6 +106,21 @@ export class RandomNameComponent implements OnInit, OnDestroy {
     }
   }
 
+  closeModal() {
+    this.isModal = false;
+  }
+
+
+  openModal() {
+    console.log(this.appService.getCharactersCount());
+    this.isModal = true;
+
+    setTimeout(() => {
+      this.saveCharacter();
+    }, 3000);
+  }
+
+
   // 클릭시 생성한 캐릭터, 이름을 서버에 저장한다.
   saveCharacter() {
     const result = {
@@ -102,8 +128,14 @@ export class RandomNameComponent implements OnInit, OnDestroy {
       modules: this.currentModule,
       createdAt: new Date()
     };
-    this.appService.addCharacter(result);
+
+    this.appService.addCharacter(result)
+      .then(() => {
+        this.isComplete = true;
+      })
+      .catch(console.error);
   }
+
   restart() {
     console.log('restart()');
     this.step = 0;
@@ -117,9 +149,13 @@ export class RandomNameComponent implements OnInit, OnDestroy {
   }
 
 
+  moveTo(targetPage: string) {
+    const link = '/' + targetPage;
+    this.router.navigate([link]);
+  }
 
 
-
+  // 사용자가 선택한 이름을 서비스에 저장
   setSelectedName() {
     this.step = 0;
     this.isSave = true;
@@ -128,8 +164,6 @@ export class RandomNameComponent implements OnInit, OnDestroy {
       this.dataset.charAt(this.randomNameIndex.first) +
       this.dataset.charAt(this.randomNameIndex.middle) +
       this.dataset.charAt(this.randomNameIndex.last);
-
   }
-
 
 }

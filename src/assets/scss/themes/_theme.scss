@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+
+
+$btn-size: 8.125rem;
+$btn-col: $black;
+// $btn-bgCol: none;
+
+.btn {
+  @include size($btn-size, $btn-size);
+  @include border-radius(50%);
+  @include flex(flex, row nowrap);
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+
+  font-family: $sans-bold !important;
+  font-size: $size-6;
+  font-weight: $weight-normal;
+  
+  text-align: center;
+
+  &.primary {
+    background-color: $main-color;
+    color: $btn-col;
+  }
+
+  &.light {
+    background-color: #F6F6F6;
+    color: #4A4A4A;
+  }
+}
+
+
+.custom-modal {
+  width: 100vw;
+  height: 0;
+  background-color: $custom-modal-color;
+  overflow: hidden;
+  position: absolute;
+  
+  // opacity: ;
+  z-index: $z-modal;
+  transition: height .4s ease-in-out;
+
+  &.active {
+      top: 0;
+      height: 100vh;
+  }
+  &.inactive {
+      top: 0;
+      height: 0;
+  }    
+
+  p {
+      font-size: $size-big;
+      text-align: center;
+  }
+}
+
+
+
+
+.hero-foot {
+    .btn_container {
+        @include size(20vw, auto);
+        @include flex(flex, row nowrap);
+        justify-content: center;
+        margin: 0 auto;
+    }
+}

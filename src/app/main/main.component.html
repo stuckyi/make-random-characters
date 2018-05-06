@@ -1,22 +1,20 @@
-
-<section class="hero is-primary is-fullHeight">
+<section class="hero is-primary is-fullheight">
   <div class="hero-body">
     <div class="container">
       <p class="main-title">랜덤캐</p>
-      <p>이곳에서는 곽규섭 창작자와 스투키 스튜디오의 공동 창작 작업물을 공개, 공유하고 있습니다.</p>
-
-      
     </div>
+    
+  </div>
+  <div class="hero-foot">
+      <!-- <a routerLink="/random-characters">새로운 캐릭터 만들기</a> -->
+      <a class="btn" (click)="openModal()">새로운 캐릭터 만들기</a>
   </div>
 </section>
+ 
 
-<!--
-<div class="container">
-  <div class="column">
-      <p class="main-title">랜덤 캐릭터 만들기</p>
-      <p>(여기에 우리가 헤럴드때 썼던 랜덤랜덤 거리는 텍스트 콘텐츠를 넣는다.)</p>
-  </div>  
-  
+<div class="custom-modal" 
+    [class.active]="isModal"
+    [class.inactive]="isModal === false" >
+    <!-- <p>97개의 모듈로 백이십구억개 캐릭터 만들기</p> -->
+    <p>97</p>
 </div>
-
--->

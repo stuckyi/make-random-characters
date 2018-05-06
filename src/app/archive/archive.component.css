@@ -6125,12 +6125,64 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 * {
-  font-family: Arial, sans-serif; }
+  font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif; }
 
 @media (min-width: 769px) {
   * {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
+/* color */
+/* z-index */
+/* svg size */
+.btn {
+  width: 8.125rem;
+  height: 8.125rem;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  font-family: "Black Han Sans", sans-serif !important;
+  font-size: 2.25rem;
+  font-weight: 400;
+  text-align: center; }
+  .btn.primary {
+    background-color: #33FFBC;
+    color: #0a0a0a; }
+  .btn.light {
+    background-color: #F6F6F6;
+    color: #4A4A4A; }
+
+.custom-modal {
+  width: 100vw;
+  height: 0;
+  background-color: gold;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1000;
+  transition: height .4s ease-in-out; }
+  .custom-modal.active {
+    top: 0;
+    height: 100vh; }
+  .custom-modal.inactive {
+    top: 0;
+    height: 0; }
+  .custom-modal p {
+    font-size: 6rem;
+    text-align: center; }
+
+.hero-foot .btn_container {
+  width: 20vw;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0 auto; }
+
 /* Color */
 svg > path {
   fill: inherit; }
@@ -6384,22 +6436,6 @@ svg > path {
   100%{transform: translate(0,0) scale(1);}
 }
 */
-@keyframes motion {
-  0% {
-    -webkit-transform: translateX(0) scale(1);
-    transform: translateX(0) scale(1); }
-  25% {
-    -webkit-transform: translateX(-50px) scale(0.3);
-    transform: translateX(-50px) scale(0.3); }
-  50% {
-    -webkit-transform: translateX(0) scale(1);
-    transform: translateX(0) scale(1); }
-  75% {
-    -webkit-transform: translateX(50px) scale(0.3);
-    transform: translateX(50px) scale(0.3); }
-  100% {
-    -webkit-transform: translateX(0) scale(1);
-    transform: translateX(0) scale(1); } }
 @keyframes shake {
   from,
   to {
@@ -6458,6 +6494,80 @@ svg > path {
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn; }
 
+.motion {
+  -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
+
+@-webkit-keyframes motion {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  25% {
+    -webkit-transform: translateX(-50px) scale(0.3);
+    transform: translateX(-50px) scale(0.3); }
+  50% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  75% {
+    -webkit-transform: translateX(50px) scale(0.3);
+    transform: translateX(50px) scale(0.3); }
+  100% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); } }
+@keyframes motion {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  25% {
+    -webkit-transform: translateX(-50px) scale(0.3);
+    transform: translateX(-50px) scale(0.3); }
+  50% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  75% {
+    -webkit-transform: translateX(50px) scale(0.3);
+    transform: translateX(50px) scale(0.3); }
+  100% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); } }
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom; }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom; }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+.jackInTheBox {
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox; }
+
 section {
   width: 100vw;
   height: 100vh;
@@ -6476,5 +6586,13 @@ section {
       border: 3px solid red; }
       section .character svg .module-container {
         border: 3px solid magenta; }
+
+.btn_container {
+  width: 100vw;
+  height: auto;
+  margin: 0 auto;
+  bottom: 0;
+  position: fixed;
+  z-index: 100; }
 
 /*# sourceMappingURL=archive.component.css.map */

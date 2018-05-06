@@ -1,3 +1,5 @@
+import { Character } from './../model/character';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AppService } from './../app.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./archive.component.css']
 })
 export class ArchiveComponent implements OnInit {
-  characters;
+  characters: any;
 
-  constructor(private appService: AppService) { }
+  constructor(
+    private afs: AngularFirestore,
+    private appService: AppService
+  ) { }
 
   ngOnInit() {
     this.appService.getCharacters()
-      .subscribe(characters => this.characters = characters);
+      .subscribe(characters => {
+        this.characters = characters;
+      });
   }
 
 }

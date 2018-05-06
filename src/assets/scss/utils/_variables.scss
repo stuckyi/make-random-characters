@@ -1,4 +1,28 @@
 /* color */
-$main-color: #ffff8c;
+$main-color: #33FFBC;
 $main-color-light: lighten($main-color, 20%);
 $main-color-dark: darken($main-color, 20%);
+
+$custom-modal-color: gold;
+
+/* z-index */
+$z-modal: 1000;
+$z-modal-btn: 1100;
+
+
+/* svg size */
+
+$svg-size1-w: 130px;
+$svg-size1-h: 223px;
+
+$svg-size2-w: 280px;
+$svg-size2-h: 480px;
+
+$svg-size3-w: 292px;
+$svg-size3-h: 500px;
+
+$svg-size4-w: 393px;
+$svg-size4-h: 673px;
+
+
+
