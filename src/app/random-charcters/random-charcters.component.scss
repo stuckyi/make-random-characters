@@ -13,6 +13,8 @@ $userBtn-large-w: auto;
 $userBtn-large-h: 10vh;
 $userBtn-small-w: auto;
 $userBtn-small-h: 10vh;
+$userBtn-Extralarge-w: auto;
+$userBtn-Extralarge-h: 20vh;
 
 
 .hero {
@@ -26,11 +28,12 @@ $userBtn-small-h: 10vh;
 			.custom-main {
 				@include size(100vw, 100vh);
 				@include flex(flex, column nowrap);
-				justify-content: space-between;
+				justify-content: flex-start;
 				align-content: center;
+				overflow: hidden;
 				.img-wrap {
-					@include size(auto, 70vh);
-					margin: 0 auto;
+					@include size(auto, 50vh);
+					margin: 0 auto 4rem;
 				}
 				.btnClick {
 					img {
@@ -38,37 +41,22 @@ $userBtn-small-h: 10vh;
 					}
 					&.large{
 						img {
-							@include size(auto, $userBtn-large-h);
-							padding-bottom: 2rem;
+							@include size(auto, $userBtn-Extralarge-h);
+							margin-top: -2rem;
+						}
+						&:hover {
+							animation: none;
 						}
 					}
 				}
 				.hand {
-					@include size(auto, 60vh);
+					@include size(auto, 70vh);
 					position: absolute;
-					right: 0;
+					right: 10vw;
 					bottom: 0;
+					@include translate(0, 100px);
 				}
 				overflow: hidden;
-				
-				/*
-				.sheet {
-					@include size(60vw, 34.25vw);
-					background-image: url('/assets/images/landing/sheet.png');
-					background-size: contain;
-					background-repeat: no-repeat;
-					margin: 0 auto;
-				}
-				.handmove {
-					@include size(80vw, 50.58vw);
-					background-image: url('/assets/images/landing/handmove.gif');
-					background-size: contain;
-					background-repeat: no-repeat;
-					position: absolute;
-					z-index: 300;
-					bottom: 0;
-				}
-				*/
 				
 			}
 	

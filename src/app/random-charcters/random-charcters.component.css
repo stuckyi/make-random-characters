@@ -7218,44 +7218,34 @@ svg > path {
       height: 100vh;
       display: flex;
       flex-flow: column nowrap;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-content: center;
       overflow: hidden;
-      /*
-      .sheet {
-      	@include size(60vw, 34.25vw);
-      	background-image: url('/assets/images/landing/sheet.png');
-      	background-size: contain;
-      	background-repeat: no-repeat;
-      	margin: 0 auto;
-      }
-      .handmove {
-      	@include size(80vw, 50.58vw);
-      	background-image: url('/assets/images/landing/handmove.gif');
-      	background-size: contain;
-      	background-repeat: no-repeat;
-      	position: absolute;
-      	z-index: 300;
-      	bottom: 0;
-      }
-      */ }
+      overflow: hidden; }
       .hero .hero-body .custom-main .img-wrap {
         width: auto;
-        height: 70vh;
-        margin: 0 auto; }
+        height: 50vh;
+        margin: 0 auto 4rem; }
       .hero .hero-body .custom-main .btnClick img {
         width: auto;
         height: 10vh; }
       .hero .hero-body .custom-main .btnClick.large img {
         width: auto;
-        height: 10vh;
-        padding-bottom: 2rem; }
+        height: 20vh;
+        margin-top: -2rem; }
+      .hero .hero-body .custom-main .btnClick.large:hover {
+        animation: none; }
       .hero .hero-body .custom-main .hand {
         width: auto;
-        height: 60vh;
+        height: 70vh;
         position: absolute;
-        right: 0;
-        bottom: 0; }
+        right: 10vw;
+        bottom: 0;
+        -moz-transform: translate(0, 100px);
+        -o-transform: translate(0, 100px);
+        -ms-transform: translate(0, 100px);
+        -webkit-transform: translate(0, 100px);
+        transform: translate(0, 100px); }
     .hero .hero-body .characters {
       width: 100vw;
       height: 500px;
