@@ -136,10 +136,22 @@ $userBtn-h-max: 8vh;
 
 
 
+
+
+
+
 .name-modal {
   @include size(100%, 100vh);
   @include flex(flex, column nowrap);
   justify-content: center;
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
+
+  &.isOutModal {
+    opacity: 0;
+  }
+
+
 
   .saveMsg {
     @include size(100%, 100vh);
@@ -164,7 +176,7 @@ $userBtn-h-max: 8vh;
       margin: 0 auto;
       &.active {
         transform-origin: center;
-        animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 4s forwards running;
+        animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3s forwards running;
       }
    }
 }

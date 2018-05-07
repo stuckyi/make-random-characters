@@ -6695,13 +6695,13 @@ label.panel-block {
   height: 0.1; }
 
 ::-webkit-scrollbar-thumb {
-  background: #33FFBC; }
+  background: #00FFD2; }
 
 ::-webkit-scrollbar-track {
   background: transparent; }
 
 body {
-  scrollbar-face-color: #33FFBC;
+  scrollbar-face-color: #00FFD2;
   scrollbar-track-color: transparent; }
 
 .btn {
@@ -6721,7 +6721,7 @@ body {
   font-weight: 400;
   text-align: center; }
   .btn.primary {
-    background-color: #33FFBC;
+    background-color: #00FFD2;
     color: #0a0a0a; }
   .btn.light {
     background-color: #F6F6F6;
@@ -6771,6 +6771,13 @@ body {
         width: auto;
         height: 10vh;
         max-height: 10vh; }
+
+.load-img {
+  width: auto;
+  height: 10vh; }
+
+body {
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; }
 
 /*
  @include mat-core-theme($theme);

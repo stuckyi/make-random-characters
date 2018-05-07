@@ -1239,25 +1239,31 @@
       </div>
       
       <div class="archive-foot">
-            
             <div  (click)="moveTo('random-characters')" class="userBtn">
                   <img src="assets/images/ui/btn/goto-home.png" alt="첫 페이지로 이동" />
             </div>
-      
       </div>
 
-      <div class="btnDir_container">
-            <div class="dirs">
-                  <img class="dir" src="assets/images/ui/left.png" alt="왼쪽 탐색버튼" (click)="moveBtn('left')" >
-                  <img class="dir" src="assets/images/ui/right.png" alt="오른쪽 탐색버튼" (click)="moveBtn('right')" >
-            </div>
-            <div class="graphics">
-                  <img class="graphic" src="assets/images/ui/archive/left-bottom.png" alt="멘넴그래픽소스" />
-                  <img class="graphic" src="assets/images/ui/archive/right-bottom.png" alt="멘넴그래픽소스" />
-            </div>
-      </div>
+      
+      <img class="dir left" src="assets/images/ui/left.png" alt="왼쪽 탐색버튼" (click)="moveBtn('left')">
+      <img class="dir right" src="assets/images/ui/right.png" alt="오른쪽 탐색버튼" (click)="moveBtn('right')" >
+      <img class="graphic left" [class.active]="ani1" src="assets/images/ui/archive/left-bottom.png" alt="멘넴그래픽소스" />
+      <img class="graphic right" [class.active]="ani1" src="assets/images/ui/archive/right-bottom.png" alt="멘넴그래픽소스" />
+      
       <div *ngIf="totalCount" class="counter">
             <span class="txt">만들어진 캐릭터 수 : </span><span class="num" >{{totalCount}}</span>
       </div>
 </section>
 
+
+<!-- custom modal : init -->
+<div class="custom-init-modal" [class.inactive]="isInitModal === false">
+
+      <div class="name-to-archive">
+            <!-- 랜덤네임 init 모달 -->
+            <div class="saveMsg">
+                  
+            </div>
+      </div>
+      
+</div>

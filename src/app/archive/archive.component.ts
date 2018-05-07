@@ -12,8 +12,12 @@ import { Component, OnInit } from '@angular/core';
 export class ArchiveComponent implements OnInit {
   characters: any;
   recentCharacter: any;
-
   isProcessComplete: boolean;
+
+
+  // modal
+  isInitModal: boolean;
+  ani1: boolean;
 
   // Slider
   sliderX = 0;
@@ -34,7 +38,9 @@ export class ArchiveComponent implements OnInit {
     private router: Router,
     private afs: AngularFirestore,
     private appService: AppService
-  ) { }
+  ) { 
+    this.isInitModal = true;
+  }
 
   ngOnInit() {
     this.appService.getCharacters()
@@ -42,6 +48,21 @@ export class ArchiveComponent implements OnInit {
         this.characters = characters;
         this.sliderInit();
       });
+    this.initModal(2000); // n초후 로딩화면 종료
+  }
+
+
+  initModal(sec: number) {
+    const timingAni1 = sec + 1000;
+
+    setTimeout(() => {
+      // this.play(this.step);
+      this.isInitModal = false;
+    }, sec);
+    setTimeout(() => {
+      this.ani1 = true;
+    }, timingAni1);
+
   }
 
 
@@ -58,6 +79,7 @@ export class ArchiveComponent implements OnInit {
       console.log(this.totalCount);
     }
   }
+
   moveBtn(dir: string) {
     // console.log('dir', dir);
     // console.log('sliderX before', this.sliderX);

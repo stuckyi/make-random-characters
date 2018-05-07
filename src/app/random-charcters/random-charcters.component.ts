@@ -97,7 +97,7 @@ export class RandomCharctersComponent {
       this.modalName = 'character-to-name';
       setTimeout(() => {
         this.moveTo('random-name');
-      }, 2000);
+      }, 1000);
     }
 
   }

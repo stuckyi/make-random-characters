@@ -6695,13 +6695,13 @@ label.panel-block {
   height: 0.1; }
 
 ::-webkit-scrollbar-thumb {
-  background: #33FFBC; }
+  background: #00FFD2; }
 
 ::-webkit-scrollbar-track {
   background: transparent; }
 
 body {
-  scrollbar-face-color: #33FFBC;
+  scrollbar-face-color: #00FFD2;
   scrollbar-track-color: transparent; }
 
 .btn {
@@ -6721,7 +6721,7 @@ body {
   font-weight: 400;
   text-align: center; }
   .btn.primary {
-    background-color: #33FFBC;
+    background-color: #00FFD2;
     color: #0a0a0a; }
   .btn.light {
     background-color: #F6F6F6;
@@ -6771,6 +6771,13 @@ body {
         width: auto;
         height: 10vh;
         max-height: 10vh; }
+
+.load-img {
+  width: auto;
+  height: 10vh; }
+
+body {
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; }
 
 /*
  @include mat-core-theme($theme);
@@ -7189,18 +7196,29 @@ svg > path {
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox; }
 
+.blink {
+  animation: blink 1.4s ease-in-out .4s forwards infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 .hero {
-  overflow: hidden; }
-  .hero .hero-body .container {
-    width: 100%;
+  overflow: hidden;
+  background-color: #00FFD2 !important; }
+  .hero .hero-body {
+    width: 100vw;
     height: auto;
     overflow: hidden; }
-    .hero .hero-body .container .custom-main {
+    .hero .hero-body .custom-main {
       width: 100vw;
       height: 100vh;
       display: flex;
       flex-flow: column nowrap;
-      justify-content: center;
+      justify-content: space-between;
       align-content: center;
       overflow: hidden;
       /*
@@ -7221,32 +7239,59 @@ svg > path {
       	bottom: 0;
       }
       */ }
-      .hero .hero-body .container .custom-main .img-wrap {
+      .hero .hero-body .custom-main .img-wrap {
         width: auto;
-        height: 20vh;
+        height: 70vh;
         margin: 0 auto; }
-    .hero .hero-body .container .characters {
+      .hero .hero-body .custom-main .btnClick img {
+        width: auto;
+        height: 10vh; }
+      .hero .hero-body .custom-main .btnClick.large img {
+        width: auto;
+        height: 10vh;
+        padding-bottom: 2rem; }
+      .hero .hero-body .custom-main .hand {
+        width: auto;
+        height: 60vh;
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+    .hero .hero-body .characters {
       width: 100vw;
       height: 500px;
       margin: 0 auto; }
-      .hero .hero-body .container .characters .character {
+      .hero .hero-body .characters .character {
         width: 292px;
         height: 500px;
         margin: 0 auto; }
-        .hero .hero-body .container .characters .character.inactive {
+        .hero .hero-body .characters .character.inactive {
           opacity: 0.8;
           -moz-transform: scale(0.8);
           -o-transform: scale(0.8);
           -ms-transform: scale(0.8);
           -webkit-transform: scale(0.8);
           transform: scale(0.8); }
-        .hero .hero-body .container .characters .character.active {
+        .hero .hero-body .characters .character.active {
           opacity: 1;
           -moz-transform: scale(1);
           -o-transform: scale(1);
           -ms-transform: scale(1);
           -webkit-transform: scale(1);
           transform: scale(1); }
+  .hero .btn-start {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 1rem; }
+    .hero .btn-start img {
+      width: auto;
+      height: 8vh; }
+      .hero .btn-start img:hover {
+        animation: none; }
 
 .character-to-name {
   width: 100%;

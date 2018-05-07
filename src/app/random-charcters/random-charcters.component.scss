@@ -11,25 +11,43 @@ $userBtn-h-max: 8vh;
 
 $userBtn-large-w: auto;
 $userBtn-large-h: 10vh;
+$userBtn-small-w: auto;
+$userBtn-small-h: 10vh;
 
 
 .hero {
 	overflow: hidden;
+	background-color: $main-color !important;
 	.hero-body {
-		.container {
-			@include size(100%, auto);
+		
+			@include size(100vw, auto);
 			overflow: hidden;
 			
 			.custom-main {
 				@include size(100vw, 100vh);
 				@include flex(flex, column nowrap);
-				justify-content: center;
+				justify-content: space-between;
 				align-content: center;
 				.img-wrap {
-					@include size(auto, 20vh);
+					@include size(auto, 70vh);
 					margin: 0 auto;
-					
-
+				}
+				.btnClick {
+					img {
+						@include size(auto, $userBtn-small-h);
+					}
+					&.large{
+						img {
+							@include size(auto, $userBtn-large-h);
+							padding-bottom: 2rem;
+						}
+					}
+				}
+				.hand {
+					@include size(auto, 60vh);
+					position: absolute;
+					right: 0;
+					bottom: 0;
 				}
 				overflow: hidden;
 				
@@ -75,14 +93,27 @@ $userBtn-large-h: 10vh;
 			}
 				
 	
-		}
+		
 
 	}
 	.hero-foot {
 		//.hero-foot
 	} 
 	
+	.btn-start {
+		@include size(100vw, auto);
+		@include flex(flex, row nowrap);
+		justify-content: center;
+		margin: 0 auto;
+		position: absolute;
+		bottom: 1rem;
+		img {
+			@include size($userBtn-w, $userBtn-h);
+			&:hover { animation: none; }
+			
+		}
 
+	}
 }
 
 
@@ -93,5 +124,4 @@ $userBtn-large-h: 10vh;
   @include flex(flex, column nowrap);
   justify-content: center;
 }
-
 

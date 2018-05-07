@@ -29,6 +29,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
   // modal
   isModal: boolean;
   isInitModal: boolean;
+  isOutModal: boolean;
   isComplete: boolean; // 저장중 or 저장 완료
 
 
@@ -126,8 +127,17 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       this.saveCharacter();
-    }, 3000);
+    }, 2000);
   }
+
+  outModal() {
+    this.isOutModal = true;
+    setTimeout(() => { 
+      this.moveTo('archive');
+    }, 1200);
+  }
+
+
 
 
   // 클릭시 생성한 캐릭터, 이름을 서버에 저장한다.
@@ -140,7 +150,7 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
     this.appService.addCharacter(result)
       .then(() => {
-        console.log("저장 완료!");
+        console.log('저장 완료!');
         this.isComplete = true;
       })
       .catch(console.error);

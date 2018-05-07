@@ -1260,11 +1260,11 @@
                   </div>
                   <div *ngIf="isSave" (click)="restart()" class="userBtn"> 
                         <!-- <span>다시</span>  -->
-                        <img src="assets/images/ui/btn/retry.png" alt="다시하기 버튼(기본)" />
+                        <img src="assets/images/ui/btn/retry-box.png" alt="다시하기 버튼(기본)" />
                   </div>
                   <div *ngIf="isSave" (click)="openModal()" class="userBtn">
                          <!-- <span>저장</span>  -->
-                         <img src="assets/images/ui/btn/save.png" alt="저장하기 버튼(기본)" />
+                         <img src="assets/images/ui/btn/save-box.png" alt="저장하기 버튼(기본)" />
                   </div> 
             </div>
       </div>
@@ -1277,11 +1277,25 @@
       <div class="character-to-name">
             <!-- 랜덤네임 init 모달 -->
             <div class="saveMsg">
-                  <img src="assets/images/ui/loading.png">
+                  <img class="load-img blink" src="assets/images/ui/loading.png">
             </div>
       </div>
 
 </div>
+
+
+<!-- custom modal : init -->
+<div class="custom-out-modal" [class.inactive]="!isOutModal">
+
+      <div class="name-to-archive">
+            <!-- 랜덤네임 out 모달 -->
+            <div class="saveMsg">
+                  <img class="blink" src="assets/images/ui/loading.png">
+            </div>
+      </div>
+
+</div>
+      
 
 <!-- custom modal -->
 <div class="custom-modal" 
@@ -1289,12 +1303,12 @@
     [class.inactive]="isModal === false" >
     <!-- <p>97개의 모듈로 백이십구억개 캐릭터 만들기</p> -->
 
-    <div class="name-modal">
+    <div class="name-modal" [class.isOutModal]="isOutModal">
 
       <!-- 저장중 -->
       <div class="saveMsg">
             <div *ngIf="!isComplete">
-                  <img src="assets/images/ui/btn/save-ing.png" alt="저장중" />
+                  <img class="blink"  src="assets/images/ui/btn/save-ing.png" alt="저장중" />
             </div>
             <div *ngIf="isComplete">
                   <img src="assets/images/ui/btn/save-complete.png" alt="저장완료" />
@@ -1303,13 +1317,14 @@
       
 
       <div class="btn_container" [class.active]="isModal">
-            <div (click)="moveTo('random-characters')" class="userBtn"> 
+            <div (click)="moveTo('random-characters')" class="userBtn large"> 
                   <!-- <span>처음으로</span>  -->
-                  <img src="assets/images/ui/btn/goto-home.png" alt="첫 페이지로 이동" />
+                  <img src="assets/images/ui/btn/goto-home-box.png" alt="첫 페이지로 이동" />
             </div>
-            <div (click)="moveTo('archive')" class="userBtn">
+            <!-- <div (click)="moveTo('archive')" class="userBtn large">-->
+            <div (click)="outModal()" class="userBtn large">
                   <!-- <span>모든 캐릭터 보러가기</span> -->
-                  <img src="assets/images/ui/btn/goto-archive.png" alt="아카이브 페이지로 이동" />
+                  <img src="assets/images/ui/btn/goto-archive-box.png" alt="아카이브 페이지로 이동" />
             </div> 
       </div>
     </div>

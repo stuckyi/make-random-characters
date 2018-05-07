@@ -6695,13 +6695,13 @@ label.panel-block {
   height: 0.1; }
 
 ::-webkit-scrollbar-thumb {
-  background: #33FFBC; }
+  background: #00FFD2; }
 
 ::-webkit-scrollbar-track {
   background: transparent; }
 
 body {
-  scrollbar-face-color: #33FFBC;
+  scrollbar-face-color: #00FFD2;
   scrollbar-track-color: transparent; }
 
 .btn {
@@ -6721,7 +6721,7 @@ body {
   font-weight: 400;
   text-align: center; }
   .btn.primary {
-    background-color: #33FFBC;
+    background-color: #00FFD2;
     color: #0a0a0a; }
   .btn.light {
     background-color: #F6F6F6;
@@ -6771,6 +6771,13 @@ body {
         width: auto;
         height: 10vh;
         max-height: 10vh; }
+
+.load-img {
+  width: auto;
+  height: 10vh; }
+
+body {
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; }
 
 /*
  @include mat-core-theme($theme);
@@ -7189,6 +7196,16 @@ svg > path {
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox; }
 
+.blink {
+  animation: blink 1.4s ease-in-out .4s forwards infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 .archive {
   width: 100vw;
   height: 100vh;
@@ -7238,37 +7255,34 @@ svg > path {
       .archive .archive-foot .userBtn img {
         width: auto;
         height: 8vh; }
-  .archive .btnDir_container {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-content: space-between;
+  .archive .dir {
+    width: auto;
+    height: 8vh;
+    z-index: 910;
     position: absolute;
+    top: 5vw; }
+    .archive .dir.left {
+      left: 5vw; }
+    .archive .dir.right {
+      right: 5vw; }
+  .archive .graphic {
+    width: 18vw;
+    height: 18vw;
+    position: absolute;
+    z-index: 930;
     bottom: 0;
-    z-index: 910; }
-    .archive .btnDir_container .dirs {
-      width: 90vw;
-      height: auto;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-content: center;
-      margin: 0 auto; }
-      .archive .btnDir_container .dirs .dir {
-        width: auto;
-        height: 5vh; }
-    .archive .btnDir_container .graphics {
-      width: 100vw;
-      height: 18vw;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-content: flex-end; }
-      .archive .btnDir_container .graphics .graphic {
-        width: 18vw;
-        height: 18vw; }
+    -moz-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%); }
+    .archive .graphic.active {
+      transform-origin: center;
+      animation: buttonUp 2s cubic-bezier(1, 0.015, 0.295, 1.225) 2s forwards running; }
+    .archive .graphic.left {
+      left: 0; }
+    .archive .graphic.right {
+      right: 0; }
   .archive .counter {
     font-family: "Gamja Flower", cursive;
     font-size: 1.375rem;
@@ -7295,9 +7309,37 @@ svg > path {
 @keyframes buttonUp {
   0% {
     opacity: 0;
-    transform: translateY(200%); }
+    transform: translateY(100%); }
   100% {
     opacity: 1;
-    transform: translateY(-200%); } }
+    transform: translateY(0); } }
+.custom-init-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: gold;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  transition: height .4s ease-in-out; }
+  .custom-init-modal.active {
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; }
+  .custom-init-modal.inactive {
+    top: 0;
+    height: 0; }
+  .custom-init-modal p {
+    font-size: 6rem;
+    text-align: center; }
+
+.name-to-archive {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; }
 
 /*# sourceMappingURL=archive.component.css.map */
