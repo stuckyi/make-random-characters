@@ -6687,8 +6687,9 @@ label.panel-block {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
 /* color */
-/* z-index */
-/* svg size */
+/* z-indexs */
+/* svg sizes */
+/* user button sizes */
 ::-webkit-scrollbar {
   width: 0.1;
   height: 0.1; }
@@ -6744,13 +6745,32 @@ body {
     font-size: 6rem;
     text-align: center; }
 
-.hero-foot .btn_container {
-  width: 20vw;
-  height: auto;
+.btn_container {
+  width: 100vw;
+  height: 20vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin: 0 auto; }
+  .btn_container .userBtn {
+    width: auto;
+    height: 8vh;
+    padding: 0 2rem;
+    opacity: 0.4; }
+    .btn_container .userBtn img {
+      width: auto;
+      height: 8vh;
+      max-height: 8vh; }
+    .btn_container .userBtn:hover {
+      opacity: 1; }
+    .btn_container .userBtn.large {
+      width: auto;
+      height: 10vh;
+      padding: 0 2rem; }
+      .btn_container .userBtn.large img {
+        width: auto;
+        height: 10vh;
+        max-height: 10vh; }
 
 /*
  @include mat-core-theme($theme);
@@ -7169,33 +7189,34 @@ svg > path {
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox; }
 
-.hero-body .container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-content: center; }
-  .hero-body .container .character {
-    width: 280px;
-    height: 480px;
-    margin: 0 auto; }
-  .hero-body .container .boxs {
-    width: 50vh;
-    height: auto;
+.hero {
+  overflow: hidden; }
+  .hero .hero-body .container {
     display: flex;
-    flex-flow: row nowrap;
-    margin: 0 auto;
-    justify-content: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     align-content: center; }
-    .hero-body .container .boxs .random-text {
-      width: 33%;
+    .hero .hero-body .container .character {
+      width: 196px;
+      height: 336px;
+      margin: 0 auto; }
+    .hero .hero-body .container .boxs {
+      width: 50vh;
       height: auto;
-      border: 2px solid #0a0a0a;
-      text-align: center; }
-      .hero-body .container .boxs .random-text p {
-        font-size: 6rem;
-        font-weight: 100; }
-        .hero-body .container .boxs .random-text p.question-mark {
-          opacity: .2; }
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0 auto;
+      justify-content: center;
+      align-content: center; }
+      .hero .hero-body .container .boxs .random-text {
+        width: 33%;
+        height: auto;
+        text-align: center; }
+        .hero .hero-body .container .boxs .random-text p {
+          font-size: 6rem;
+          font-weight: 100; }
+          .hero .hero-body .container .boxs .random-text p.question-mark {
+            opacity: .2; }
 
 .custom-modal {
   width: 100vw;
@@ -7212,8 +7233,8 @@ svg > path {
     flex-flow: row nowrap;
     justify-content: center; }
     .custom-modal.active .result {
-      width: 280px;
-      height: 480px;
+      width: 196px;
+      height: 336px;
       margin: 0 auto; }
   .custom-modal.inactive {
     top: 0;
@@ -7267,29 +7288,29 @@ svg > path {
     font-size: 6rem;
     font-family: "Black Han Sans", sans-serif; }
   .name-modal .btn_container {
-    width: 20vw;
-    height: 10vh;
+    width: 40vw;
+    height: 20vh;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-around;
     z-index: 1100;
-    -moz-transform: translate(0, 200%);
-    -o-transform: translate(0, 200%);
-    -ms-transform: translate(0, 200%);
-    -webkit-transform: translate(0, 200%);
-    transform: translate(0, 200%);
+    -moz-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
     opacity: 0;
     margin: 0 auto; }
     .name-modal .btn_container.active {
       transform-origin: center;
-      animation: buttonUp 0.8s cubic-bezier(1, 0.015, 0.295, 1.225) 3.2s forwards running; }
+      animation: buttonUp 0.8s cubic-bezier(1, 0.015, 0.295, 1.225) 4s forwards running; }
 
 @keyframes buttonUp {
   0% {
     opacity: 0;
-    transform: translateY(200%); }
+    transform: translateY(100%); }
   100% {
     opacity: 1;
-    transform: translateY(-200%); } }
+    transform: translateY(-100%); } }
 
 /*# sourceMappingURL=random-name.component.css.map */

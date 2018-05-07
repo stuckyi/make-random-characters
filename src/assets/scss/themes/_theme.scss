@@ -4,7 +4,7 @@
 
 $btn-size: 8.125rem;
 $btn-col: $black;
-// $btn-bgCol: none;
+
 
 
 @include scrollbars(.1, $main-color, transparent);
@@ -64,11 +64,35 @@ $btn-col: $black;
 
 
 
-.hero-foot {
-    .btn_container {
-        @include size(20vw, auto);
-        @include flex(flex, row nowrap);
-        justify-content: center;
-        margin: 0 auto;
-    }
+
+.btn_container {
+    @include size(100vw, 20vh);
+    @include flex(flex, row nowrap);
+    justify-content: center;
+    margin: 0 auto;
+
+
+    .userBtn {
+        // default style
+        @include size($userBtn-w, $userBtn-h);
+        padding: 0 2rem;
+        img {
+            @include size($userBtn-w, $userBtn-h);
+            max-height: $userBtn-h-max;
+        }
+        opacity: 0.4;
+        &:hover { 
+            opacity: 1;
+        }
+        // large style
+        &.large {
+            @include size($userBtn-large-w, $userBtn-large-h);
+            padding: 0 2rem;
+            img {
+                @include size($userBtn-large-w, $userBtn-large-h);
+                max-height: $userBtn-large-h;
+            }
+        }
+    }        
 }
+

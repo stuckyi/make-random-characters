@@ -6687,8 +6687,9 @@ label.panel-block {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
 /* color */
-/* z-index */
-/* svg size */
+/* z-indexs */
+/* svg sizes */
+/* user button sizes */
 ::-webkit-scrollbar {
   width: 0.1;
   height: 0.1; }
@@ -6744,13 +6745,32 @@ body {
     font-size: 6rem;
     text-align: center; }
 
-.hero-foot .btn_container {
-  width: 20vw;
-  height: auto;
+.btn_container {
+  width: 100vw;
+  height: 20vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin: 0 auto; }
+  .btn_container .userBtn {
+    width: auto;
+    height: 8vh;
+    padding: 0 2rem;
+    opacity: 0.4; }
+    .btn_container .userBtn img {
+      width: auto;
+      height: 8vh;
+      max-height: 8vh; }
+    .btn_container .userBtn:hover {
+      opacity: 1; }
+    .btn_container .userBtn.large {
+      width: auto;
+      height: 10vh;
+      padding: 0 2rem; }
+      .btn_container .userBtn.large img {
+        width: auto;
+        height: 10vh;
+        max-height: 10vh; }
 
 /*
  @include mat-core-theme($theme);

@@ -6687,8 +6687,9 @@ label.panel-block {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
 /* color */
-/* z-index */
-/* svg size */
+/* z-indexs */
+/* svg sizes */
+/* user button sizes */
 ::-webkit-scrollbar {
   width: 0.1;
   height: 0.1; }
@@ -6744,13 +6745,32 @@ body {
     font-size: 6rem;
     text-align: center; }
 
-.hero-foot .btn_container {
-  width: 20vw;
-  height: auto;
+.btn_container {
+  width: 100vw;
+  height: 20vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin: 0 auto; }
+  .btn_container .userBtn {
+    width: auto;
+    height: 8vh;
+    padding: 0 2rem;
+    opacity: 0.4; }
+    .btn_container .userBtn img {
+      width: auto;
+      height: 8vh;
+      max-height: 8vh; }
+    .btn_container .userBtn:hover {
+      opacity: 1; }
+    .btn_container .userBtn.large {
+      width: auto;
+      height: 10vh;
+      padding: 0 2rem; }
+      .btn_container .userBtn.large img {
+        width: auto;
+        height: 10vh;
+        max-height: 10vh; }
 
 /*
  @include mat-core-theme($theme);
@@ -7177,7 +7197,8 @@ svg > path {
   justify-content: center;
   align-content: center;
   overflow: hidden;
-  background-color: #00d1b2; }
+  background-image: url("/assets/images/ui/archive/bg.png");
+  background-size: cover; }
   .archive .archive-body {
     width: 100vw;
     height: 80vh;
@@ -7185,13 +7206,14 @@ svg > path {
     flex-flow: column nowrap;
     justify-content: flex-end;
     overflow: hidden; }
-    .archive .archive-body .counter-msg {
-      width: 100%;
+    .archive .archive-body .top-img {
+      width: 80%;
       height: auto;
-      font-family: "Black Han Sans", sans-serif;
-      font-size: 6rem;
-      text-align: center;
-      margin: 2rem auto; }
+      margin: 0 auto; }
+      .archive .archive-body .top-img img {
+        width: auto;
+        height: 14vh;
+        margin: 0 auto; }
     .archive .archive-body .characters {
       width: 80vw;
       height: 480px;
@@ -7204,98 +7226,69 @@ svg > path {
       .archive .archive-body .characters .character {
         width: 280px;
         height: 480px;
-        margin: 0 auto;
-        opacity: .8; }
+        margin: 0 auto; }
   .archive .archive-foot {
     width: 100vw;
     height: 20vh;
-    		/*
-    		.btn_container {
-    			z-index: $z-archive-btn;
-    			@include size(20vw, 20vh);
-    			@include flex(flex, row nowrap);
-    			justify-content: center;
-    			align-content: center;
-    			margin: 0 auto;
-    
-    			// @include translate(0, 200%);
-    			// opacity: 0;
-    			&.active {
-    				transform-origin: center;
-    				animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3.2s forwards running;
-    			}
-    			
-    		}
-    		*/ }
-    .archive .archive-foot .btnDir_container {
-      z-index: 900;
-      width: 80vw;
-      height: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; }
+    .archive .archive-foot .userBtn {
+      z-index: 930; }
+      .archive .archive-foot .userBtn img {
+        width: auto;
+        height: 8vh; }
+  .archive .btnDir_container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    position: absolute;
+    bottom: 0;
+    z-index: 910; }
+    .archive .btnDir_container .dirs {
+      width: 90vw;
+      height: auto;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-content: center;
-      margin: .5rem auto; }
-      .archive .archive-foot .btnDir_container img {
-        width: 63px;
-        height: 45px;
-        opacity: .4; }
-        .archive .archive-foot .btnDir_container img:hover {
-          opacity: 1; }
-    .archive .archive-foot .btnSmall_container {
-      z-index: 900;
-      width: 80vw;
-      height: 10vh;
+      margin: 0 auto; }
+      .archive .btnDir_container .dirs .dir {
+        width: auto;
+        height: 5vh; }
+    .archive .btnDir_container .graphics {
+      width: 100vw;
+      height: 18vw;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
-      align-content: center;
-      margin: .5rem auto; }
-      .archive .archive-foot .btnSmall_container .home {
-        -moz-transform: scale(0.7);
-        -o-transform: scale(0.7);
-        -ms-transform: scale(0.7);
-        -webkit-transform: scale(0.7);
-        transform: scale(0.7); }
-
-.home {
-  -moz-transform: scale(0.6);
-  -o-transform: scale(0.6);
-  -ms-transform: scale(0.6);
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
-  position: fixed;
-  bottom: 0;
-  right: 1rem; }
-
-.btn-dir {
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  font-size: 1.375rem;
-  font-family: "Black Han Sans", sans-serif;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
-  background: none;
-  border: 2px solid whitesmoke;
-  color: whitesmoke; }
-  .btn-dir:hover {
-    background-color: #33FFBC; }
+      justify-content: space-between;
+      align-content: flex-end; }
+      .archive .btnDir_container .graphics .graphic {
+        width: 18vw;
+        height: 18vw; }
+  .archive .counter {
+    font-family: "Gamja Flower", cursive;
+    font-size: 1.375rem;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 910; }
 
 .custom-tooltip {
   width: 280px;
   height: auto;
+  margin: 0 auto;
+  overflow: hidden;
   position: absolute;
+  font-family: "Gamja Flower", cursive;
+  font-size: 1.375rem;
   padding: 1rem;
-  color: white;
-  background-color: #0a0a0a;
-  opacity: 0; }
+  color: #0a0a0a;
+  opacity: 0;
+  transition: opacity .4s ease-in-out; }
   .custom-tooltip.active {
     opacity: 1; }
 

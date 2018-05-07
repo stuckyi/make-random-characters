@@ -2,48 +2,61 @@
 @import 'assets/scss/utils/characterStyle';
 @import 'assets/scss/utils/animations';
 
+$svg-w: $svg-size1-w;
+$svg-h: $svg-size1-h;
 
+$userBtn-w: auto;
+$userBtn-h: 8vh;
+$userBtn-h-max: 8vh;
 
-.hero-body {
-  .container {
-    
-    @include flex(flex, column nowrap);
-    justify-content: space-between;
-    align-content: center;
-    
-    .character {
-      // 미디어쿼리 적용
-      @include size($svg-size2-w, $svg-size2-h);
-      margin: 0 auto;
-    }
-  
-  
-    .boxs {
-      @include size(50vh, auto);
-      @include flex(flex, row nowrap);
-      margin: 0 auto;
-  
-      justify-content: center;
+.hero {
+  overflow: hidden;
+
+  .hero-body {
+    .container {
+      @include flex(flex, column nowrap);
+      justify-content: flex-start;
       align-content: center;
-  
-      .random-text {
-        @include size(33%, auto);
-        border: 2px solid $black;
-        text-align: center;
-        
-        p {
-          font-size: $size-big;
-          font-weight: $weight-thin; 
-          &.question-mark { 
-            opacity: .2;
+      
+      .character {
+        // 미디어쿼리 적용
+        @include size($svg-w, $svg-h);
+        margin: 0 auto;
+      }
+    
+    
+      .boxs {
+        @include size(50vh, auto);
+        @include flex(flex, row nowrap);
+        margin: 0 auto;
+    
+        justify-content: center;
+        align-content: center;
+    
+        .random-text {
+          @include size(33%, auto);
+          text-align: center;
+          
+          p {
+            font-size: $size-big;
+            font-weight: $weight-thin; 
+            &.question-mark { 
+              opacity: .2;
+            }
           }
         }
       }
     }
   }
-  
-  
+
+
+  .hero-foot {
+    // here
+  }
+
 }
+
+//// Modal Style ////
 
 
 .custom-modal {
@@ -64,7 +77,7 @@
       justify-content: center;
 
       .result {
-        @include size($svg-size2-w, $svg-size2-h);
+        @include size($svg-w, $svg-h);
         margin: 0 auto;
       }
 
@@ -140,24 +153,24 @@
 
   
   .btn_container {
-      @include size(20vw, 10vh);
+      @include size(40vw, 20vh);
       @include flex(flex, row nowrap);
-      justify-content: center;
+      justify-content: space-around;
       z-index: $z-modal-btn;
 
-      @include translate(0, 200%);
+      @include translate(0, 100%);
       opacity: 0;
 
       margin: 0 auto;
       &.active {
         transform-origin: center;
-        animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3.2s forwards running;
+        animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 4s forwards running;
       }
    }
 }
 
 
 @keyframes buttonUp{
-  0% {    opacity: 0; transform: translateY(200%); }
-  100%  { opacity: 1; transform: translateY(-200%); }
+  0% {    opacity: 0; transform: translateY(100%); }
+  100%  { opacity: 1; transform: translateY(-100%); }
 }

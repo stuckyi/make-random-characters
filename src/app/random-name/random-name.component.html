@@ -1,5 +1,5 @@
 <section class="hero is-fullheight">
-      <div class="hero-body">
+      <div class="hero-body is-paddingless">
             <div class="container">
                   <!-- svg 접근성 체크하기 -->
                   <svg *ngIf="currentModule" class="character" viewBox="0 0 700 1200">
@@ -1254,9 +1254,18 @@
       </div>
       <div class="hero-foot">
             <div class="btn_container">
-                  <div *ngIf="!isSave" class="btn primary" (click)="stop()"> <span>선택</span> </div>
-                  <div *ngIf="isSave" class="btn light" (click)="restart()"> <span>다시</span> </div>
-                  <div *ngIf="isSave" class="btn primary" (click)="openModal()"> <span>저장</span> </div> 
+                  <div *ngIf="!isSave" (click)="stop()" class="userBtn"> 
+                        <!-- <span>선택</span>  -->
+                        <img src="assets/images/ui/btn/stop-default.png" alt="선택 버튼(기본)" />
+                  </div>
+                  <div *ngIf="isSave" (click)="restart()" class="userBtn"> 
+                        <!-- <span>다시</span>  -->
+                        <img src="assets/images/ui/btn/retry.png" alt="다시하기 버튼(기본)" />
+                  </div>
+                  <div *ngIf="isSave" (click)="openModal()" class="userBtn">
+                         <!-- <span>저장</span>  -->
+                         <img src="assets/images/ui/btn/save.png" alt="저장하기 버튼(기본)" />
+                  </div> 
             </div>
       </div>
 </section>
@@ -1266,11 +1275,9 @@
 <div class="custom-init-modal" [class.inactive]="!isInitModal">
 
       <div class="character-to-name">
-            <!-- 메인 to 랜덤캐 모달 -->
+            <!-- 랜덤네임 init 모달 -->
             <div class="saveMsg">
                   <img src="assets/images/ui/loading.png">
-                  <!-- <p *ngIf="!isComplete" class="ing">저장중</p> -->
-                  <!-- <p *ngIf="isComplete" class="complete">저장 완료!</p> -->
             </div>
       </div>
 
@@ -1286,14 +1293,24 @@
 
       <!-- 저장중 -->
       <div class="saveMsg">
-            <p *ngIf="!isComplete" class="ing">저장중</p>
-            <p *ngIf="isComplete" class="complete">저장 완료!</p>
+            <div *ngIf="!isComplete">
+                  <img src="assets/images/ui/btn/save-ing.png" alt="저장중" />
+            </div>
+            <div *ngIf="isComplete">
+                  <img src="assets/images/ui/btn/save-complete.png" alt="저장완료" />
+            </div>
       </div>
       
 
       <div class="btn_container" [class.active]="isModal">
-            <div class="btn light" (click)="moveTo('random-characters')"> <span>처음으로</span> </div>
-            <div class="btn primary" (click)="moveTo('archive')"> <span>모든 캐릭터 보러가기</span> </div> 
+            <div (click)="moveTo('random-characters')" class="userBtn"> 
+                  <!-- <span>처음으로</span>  -->
+                  <img src="assets/images/ui/btn/goto-home.png" alt="첫 페이지로 이동" />
+            </div>
+            <div (click)="moveTo('archive')" class="userBtn">
+                  <!-- <span>모든 캐릭터 보러가기</span> -->
+                  <img src="assets/images/ui/btn/goto-archive.png" alt="아카이브 페이지로 이동" />
+            </div> 
       </div>
     </div>
 </div>

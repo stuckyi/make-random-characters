@@ -5,17 +5,20 @@ $main-color-dark: darken($main-color, 20%);
 
 $custom-modal-color: gold;
 
-/* z-index */
+/* z-indexs */
 $z-modal: 1000;
 $z-modal-btn: 1100;
-$z-archive-btn: 900;
-$z-archive-mennem: 910;
+$z-archive-btn: 930;
+$z-archive-graphic: 910;
 
 
-/* svg size */
+/* svg sizes */
 
-$svg-size1-w: 130px;
-$svg-size1-h: 223px;
+$svg-size0-w: 130px;
+$svg-size0-h: 223px;
+
+$svg-size1-w: 196px;
+$svg-size1-h: 336px;
 
 $svg-size2-w: 280px;
 $svg-size2-h: 480px;
@@ -26,5 +29,13 @@ $svg-size3-h: 500px;
 $svg-size4-w: 393px;
 $svg-size4-h: 673px;
 
+
+/* user button sizes */
+$userBtn-w: auto;
+$userBtn-h: 8vh;
+$userBtn-h-max: 8vh;
+
+$userBtn-large-w: auto;
+$userBtn-large-h: 10vh;
 
 

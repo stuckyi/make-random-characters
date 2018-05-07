@@ -9,7 +9,11 @@
 	justify-content: center;
   align-content: center;
 	overflow: hidden;
-	background-color: $primary;
+	background-image: url('/assets/images/ui/archive/bg.png');
+	// background-repeat: repeat-x;
+	background-size: cover;
+	
+	
 
 	.archive-body {
 		@include size(100vw, 80vh);
@@ -17,13 +21,16 @@
 		justify-content: flex-end;
 		overflow: hidden;
 
-		// 카운터 메시지
-		.counter-msg {
-			@include size(100%, auto);
-			font-family: $sans-bold;
-			font-size: $size-big;
-			text-align: center;
-			margin: 2rem auto;
+
+		// 멘넴의 캐릭터 동산
+		.top-img {
+			@include size(80%, auto);
+			margin: 0 auto;
+			
+			img {
+				@include size(auto, 14vh);
+				margin: 0 auto;
+			}
 
 		}
 		// 최근 캐릭터들 (방금 생성산 캐릭터 제외)
@@ -35,13 +42,13 @@
 			align-content: center;
 			margin: 0 auto;
 			overflow: visible;
+			
 			// overflow-x: scroll;
 			// overflow-y: hidden;
 
 			.character {
 				@include size($svg-size2-w, $svg-size2-h);
 				margin: 0 auto;
-				opacity: .8;
 			}
 		}
 
@@ -49,92 +56,79 @@
 
 	.archive-foot {
 		@include size(100vw, 20vh);
-
-		.btnDir_container {
+		@include flex(flex, column nowrap);
+		justify-content: center;
+		.userBtn {
 			z-index: $z-archive-btn;
-			@include size(80vw, 10vh);
+			img {
+				@include size(auto, 8vh); // only for archive page
+			 }
+		}
+	}
+	// 좌우 이동 버튼, 아카이브 그래픽 소스(키티, 튤립)
+	.btnDir_container{
+		@include size(100vw, auto);
+		@include flex(flex, column nowrap);
+		justify-content: space-between;
+		align-content: space-between;
+
+		position: absolute;
+		bottom: 0;
+		z-index: $z-archive-graphic;
+
+		.dirs {
+			@include size(90vw, auto);
 			@include flex(flex, row nowrap);
 			justify-content: space-between;
 			align-content: center;
-			margin: .5rem auto;
-
-			img {
-				@include size(63px, 45px);
-				opacity: .4;
-				&:hover { opacity: 1; }
-			}
-		}
-		.btnSmall_container {
-			z-index: $z-archive-btn;
-			@include size(80vw, 10vh);
-			@include flex(flex, row nowrap);
-			justify-content: center;
-			align-content: center;
-			margin: .5rem auto;
-
-			.home { 
-				@include scale(.7);
-			}
-
-		}
-		/*
-		.btn_container {
-			z-index: $z-archive-btn;
-			@include size(20vw, 20vh);
-			@include flex(flex, row nowrap);
-			justify-content: center;
-			align-content: center;
 			margin: 0 auto;
-
-			// @include translate(0, 200%);
-			// opacity: 0;
-			&.active {
-				transform-origin: center;
-				animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3.2s forwards running;
+			// 좌우 이동 버튼
+			.dir {
+				@include size(auto, 5vh);
+			}
+		}
+		// 아카이브 그래픽 소스(키티, 튤립)
+		.graphics {
+			$graphic-size: 18vw;
+			@include size(100vw, $graphic-size);
+			@include flex(flex, row nowrap);
+			justify-content: space-between;
+			align-content: flex-end;
+			.graphic {
+				@include size($graphic-size, $graphic-size);
 			}
 			
 		}
-		*/
 	}
 
-
-}
-
-.home {
-	@include scale(.6);
-	position: fixed;
-	bottom: 0;
-	right: 1rem;
-}
-
-.btn-dir {
-	@include size(4rem, 4rem);
-	@include flex(flex, row nowrap);
-	justify-content: center;
-	align-content: center;
-	text-align: center;
-
-	font-size: $size-4;
-	font-family: $sans-bold;
-	@include border-radius(50%);
-	background: none;
-	border: 2px solid $white-ter;
-	color: $white-ter;
-
-	&:hover {
-		background-color: $main-color;
+	.counter {
+		font-family: $serif-talk;
+		font-size: $size-4;
+		position: absolute;
+		top: 0;
+		right: 1rem;
+		z-index: $z-archive-graphic;
+		
 	}
 }
 
 
 .custom-tooltip {
 	@include size($svg-size2-w, auto);
+	margin: 0 auto;
+	overflow: hidden;
 	position: absolute;
+	font-family: $serif-talk;
+	font-size: $size-4;
 	padding: 1rem;
-	color: $white;
-	background-color: $black;
-
+	color: $black;
 	opacity: 0;
+
+	// background-image: url('/assets/images/ui/archive/tooltip-bg.png');
+	// background-repeat: no-repeat;
+	// background-size: contain;
+
+	transition: opacity .4s ease-in-out;
 	&.active { opacity: 1; }
 }
 

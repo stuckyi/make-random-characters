@@ -1,7 +1,7 @@
 <section class="archive" *ngIf="characters">
       <div class="archive-body">
-            <div class="counter-msg">
-                  <p *ngIf="totalCount">{{totalCount}}개의 캐릭터가 있어요</p>
+            <div class="top-img"> 
+                  <img src="assets/images/ui/archive-title.png" alt="멘넴의 캐릭터 동산">
             </div>
             <div class="characters" [style.transform]="getPosX()">
 
@@ -10,7 +10,8 @@
                         (mouseleave)="setHoverIndex(null)">
                         <div class="custom-tooltip" 
                               [class.active]="hoverIndex === i">
-                              <span>안녕? 나는 {{character.name}}</span>
+                              <p>안녕? 내 이름은 {{character.name}}</p>
+                              <p>잘부탁해</p>
                         </div>
                         <!-- svg 접근성 체크하기 -->
                         <svg *ngIf="character.modules" viewBox="0 0 700 1200" class="character">
@@ -1238,34 +1239,25 @@
       </div>
       
       <div class="archive-foot">
-            <div class="btnDir_container">
-                  <img src="assets/images/ui/left.png" alt="왼쪽 탐색버튼" (click)="moveBtn('left')" >
-                  <img src="assets/images/ui/right.png" alt="오른쪽 탐색버튼" (click)="moveBtn('right')" >
-            </div>
-            <div class="btnSmall_container">
-                  <div class="btn light" (click)="moveTo('random-characters')"> <span>처음으로</span> </div>
-            </div>
-                  
-            <!--
-            <div class="btn_container">
-                  <button class="btn-dir primary" (click)="moveBtn('left')" [disabled]="!isLeft">
-                        <span>왼쪽</span>
-                  </button>
-                  <button class="btn-dir primary" (click)="moveBtn('right')" [disabled]="!isRight">
-                        <span>오른쪽</span>
-                  </button>
-            </div>
-            -->
             
-            <!--
-            <div class="btn_container" [class.active]="isProcessComplete">
-                  <div class="btn light" (click)="moveTo('random-characters')"> <span>처음으로</span> </div>
-                  <div class="btn primary" (click)="openInfo()"> 
-                        <span><i class="material-icons">info</i></span>
-                  </div> 
+            <div  (click)="moveTo('random-characters')" class="userBtn">
+                  <img src="assets/images/ui/btn/goto-home.png" alt="첫 페이지로 이동" />
             </div>
-            -->
+      
+      </div>
+
+      <div class="btnDir_container">
+            <div class="dirs">
+                  <img class="dir" src="assets/images/ui/left.png" alt="왼쪽 탐색버튼" (click)="moveBtn('left')" >
+                  <img class="dir" src="assets/images/ui/right.png" alt="오른쪽 탐색버튼" (click)="moveBtn('right')" >
+            </div>
+            <div class="graphics">
+                  <img class="graphic" src="assets/images/ui/archive/left-bottom.png" alt="멘넴그래픽소스" />
+                  <img class="graphic" src="assets/images/ui/archive/right-bottom.png" alt="멘넴그래픽소스" />
+            </div>
+      </div>
+      <div *ngIf="totalCount" class="counter">
+            <span class="txt">만들어진 캐릭터 수 : </span><span class="num" >{{totalCount}}</span>
       </div>
 </section>
 
-<!-- <div class="btn light home" (click)="moveTo('random-characters')"> <span>처음으로</span>  -->

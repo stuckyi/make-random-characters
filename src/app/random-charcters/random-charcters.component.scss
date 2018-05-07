@@ -2,67 +2,96 @@
 @import 'assets/scss/utils/characterStyle';
 @import 'assets/scss/utils/animations';
 
-.container {
-	@include size(100%, auto);
+$svg-w: $svg-size3-w;
+$svg-h: $svg-size3-h;
+
+$userBtn-w: auto;
+$userBtn-h: 8vh;
+$userBtn-h-max: 8vh;
+
+$userBtn-large-w: auto;
+$userBtn-large-h: 10vh;
+
+
+.hero {
 	overflow: hidden;
-	
-	.custom-main {
-		@include size(100vw, 100vh);
-		@include flex(flex, column nowrap);
-		justify-content: center;
-		align-content: center;
-		.img-wrap {
+	.hero-body {
+		.container {
 			@include size(100%, auto);
-			margin: 0 auto;
-		}
-		overflow: hidden;
-		
-		/*
-		.sheet {
-			@include size(60vw, 34.25vw);
-			background-image: url('/assets/images/landing/sheet.png');
-			background-size: contain;
-			background-repeat: no-repeat;
-			margin: 0 auto;
-		}
-		.handmove {
-			@include size(80vw, 50.58vw);
-			background-image: url('/assets/images/landing/handmove.gif');
-			background-size: contain;
-			background-repeat: no-repeat;
-			position: absolute;
-			z-index: 300;
-			bottom: 0;
-		}
-		*/
-		
-	}
-
-	.characters {
-		@include size(100vw, $svg-size3-h);
-		margin: 0 auto;
-		.character {
-			// 미디어쿼리 적용
-			@include size($svg-size3-w, $svg-size3-h);
-			margin: 0 auto;
+			overflow: hidden;
 			
-			&.inactive {
-				opacity: 0.8;
-				@include scale(.8);
+			.custom-main {
+				@include size(100vw, 100vh);
+				@include flex(flex, column nowrap);
+				justify-content: center;
+				align-content: center;
+				.img-wrap {
+					@include size(auto, 20vh);
+					margin: 0 auto;
+					
+
+				}
+				overflow: hidden;
+				
+				/*
+				.sheet {
+					@include size(60vw, 34.25vw);
+					background-image: url('/assets/images/landing/sheet.png');
+					background-size: contain;
+					background-repeat: no-repeat;
+					margin: 0 auto;
+				}
+				.handmove {
+					@include size(80vw, 50.58vw);
+					background-image: url('/assets/images/landing/handmove.gif');
+					background-size: contain;
+					background-repeat: no-repeat;
+					position: absolute;
+					z-index: 300;
+					bottom: 0;
+				}
+				*/
+				
 			}
-			&.active {
-				opacity: 1;
-				@include scale(1);
+	
+			.characters {
+				@include size(100vw, $svg-h);
+				margin: 0 auto;
+				.character {
+					// 미디어쿼리 적용
+					@include size($svg-w, $svg-h);
+					margin: 0 auto;
+					
+					&.inactive {
+						opacity: 0.8;
+						@include scale(.8);
+					}
+					&.active {
+						opacity: 1;
+						@include scale(1);
+					}
+				} // character - E -
+	
 			}
-		} // character - E -
+				
+	
+		}
 
 	}
-		
+	.hero-foot {
+		//.hero-foot
+	} 
+	
 
 }
+
+
+// modal
 
 .character-to-name {
   @include size(100%, 100vh);
   @include flex(flex, column nowrap);
   justify-content: center;
 }
+
+

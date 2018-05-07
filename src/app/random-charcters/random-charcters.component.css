@@ -6687,8 +6687,9 @@ label.panel-block {
     font-family: "Gothic A1", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
     font-weight: 100; } }
 /* color */
-/* z-index */
-/* svg size */
+/* z-indexs */
+/* svg sizes */
+/* user button sizes */
 ::-webkit-scrollbar {
   width: 0.1;
   height: 0.1; }
@@ -6744,13 +6745,32 @@ body {
     font-size: 6rem;
     text-align: center; }
 
-.hero-foot .btn_container {
-  width: 20vw;
-  height: auto;
+.btn_container {
+  width: 100vw;
+  height: 20vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin: 0 auto; }
+  .btn_container .userBtn {
+    width: auto;
+    height: 8vh;
+    padding: 0 2rem;
+    opacity: 0.4; }
+    .btn_container .userBtn img {
+      width: auto;
+      height: 8vh;
+      max-height: 8vh; }
+    .btn_container .userBtn:hover {
+      opacity: 1; }
+    .btn_container .userBtn.large {
+      width: auto;
+      height: 10vh;
+      padding: 0 2rem; }
+      .btn_container .userBtn.large img {
+        width: auto;
+        height: 10vh;
+        max-height: 10vh; }
 
 /*
  @include mat-core-theme($theme);
@@ -7169,62 +7189,64 @@ svg > path {
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox; }
 
-.container {
-  width: 100%;
-  height: auto;
+.hero {
   overflow: hidden; }
-  .container .custom-main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden;
-    /*
-    .sheet {
-    	@include size(60vw, 34.25vw);
-    	background-image: url('/assets/images/landing/sheet.png');
-    	background-size: contain;
-    	background-repeat: no-repeat;
-    	margin: 0 auto;
-    }
-    .handmove {
-    	@include size(80vw, 50.58vw);
-    	background-image: url('/assets/images/landing/handmove.gif');
-    	background-size: contain;
-    	background-repeat: no-repeat;
-    	position: absolute;
-    	z-index: 300;
-    	bottom: 0;
-    }
-    */ }
-    .container .custom-main .img-wrap {
-      width: 100%;
-      height: auto;
-      margin: 0 auto; }
-  .container .characters {
-    width: 100vw;
-    height: 500px;
-    margin: 0 auto; }
-    .container .characters .character {
-      width: 292px;
+  .hero .hero-body .container {
+    width: 100%;
+    height: auto;
+    overflow: hidden; }
+    .hero .hero-body .container .custom-main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-content: center;
+      overflow: hidden;
+      /*
+      .sheet {
+      	@include size(60vw, 34.25vw);
+      	background-image: url('/assets/images/landing/sheet.png');
+      	background-size: contain;
+      	background-repeat: no-repeat;
+      	margin: 0 auto;
+      }
+      .handmove {
+      	@include size(80vw, 50.58vw);
+      	background-image: url('/assets/images/landing/handmove.gif');
+      	background-size: contain;
+      	background-repeat: no-repeat;
+      	position: absolute;
+      	z-index: 300;
+      	bottom: 0;
+      }
+      */ }
+      .hero .hero-body .container .custom-main .img-wrap {
+        width: auto;
+        height: 20vh;
+        margin: 0 auto; }
+    .hero .hero-body .container .characters {
+      width: 100vw;
       height: 500px;
       margin: 0 auto; }
-      .container .characters .character.inactive {
-        opacity: 0.8;
-        -moz-transform: scale(0.8);
-        -o-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8); }
-      .container .characters .character.active {
-        opacity: 1;
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1); }
+      .hero .hero-body .container .characters .character {
+        width: 292px;
+        height: 500px;
+        margin: 0 auto; }
+        .hero .hero-body .container .characters .character.inactive {
+          opacity: 0.8;
+          -moz-transform: scale(0.8);
+          -o-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          -webkit-transform: scale(0.8);
+          transform: scale(0.8); }
+        .hero .hero-body .container .characters .character.active {
+          opacity: 1;
+          -moz-transform: scale(1);
+          -o-transform: scale(1);
+          -ms-transform: scale(1);
+          -webkit-transform: scale(1);
+          transform: scale(1); }
 
 .character-to-name {
   width: 100%;
