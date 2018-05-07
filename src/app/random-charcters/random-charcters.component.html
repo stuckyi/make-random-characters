@@ -1263,7 +1263,6 @@
                   <div *ngIf="!isComplete" class="btn primary" (click)="randomStop()"> <span>선택</span> </div>
                   <!-- off (선택완료) -->
                   <div *ngIf="isComplete" class="btn light" (click)="randomRestart()"> <span>다시</span> </div>
-                  <!-- <div *ngIf="isComplete" class="btn primary" (click)="moveTo('random-name')"> <span>다음</span></div> -->
 
                   <div *ngIf="isComplete" class="btn primary"
                         (click)="openModal('random-name')"> <span>다음</span></div>
@@ -1279,7 +1278,7 @@
     [class.inactive]="isModal === false" >
 
      <div class="character-to-name">
-            <!-- 메인 to 랜덤캐 모달 -->
+            <!-- 메인 to 랜덤캐 모달 & 랜덤캐 to 랜덤네임 모달 -->
             <div class="saveMsg">
                   <img src="assets/images/ui/loading.png">
             </div>

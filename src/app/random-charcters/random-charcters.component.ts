@@ -81,6 +81,7 @@ export class RandomCharctersComponent {
     private router: Router,
     private appService: AppService,
   ) { }
+
   // 시작하기 클릭시 모달창이 열려서 설명하고, 1초 후에 닫힌다.
   // 이미 랜덤이 돌아가고 있다.
   openModal(targetPage: string) {
@@ -122,8 +123,6 @@ export class RandomCharctersComponent {
 
   // 랜덤 종료(선택하기 클릭 시)
   randomStop() {
-    console.log('randomStop()');
-    console.log('randomFaceIndex', this.randomIndex);
     this.isPlay = false;
     this.dynamicClass = 'on';
     this.timer$.unsubscribe();
