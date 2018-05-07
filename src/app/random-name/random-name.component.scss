@@ -82,6 +82,47 @@
 
 
 
+
+.custom-init-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: $custom-modal-color;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  
+  // opacity: ;
+  z-index: 2000;
+  transition: height .4s ease-in-out;
+
+  &.active {
+      top: 0;
+      height: 100vh;
+      @include flex(flex, row nowrap);
+      justify-content: center;
+
+
+  }
+  &.inactive {
+      top: 0;
+      height: 0;
+  }    
+
+  p {
+      font-size: $size-big;
+      text-align: center;
+  }
+}
+
+
+.character-to-name {
+  @include size(100%, 100vh);
+  @include flex(flex, column nowrap);
+  justify-content: center;
+}
+
+
+
 .name-modal {
   @include size(100%, 100vh);
   @include flex(flex, column nowrap);
@@ -106,7 +147,7 @@
 
       @include translate(0, 200%);
       opacity: 0;
-      
+
       margin: 0 auto;
       &.active {
         transform-origin: center;

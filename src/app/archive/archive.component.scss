@@ -9,18 +9,27 @@
 	justify-content: center;
   align-content: center;
 	overflow: hidden;
-	background-color: $main-color;
+	background-color: $primary;
 
 	.archive-body {
-		@include size(100vw, 90vh);
+		@include size(100vw, 80vh);
 		@include flex(flex, column nowrap);
 		justify-content: flex-end;
 		overflow: hidden;
 
+		// 카운터 메시지
+		.counter-msg {
+			@include size(100%, auto);
+			font-family: $sans-bold;
+			font-size: $size-big;
+			text-align: center;
+			margin: 2rem auto;
+
+		}
 		// 최근 캐릭터들 (방금 생성산 캐릭터 제외)
 		.characters {
-			@include testBorder();
-			@include size(100vw, $svg-size2-h);
+			// @include testBorder();
+			@include size(80vw, $svg-size2-h);
 			@include flex(flex, row nowrap);
 			justify-content: flex-start;
 			align-content: center;
@@ -39,45 +48,97 @@
 	}
 
 	.archive-foot {
-		@include size(100vw, 10vh);
+		@include size(100vw, 20vh);
+
+		.btnDir_container {
+			z-index: $z-archive-btn;
+			@include size(80vw, 10vh);
+			@include flex(flex, row nowrap);
+			justify-content: space-between;
+			align-content: center;
+			margin: .5rem auto;
+
+			img {
+				@include size(63px, 45px);
+				opacity: .4;
+				&:hover { opacity: 1; }
+			}
+		}
+		.btnSmall_container {
+			z-index: $z-archive-btn;
+			@include size(80vw, 10vh);
+			@include flex(flex, row nowrap);
+			justify-content: center;
+			align-content: center;
+			margin: .5rem auto;
+
+			.home { 
+				@include scale(.7);
+			}
+
+		}
+		/*
 		.btn_container {
 			z-index: $z-archive-btn;
-			@include size(100vw, 10vh);
+			@include size(20vw, 20vh);
+			@include flex(flex, row nowrap);
+			justify-content: center;
+			align-content: center;
 			margin: 0 auto;
-			@include translate(0, 200%);
-			opacity: 0;
+
+			// @include translate(0, 200%);
+			// opacity: 0;
 			&.active {
 				transform-origin: center;
 				animation: buttonUp 0.8s cubic-bezier(1,.015,.295,1.225) 3.2s forwards running;
 			}
+			
 		}
+		*/
 	}
 
 
 }
 
+.home {
+	@include scale(.6);
+	position: fixed;
+	bottom: 0;
+	right: 1rem;
+}
 
-.mennemAct {
-	z-index: 1200;
-	@include size(10vw, 10vw);
-	@include translate(-30%, -350%);
-	@include testBorder();
+.btn-dir {
+	@include size(4rem, 4rem);
+	@include flex(flex, row nowrap);
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 
-	img {
-		// @include size(249px, 364px);
-		@include scale(2);
+	font-size: $size-4;
+	font-family: $sans-bold;
+	@include border-radius(50%);
+	background: none;
+	border: 2px solid $white-ter;
+	color: $white-ter;
+
+	&:hover {
+		background-color: $main-color;
 	}
-
-	transform-origin: center;
-	animation: mennemAct 2s linear forwards running;
-
 }
 
 
-@keyframes mennemAct{
-  0% {    transform: translateX(-30%) translateY(-350%); }
-  100%  { transform: translateX(120%) translateY(-350%); }
+.custom-tooltip {
+	@include size($svg-size2-w, auto);
+	position: absolute;
+	padding: 1rem;
+	color: $white;
+	background-color: $black;
+
+	opacity: 0;
+	&.active { opacity: 1; }
 }
+
+
 @keyframes buttonUp{
   0% {    opacity: 0; transform: translateY(200%); }
   100%  { opacity: 1; transform: translateY(-200%); }

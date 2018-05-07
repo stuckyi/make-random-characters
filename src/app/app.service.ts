@@ -28,8 +28,6 @@ export class AppService {
   getCharacters() {
     return this.characters.valueChanges();
   }
-  
-  
 
   addCharacter(newCharacter: Character) {
     return this.characters.add(newCharacter);

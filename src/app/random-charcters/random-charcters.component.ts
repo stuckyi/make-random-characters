@@ -45,10 +45,12 @@ export const chracterTransition = trigger('dynamicClass', [
   styleUrls: ['./random-charcters.component.css'],
   animations: [chracterTransition]
 })
-export class RandomCharctersComponent implements OnInit, OnDestroy {
+export class RandomCharctersComponent {
   timer$; 
   isModal: boolean;
-  startBtnUrl = 'assets/images/msg/start.png';
+  modalName = 'main-to-character';
+
+  
 
   dynamicClass = 'init';
 
@@ -79,23 +81,24 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     private router: Router,
     private appService: AppService,
   ) { }
-
-  ngOnInit() { 
-  }
-  
-
-  ngOnDestroy() {
-  }
-
   // 시작하기 클릭시 모달창이 열려서 설명하고, 1초 후에 닫힌다.
   // 이미 랜덤이 돌아가고 있다.
-  openModal() {
+  openModal(targetPage: string) {
     this.isModal = true;
 
-    setTimeout(() => {
-      this.isModal = false;
-      this.setRandomState();
-    }, 3000);
+    if (targetPage === 'random-characters') {
+      this.modalName = 'main-to-character';
+      setTimeout(() => {
+        this.isModal = false;
+        this.setRandomState();
+      }, 3000);
+    } else {
+      this.modalName = 'character-to-name';
+      setTimeout(() => {
+        this.moveTo('random-name');
+      }, 2000);
+    }
+
   }
   closeModal() {
     this.isModal = false;
@@ -161,21 +164,6 @@ export class RandomCharctersComponent implements OnInit, OnDestroy {
     this.randomIndex['hairAcc'] = Math.floor(Math.random() * 4);
   }
 
-
-
-  
-
-  onMouseEnter(btnName: string) {
-    if (btnName === 'start') {
-      this.startBtnUrl = 'assets/images/msg/start_hover.png';
-    }
-  }
-
-  onMouseLeave(btnName: string) {
-    if (btnName === 'start') {
-      this.startBtnUrl = 'assets/images/msg/start.png';
-    }
-  }
 
 
 }

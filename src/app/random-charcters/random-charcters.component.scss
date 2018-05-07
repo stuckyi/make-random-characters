@@ -3,19 +3,66 @@
 @import 'assets/scss/utils/animations';
 
 .container {
-	.character {
-		// 미디어쿼리 적용
-		@include size($svg-size3-w, $svg-size3-h);
-		margin: 0 auto;
+	@include size(100%, auto);
+	overflow: hidden;
+	
+	.custom-main {
+		@include size(100vw, 100vh);
+		@include flex(flex, column nowrap);
+		justify-content: center;
+		align-content: center;
+		.img-wrap {
+			@include size(100%, auto);
+			margin: 0 auto;
+		}
+		overflow: hidden;
 		
-		&.inactive {
-			opacity: 0.8;
-			@include scale(.8);
+		/*
+		.sheet {
+			@include size(60vw, 34.25vw);
+			background-image: url('/assets/images/landing/sheet.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin: 0 auto;
 		}
-		&.active {
-			opacity: 1;
-			@include scale(1);
+		.handmove {
+			@include size(80vw, 50.58vw);
+			background-image: url('/assets/images/landing/handmove.gif');
+			background-size: contain;
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: 300;
+			bottom: 0;
 		}
+		*/
+		
+	}
+
+	.characters {
+		@include size(100vw, $svg-size3-h);
+		margin: 0 auto;
+		.character {
+			// 미디어쿼리 적용
+			@include size($svg-size3-w, $svg-size3-h);
+			margin: 0 auto;
+			
+			&.inactive {
+				opacity: 0.8;
+				@include scale(.8);
+			}
+			&.active {
+				opacity: 1;
+				@include scale(1);
+			}
+		} // character - E -
 
 	}
+		
+
+}
+
+.character-to-name {
+  @include size(100%, 100vh);
+  @include flex(flex, column nowrap);
+  justify-content: center;
 }

@@ -1,7 +1,16 @@
-<section class="hero is-primary is-fullheight">
-      <div class="hero-body">
-            <div class="container">
-                  <div *ngIf="isRandom">
+<section class="hero is-primary is-fullheight" >
+      <div class="hero-body is-paddingless">
+            <div class="container is-marginless">
+                  <div *ngIf="!isRandom" class="custom-main" (click)="openModal('random-characters')">
+                        <div class="img-wrap">
+                              메인이미지 영역
+                              <!-- <img src="assets/images/ui/main.png"> -->
+                        </div>
+                        
+                        <!-- <div class="sheet"> </div> -->
+                        <!-- <div class="handmove"> </div> -->
+                  </div>
+                  <div *ngIf="isRandom" class="characters">
                          <!-- svg 접근성 체크하기 -->
                         <svg class="character" [@dynamicClass]="dynamicClass" viewBox="0 0 700 1200">
                               <title lang="ko">랜덤 캐릭터 부분별 그래픽</title>
@@ -1240,11 +1249,13 @@
             </div>
             
       </div>
-      <div class="hero-foot">
+      <div class="hero-foot is-paddingless">
             <!-- init -->
+            <!--
             <div *ngIf="!isRandom" class="btn primary" (click)="openModal()">
                   <span>시작</span>
             </div>
+            -->
 
             <!-- on random play -->
             <div *ngIf="isRandom" class="btn_container">
@@ -1252,7 +1263,11 @@
                   <div *ngIf="!isComplete" class="btn primary" (click)="randomStop()"> <span>선택</span> </div>
                   <!-- off (선택완료) -->
                   <div *ngIf="isComplete" class="btn light" (click)="randomRestart()"> <span>다시</span> </div>
-                  <div *ngIf="isComplete" class="btn primary" (click)="moveTo('random-name')"> <span>다음</span></div>
+                  <!-- <div *ngIf="isComplete" class="btn primary" (click)="moveTo('random-name')"> <span>다음</span></div> -->
+
+                  <div *ngIf="isComplete" class="btn primary"
+                        (click)="openModal('random-name')"> <span>다음</span></div>
+                                    
             </div>
       </div>
 </section>
@@ -1262,7 +1277,11 @@
 <div class="custom-modal" 
     [class.active]="isModal"
     [class.inactive]="isModal === false" >
-    <!-- <p>97개의 모듈로 백이십구억개 캐릭터 만들기</p> -->
-    <p>모듈로 129억개의 캐릭터를 만들 수 있어요</p>
-    <p class="loading-msg">로딩중입니다</p>
+
+     <div class="character-to-name">
+            <!-- 메인 to 랜덤캐 모달 -->
+            <div class="saveMsg">
+                  <img src="assets/images/ui/loading.png">
+            </div>
+      </div>
 </div>

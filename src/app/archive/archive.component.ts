@@ -26,6 +26,10 @@ export class ArchiveComponent implements OnInit {
   isLeft = false;
   isRight = true;
 
+  // tooltip
+  hoverIndex;
+
+
   constructor(
     private router: Router,
     private afs: AngularFirestore,
@@ -53,7 +57,6 @@ export class ArchiveComponent implements OnInit {
 
       console.log(this.totalCount);
     }
-    
   }
   moveBtn(dir: string) {
     // console.log('dir', dir);
@@ -89,6 +92,12 @@ export class ArchiveComponent implements OnInit {
   moveTo(targetPage: string) {
     const link = '/' + targetPage;
     this.router.navigate([link]);
+  }
+
+
+  // for Tooltip
+  setHoverIndex(index: any) {
+    this.hoverIndex = index;
   }
 
 

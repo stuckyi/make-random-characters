@@ -28,8 +28,13 @@ import { RandomNameComponent } from './random-name/random-name.component';
 import { RouletteComponent } from './roulette/roulette.component';
 import { ArchiveComponent } from './archive/archive.component';
 
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatTooltipModule } from '@angular/material/tooltip';
 
 
+// const MATERIAL_MODULES = [
+//   MatTooltipModule
+// ];
 
 
 @NgModule({
@@ -50,7 +55,8 @@ import { ArchiveComponent } from './archive/archive.component';
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    // MATERIAL_MODULES
     // AngularFireModul.initializeApp(environment.firebase)
   ],
   providers: [SpeechService, SpeechRecognitionService, AppService],

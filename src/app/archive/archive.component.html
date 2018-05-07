@@ -1,7 +1,17 @@
 <section class="archive" *ngIf="characters">
       <div class="archive-body">
+            <div class="counter-msg">
+                  <p *ngIf="totalCount">{{totalCount}}개의 캐릭터가 있어요</p>
+            </div>
             <div class="characters" [style.transform]="getPosX()">
-                  <div *ngFor="let character of characters" >
+
+                  <div *ngFor="let character of characters; let i = index;"
+                        (mouseenter)="setHoverIndex(i)"
+                        (mouseleave)="setHoverIndex(null)">
+                        <div class="custom-tooltip" 
+                              [class.active]="hoverIndex === i">
+                              <span>안녕? 나는 {{character.name}}</span>
+                        </div>
                         <!-- svg 접근성 체크하기 -->
                         <svg *ngIf="character.modules" viewBox="0 0 700 1200" class="character">
                               <title lang="ko">랜덤 캐릭터 부분별 그래픽</title>
@@ -1223,20 +1233,39 @@
                               </g>
                               </g>
                         </svg>
-                        <p>{{character.name}}</p>
                   </div>
             </div>
       </div>
       
       <div class="archive-foot">
-            <button class="button" (click)="moveBtn('left')" [disabled]="!isLeft">Left</button>
+            <div class="btnDir_container">
+                  <img src="assets/images/ui/left.png" alt="왼쪽 탐색버튼" (click)="moveBtn('left')" >
+                  <img src="assets/images/ui/right.png" alt="오른쪽 탐색버튼" (click)="moveBtn('right')" >
+            </div>
+            <div class="btnSmall_container">
+                  <div class="btn light" (click)="moveTo('random-characters')"> <span>처음으로</span> </div>
+            </div>
+                  
+            <!--
+            <div class="btn_container">
+                  <button class="btn-dir primary" (click)="moveBtn('left')" [disabled]="!isLeft">
+                        <span>왼쪽</span>
+                  </button>
+                  <button class="btn-dir primary" (click)="moveBtn('right')" [disabled]="!isRight">
+                        <span>오른쪽</span>
+                  </button>
+            </div>
+            -->
             
-            <button class="button" (click)="moveBtn('right')" [disabled]="!isRight">Right</button>
+            <!--
             <div class="btn_container" [class.active]="isProcessComplete">
                   <div class="btn light" (click)="moveTo('random-characters')"> <span>처음으로</span> </div>
                   <div class="btn primary" (click)="openInfo()"> 
                         <span><i class="material-icons">info</i></span>
                   </div> 
             </div>
+            -->
       </div>
 </section>
+
+<!-- <div class="btn light home" (click)="moveTo('random-characters')"> <span>처음으로</span>  -->

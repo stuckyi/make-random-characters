@@ -1261,6 +1261,21 @@
       </div>
 </section>
 
+
+<!-- custom modal : init -->
+<div class="custom-init-modal" [class.inactive]="!isInitModal">
+
+      <div class="character-to-name">
+            <!-- 메인 to 랜덤캐 모달 -->
+            <div class="saveMsg">
+                  <img src="assets/images/ui/loading.png">
+                  <!-- <p *ngIf="!isComplete" class="ing">저장중</p> -->
+                  <!-- <p *ngIf="isComplete" class="complete">저장 완료!</p> -->
+            </div>
+      </div>
+
+</div>
+
 <!-- custom modal -->
 <div class="custom-modal" 
     [class.active]="isModal"

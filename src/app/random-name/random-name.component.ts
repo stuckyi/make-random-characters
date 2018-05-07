@@ -26,8 +26,11 @@ export class RandomNameComponent implements OnInit, OnDestroy {
 
   isPlay: boolean;
   isSave: boolean;
+  // modal
   isModal: boolean;
+  isInitModal: boolean;
   isComplete: boolean; // 저장중 or 저장 완료
+
 
 
 
@@ -39,14 +42,15 @@ export class RandomNameComponent implements OnInit, OnDestroy {
     private router: Router,
     private appService: AppService) {
     this.currentModule = this.appService.getCurrentCharacter();
+    this.isInitModal = true;
   }
 
   ngOnInit() {
     if (!this.currentModule) {
       this.router.navigate(['/random-characters']);
     }
+    this.initModal();
     this.step = 0;
-    this.play(this.step);
   }
 
   ngOnDestroy(): void {
@@ -110,7 +114,12 @@ export class RandomNameComponent implements OnInit, OnDestroy {
     this.isModal = false;
   }
 
-
+  initModal() {
+    setTimeout(() => { 
+      this.play(this.step);
+      this.isInitModal = false;
+    }, 2000);
+  }
   openModal() {
     console.log(this.appService.getCharacters());
     this.isModal = true;
